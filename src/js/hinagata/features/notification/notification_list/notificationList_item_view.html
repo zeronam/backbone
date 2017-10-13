@@ -1,0 +1,42 @@
+<% _.each(notificationList, function(val, i) { %>
+<% _.each(notificationList[i], function(val, j) { %>
+<% if( j  === 0 ){ %>
+    <% if( checkThisMonth(notificationList[i][j].attributes.startTime) === 1 ){ %>
+        <div class="mainline active">
+    <% } else { %>
+        <div class="mainline">
+    <% } %>
+    <span></span><h3><%= getHeaderDateList(notificationList[i][j].attributes.openDate, notificationList[i][j].attributes.repeatCondition)%></h3></div>
+<% } %>
+<div class="message_content cf">
+<table class="tbl-main-list">
+    <tbody>
+        <tr>
+            <td>
+                <a href="#notificationSetting/edit?notificationId=<%= notificationList[i][j].attributes.infoId%>" class="campaign-title item-name"><%= notificationList[i][j].attributes.title %></a>
+                <p class="campaign-details start-time"><%= getStatusText(notificationList[i][j].attributes.status) %><%= formatDateTime(notificationList[i][j].attributes.openDate, notificationList[i][j].attributes.repeatCondition) %></p>
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                <p class="campaign-title status-title item-name"><%= notificationList[i][j].attributes.notificationsCount %></p>
+                <p class="campaign-details subscribes item-name"><%= getText("complete")%></p>
+            </td>
+            <td id="<%= notificationList[i][j].attributes.infoId%>">
+               <!--  <a id="open_history" class="icon-history"><i class="fa fa-history" aria-hidden="true"></i></a> -->
+			    <% if( notificationList[i][j].attributes.status == 2 || notificationList[i][j].attributes.status == 3){ %>
+			    	<a id="open_dialogue_active" class="circle_act"><i class="fa fa-ellipsis-h"></i></a>
+			    <% } %>
+			    <% if( notificationList[i][j].attributes.status  == 1 ){ %>
+			    	<a id="open_dialogue_scheduled" class="circle_act"><i class="fa fa-ellipsis-h"></i></a>
+			    <% } %>
+			    <% if( notificationList[i][j].attributes.status == 0 || notificationList[i][j].attributes.status == 9 ){ %>
+			    	<a id="open_dialogue_draft" class="circle_act"><i class="fa fa-ellipsis-h"></i></a>
+			    <% } %>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<%}); %>
+<%}); %>

@@ -1,0 +1,82 @@
+
+<hr>     
+<h3><%= setMemberOnly(memberOnly)%></h3><br>
+
+<div id="mainCouponSetting">
+  <% if(!segmentDetail){ %>
+ <div class="form-group">
+   <label class="title-lbl"><%= getTargetSegment() %></label>
+   <select class="form-control input-lg" id="target">
+     <option data-id=""><%= getConditionNone()%></option>
+   </select>
+ </div>
+  <%} %>
+  <% if(segmentDetail && segmentDetail.segmentId){ %>
+  <div class="subject-title form-group segment-info">
+    <label class="title-lbl"><%= getTargetSegment() %></label>
+     <div class="text-only">
+      <i class="fa fa-line-chart" aria-hidden="true"></i>
+      <p><%= segmentDetail.chartName %></p>
+     </div>
+     <div class="text-only">
+      <i class="fa fa-database" aria-hidden="true"></i>
+      <p><%= segmentDetail.x %> ~ <%= segmentDetail.y%></p>
+     </div>
+     <div class="text-only">
+      <i class="fa fa-clock-o" aria-hidden="true"></i>
+      <p><%= segmentDetail.type %> (<%= convertDate(segmentDetail.startDate, "YYYY/MM/DD") %> ~ <%= convertDate(segmentDetail.endDate, "YYYY/MM/DD") %>)</p>
+     </div>
+   </div>
+  <%} %>
+ <div class="distribution-block form-group form-group-select">
+   <label class="title-lbl title-lbl-line"><%= getDistributionMethods() %><span class="required-label"><%= getRequired() %></span></label>
+   <label class="lbRadio line-height-42">
+     <input type="radio" name="repeatType" value="0" <% if(delivType + "" !== "1"){ %>checked<% } %> id="repeatNon" class="form-control">
+     <span><%= getDistributionMethods1() %></span>
+   </label>
+   <% if ( memberOnly + "" !== "1" ) { %>
+     <label class="lbRadio line-height-42">
+       <input type="radio" name="repeatType" value="1" id="repeatCheck" class="form-control" <% if(delivType + "" === "1"){ %>checked<% } %>>
+       <span>
+         <%= getDistributionMethods2() %>
+       </span>
+     </label>
+     <div id="repeatCheckVal" class="row">
+       <% if ( delivType + "" === "1" ) { %>
+         <div class="col-xs-6 col-sm-6 col-md-6" id="dateDistStartRegion">
+          <input readonly="true" class="form-control input-lg hasDatetimepicker" type="text" name="dateDistStart" value="<%= convertDate(startDatetime)%>"  id="dateDistStart" class="hasDatepicker"></div>
+         <div class="col-xs-6 col-sm-6 col-md-6" id="dateDistEndRegion">
+           <input readonly="true" class="form-control input-lg hasDatetimepicker" type="text" name="dateDistEnd" value="<%= convertDate(endDatetime)%>" id="dateDistEnd" class="hasDatepicker"></div>
+      <% } else if ( useStartDateTime && useEndDateTime ) { %>
+        <div class="col-xs-6 col-sm-6 col-md-6" id="dateDistStartRegion">
+          <input readonly="true" disabled  class="form-control input-lg hasDatetimepicker" type="text" name="dateDistStart" value="<%= convertDate(useStartDateTime)%>" id="dateDistStart" class="hasDatepicker"></div>
+         <div class="col-xs-6 col-sm-6 col-md-6" id="dateDistEndRegion">
+           <input readonly="true" disabled class="form-control input-lg hasDatetimepicker" type="text" name="dateDistEnd" value="<%= convertDate(useEndDateTime)%>" id="dateDistEnd" class="hasDatepicker"></div>
+      <% } else { %>
+        <div class="col-xs-6 col-sm-6 col-md-6" id="dateDistStartRegion">
+          <input readonly="true" disabled  class="form-control input-lg hasDatetimepicker" type="text" name="dateDistStart" value="<%= getNowDate()%>" id="dateDistStart" class="hasDatepicker"></div>
+         <div class="col-xs-6 col-sm-6 col-md-6" id="dateDistEndRegion">
+           <input readonly="true" disabled class="form-control input-lg hasDatetimepicker" type="text" name="dateDistEnd" value="<%= getNowDate()%>" id="dateDistEnd" class="hasDatepicker"></div>
+      <% } %>
+     </div>
+   <% } %>
+ </div> 
+
+ <div class="distribution-block form-group form-group-select">
+   <label class="title-lbl title-lbl-line"><%= getDistributionConditions() %></label>
+   <label class="lbRadio line-height-42">
+     <input type="radio" name="giveMultiple" data-id="2" id="giveMultiple2" class="form-control" <% if (giveMultiple + "" === "2" || giveMultiple + "" === ""){ %>checked<%}%>>
+     <span><%= getDistributionConditions1() %></span>
+   </label>
+   <% if ( memberOnly + "" !== "1" ) { %>
+     <label class="lbRadio line-height-42">
+       <input type="radio" name="giveMultiple" data-id="1" id="giveMultiple1" class="form-control" <% if (giveMultiple + "" === "1"){ %>checked<%}%> <% if(delivType + "" !== "1"){ %>disabled<% } %>> 
+       <span><%= getDistributionConditions2() %></span>
+     </label>
+     <label class="lbRadio line-height-42">
+       <input type="radio" name="giveMultiple" data-id="0" id="giveMultiple0" class="form-control" <% if (giveMultiple + "" === "0"){ %>checked<%}%> <% if(delivType + "" !== "1"){ %>disabled<% } %>>
+       <span><%= getDistributionConditions3() %></span>
+     </label>
+   <% } %>
+ </div>
+</div>

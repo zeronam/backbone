@@ -1,0 +1,107 @@
+//====================================================
+//-------------------- SCANNER CSS -------------------
+//====================================================
+#scanDevice-region{
+	background-color: #ebecec;
+	color: #222e66;
+}
+.scan_main.device, .scan_main.device_error {
+	height:400px;
+	margin-top:-200px;
+	text-align:center;
+}
+#scanDevice-region .container {
+	text-align: center;
+	margin-top: 0;
+	.title {    
+	    text-align: center;
+	    border-top: 100px solid #d8d8da;
+	    border-left: 50px solid transparent;
+	    border-right: 50px solid transparent;
+	    height: 0;
+	    width: 250px;
+	    position:fixed;
+	    margin-left:-125px;
+	    left:50%;
+	    top:-87px;
+	    @include rem("font-size", 16);
+	    @include rem("padding", 0, 0, 20);
+	    span {
+		    color: #29235C;
+		    text-transform: uppercase;
+		    font-weight: bold;
+		    position:absolute;
+		    top: -25px;
+		    left: 0;
+		    font-size:14px;
+		    width:100%;
+	    }
+	}
+	p.info-scanDevice {		
+		span{
+			display: block;
+			font-size: 20px;
+		}
+	}
+	p{		
+		#txt-barcode{
+			background-color: #fff;
+			height: 50px;
+			width: 100%;
+			border: none;
+			border-top: 1px solid #29235C;
+			border-bottom: 1px solid #29235C;
+			margin-bottom: 10px;
+			text-align: center;
+			color: #29235C;
+			font-size: 20px;
+		}
+		span{
+			display: block;
+		}
+	}
+	.scanning{		
+		.circle{
+			background-color:#29235C;
+			box-shadow: 0px 2px 5px #999;
+			float:left;
+			height:10px;
+			margin-left: 5px;
+			margin-top: 7px;
+			width:10px;
+			-webkit-animation-name: bounce_circle;
+			-webkit-border-radius:10px;
+		 	-webkit-animation-duration: 1.5s;
+		 	-webkit-animation-iteration-count: infinite;
+		 	-webkit-animation-direction: linear;
+			opacity:0.3;
+		}
+		#circle_1{
+		 	-webkit-animation-delay: .3s;
+		 }
+		#circle_2{
+		 	-webkit-animation-delay: .7s;
+		}
+		#circle_3{
+		 	-webkit-animation-delay: .9s;
+		}
+		@-webkit-keyframes bounce_circle{
+			0%{opacity:0.3;}
+			50%{opacity:1;background-color:#29235C}
+			100%{opacity:0.3;}
+		}	
+	}	
+}
+
+.navi-controll{
+	.btn-back{
+		left: 8px;
+	}
+	.btn-scan{
+		right: 8px;
+	    width: auto;
+	}
+}
+.scan_main.device_error .barcode_scan_place {
+	margin: 80px 0 30px;
+}

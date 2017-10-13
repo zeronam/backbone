@@ -1,0 +1,203 @@
+/*====================================================*/
+/*-------------------- CONFIRM CSS -------------------*/
+/*====================================================*/
+#confirm-region {
+    background-color: #ebecec;
+    color: #222e66;
+    .container {
+        .center-content {
+			width: 768px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+        }
+    }
+}
+
+#confirm-region .container {
+    text-align: center;
+    margin-top: 0;
+    .title {
+        text-align: center;
+        border-top: 100px solid #d8d8da;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        height: 0;
+        width: 230px;
+        position: fixed;
+        margin-left: -115px;
+        left: 50%;
+        top: -87px;
+        @include rem("font-size", 16);
+        @include rem("padding", 0, 0, 20);
+        span {
+            color: #161F60;
+            text-transform: uppercase;
+            font-weight: bold;
+            position: absolute;
+            top: -25px;
+            left: 0;
+            font-size: 14px;
+            width: 100%;
+            right: 0;
+            text-align: center;
+        }
+    }
+    hr {
+        width: 600px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        // margin-top: 150px;
+        border: 0;
+        border-top: 1px solid #29235C;
+    }
+    h3 {
+        font-size: 14px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        background-color: #ebecec;
+        display: table;
+        margin-top: -26px;
+        padding: 0 25px;
+        font-family: 'NotoSans-Bold';
+        color: #29235C;
+        font-weight: bold;
+    }
+    p {
+        margin-bottom: 25px;
+        display: inline-block;
+    }
+    p.info-confirm {
+        width: 100%;
+        font-size: 20px;
+    }
+    .btn {
+        border: 1px solid #222e66;
+        padding: 18px 0;
+        width: 155px;
+        background-color: transparent;
+        font-size: 16px;
+        line-height: 20px;
+        border-radius: 7px;
+        margin: 40px 7px 55px 7px;
+    }
+    .btn:hover {
+        background-color: #2dabb6;
+        border-color: #2dabb6;
+        color: #fff;
+    }
+    .confirm-list {
+        margin-bottom: 50px;
+        text-align: left;
+        width: 175px;
+        margin: 0 auto;
+    }
+    .confirm-list li {
+        padding-bottom: 15px;
+        display: none;
+    }
+    .confirm-list li.show {
+        display: block;
+    }
+    .confirm-list li span {
+        padding-right: 10px;
+        font-size: 24px;
+        vertical-align: middle;
+    }
+}
+
+@media only screen and (max-width: 1024spx) {}
+
+@media only screen and (max-width: 992px) {}
+
+@media only screen and (max-width: 768px) {}
+
+@media only screen and (max-width: 480px) {
+    #confirm-region .container {
+        hr {
+            width: 80%;
+        }
+        p br {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    #confirm-region .container {
+        hr {
+            margin-top: 100px;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        .btn {
+            padding: 15px 0;
+            width: 100px;
+            margin-bottom: 0;
+        }
+        .confirm-list {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+#confirm-point-region {
+    background-color: #ebecec;
+    color: #222e66;
+}
+
+#confirm-point-region .container {
+    text-align: center;
+    margin-top: 0;
+    .title {
+        text-align: center;
+        border-top: 100px solid #d8d8da;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        height: 0;
+        width: 230px;
+        position: fixed;
+        margin-left: -115px;
+        left: 50%;
+        top: -87px;
+        @include rem("font-size", 16);
+        @include rem("padding", 0, 0, 20);
+        span {
+            color: #29235C;
+            text-transform: uppercase;
+            font-weight: bold;
+            position: absolute;
+            top: -25px;
+            left: 0px;
+            font-size: 14px;
+            width: 100%;
+        }
+    }
+    p {
+        margin-bottom: 25px;
+        display: inline-block;
+    }
+    p.info-confirm {
+        width: 100%;
+        font-size: 16px;
+        margin-top: 250px;
+    }
+    .btn {
+        border: 1px solid #222e66;
+        padding: 18px 0;
+        width: 155px;
+        background-color: transparent;
+        font-size: 16px;
+        line-height: 20px;
+        border-radius: 7px;
+    }
+    .btn:hover {
+        background-color: #2dabb6;
+        border-color: #2dabb6;
+        color: #fff;
+    }
+}

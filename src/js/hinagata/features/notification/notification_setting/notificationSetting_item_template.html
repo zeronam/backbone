@@ -1,0 +1,198 @@
+
+<div id="mainPushNotification" class="row">          
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="subject-title form-group">
+      <label class="title-lbl"><%= getText("title") %><span class="required-label"><%= getRequired() %></span></label>
+      <input type="text" class="form-control input-lg" id="title" placeholder="<%= getText("titleP") %>" value="<%= title %>">
+    </div>
+
+    <div class="subject-title form-group">
+      <label class="title-lbl"><%= getText("body") %><span class="required-label"><%= getRequired() %></span></label>
+      <input type="text" class="form-control input-lg" id="contentText" placeholder="<%= getText("bodyP") %>" value="<%= contentText %>">
+    </div>
+
+    <div class="availability-period-block form-group form-group-select">
+      <label class="title-lbl"><%= getText("method") %></label>
+      <div class="row line-height-42">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <label class="lbRadio">
+            <% if ( repeatFlg === 0 || repeatFlg === "" ) { %>
+              <input type="radio" name="repeatFlg" id="repeatFlg0" class="form-control" value="0" checked>
+            <%  } else { %>
+              <input type="radio" name="repeatFlg" id="repeatFlg0" class="form-control" value="0">
+            <% } %>
+            <span><%= getText("noticeOnce") %></span>
+          </label>
+        </div>
+        <div id="repeatFlg0Val" class="col-xs-8 col-sm-8 col-md-8">
+          <div class="row">
+            <% if ( repeatFlg === 0 ) { %>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <input readonly="true" class="form-control css-input input-lg hasDatepicker" type="text" name="openDate" value="<%= convertDate(openDate) %>" placeholder="YYYY/MM/DD" id="openDate">
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <input readonly="true" class="form-control css-input input-lg hasTimepicker" type="text" name="openTime" value="<%= convertDate(openTime) %>" placeholder="HH:mm" id="openTime">
+              </div>
+            <%  } else { %>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <input <% if ( repeatFlg == 1 ) { %>disabled<% } %> class="aaa form-control css-input input-lg hasDatepicker" type="text" name="openDate" placeholder="YYYY/MM/DD HH:mm" value="<%= getNowDate("start")%>" readonly="true" id="openDate">
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <input <% if ( repeatFlg == 1 ) { %>disabled<% } %> class="aaa form-control css-input input-lg hasTimepicker" type="text" name="openTime" placeholder="HH:mm" value="<%= getNowDate("end")%>" readonly="true" id="openTime">
+              </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row line-height-42">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <label class="lbRadio">
+            <% if ( repeatFlg == 1 ) { %>
+              <input type="radio" name="repeatFlg" id="repeatFlg1" class="form-control" value="1" checked>
+            <% } else { %>
+              <input type="radio" name="repeatFlg"  id="repeatFlg1"  class="form-control" value="1">
+            <% } %>
+            <span><%= getText("repeatNotice") %></span>
+          </label>
+        </div>
+        <div id="repeatFlg1Val" class="col-xs-8 col-sm-8 col-md-8">
+          <div class="row">
+            <% if ( repeatFlg == 1 ) { %>
+              <div class="line-height-42 col-xs-6 col-sm-6 col-md-6">
+                <input readonly="true" class="form-control css-input input-lg hasDatepicker" type="text" name="distributionTimeStart" value="<%= convertDate(distributionTimeStart) %>" placeholder="YYYY/MM/DD HH:mm" id="distributionTimeStart">
+              </div>
+              <div class="line-height-42 col-xs-6 col-sm-6 col-md-6">
+                <input readonly="true" class="form-control css-input input-lg hasDatepicker" type="text" name="distributionTimeEnd" value="<%= convertDate(distributionTimeEnd) %>" placeholder="YYYY/MM/DD HH:mm" id="distributionTimeEnd">
+              </div>
+              <div class="line-height-42 col-xs-6 col-sm-6 col-md-6">
+                <label class="lbRadio lbRadio-tap repeatTypeLb <% if (repeatType == 3){ %>active<% } %>" for="Everymonth">
+                    <input type="radio" name="repeatType" value="3" <% if (repeatType == 3){ %>checked<% } %> id="Everymonth"  class="repeatType form-control">
+                    <%= getText("everyMonth") %>
+                </label>
+                <label class="lbRadio lbRadio-tap repeatTypeLb <% if (repeatType == 2){ %>active<% } %>" for="Everyweek">
+                  <input type="radio" name="repeatType" value="2" <% if (repeatType == 2){ %>checked<% } %> id="Everyweek"  class="repeatType form-control">
+                  <%= getText("weekly") %>
+                </label>
+                <label class="lbRadio lbRadio-tap repeatTypeLb <% if (repeatType == 1){ %>active<% } %>" for="Everyday">
+                  <input type="radio" name="repeatType" value="1" <% if (repeatType == 1){ %>checked<% } %> id="Everyday"  class="repeatType form-control">
+                  <%= getText("everyDay") %>
+                </label>
+              </div>
+              <div class="line-height-42 col-xs-6 col-sm-6 col-md-6">
+                <div class="no-padding col-xs-6 col-sm-6 col-md-6">
+                  <select <% if (repeatType == 1 || repeatType == 2){ %>disabled<% } %> name="selectValueEverymonth" class="repeatTypeVal form-control input-lg <% if (repeatType == 1 || repeatType == 2){ %>hidden<% } %>" id="selectValueEverymonth">
+                      <% for(var i = 1; i <= 31; i++) { %>
+                         <option value="<%= i %>"  <% if (selectValueEverymonth == i){ %>selected<% } %>><%= i %><%= getText("day") %></option>
+                      <%} %>
+                  </select>
+                  <select <% if (repeatType == 1 || repeatType == 3){ %>disabled<% } %> name="selectValueEveryweek" class="repeatTypeVal form-control input-lg <% if (repeatType == 3){ %>hidden<% } %>" id="selectValueEveryweek">
+                      <option value="1" <% if (selectValueEveryweek == 1){ %>selected<% } %>><%= getText("monday") %></option>
+                      <option value="2" <% if (selectValueEveryweek == 2){ %>selected<% } %>><%= getText("tuesday") %></option>
+                      <option value="3" <% if (selectValueEveryweek == 3){ %>selected<% } %>><%= getText("wednesday") %></option>
+                      <option value="4" <% if (selectValueEveryweek == 4){ %>selected<% } %>><%= getText("thursday") %></option>
+                      <option value="5" <% if (selectValueEveryweek == 5){ %>selected<% } %>><%= getText("friday") %></option>
+                      <option value="6" <% if (selectValueEveryweek == 6){ %>selected<% } %>><%= getText("saturday") %></option>
+                      <option value="7" <% if (selectValueEveryweek == 7){ %>selected<% } %>><%= getText("sunday") %></option>
+                  </select>
+                </div>
+                <div class="no-padding col-xs-6 col-sm-6 col-md-6">
+                  <input class="form-control css-input input-lg hasTimepicker" type="text" name="distributionTime" placeholder="HH:mm" value="<%= distributionTime %>" readonly="true" id="distributionTime">
+                </div>
+              </div>
+            <% } else { %>
+              <div class="line-height-42 col-xs-6 col-sm-6 col-md-6">
+                <input disabled class="form-control css-input input-lg hasDatepicker" type="text" name="distributionTimeStart" placeholder="YYYY/MM/DD HH:mm" value="<%= getNowDate("start")%>" readonly="true" id="distributionTimeStart">
+              </div>
+              <div class="line-height-42 col-xs-6 col-sm-6 col-md-6">
+                <input disabled class="form-control css-input input-lg hasDatepicker" type="text" name="distributionTimeEnd" placeholder="YYYY/MM/DD HH:mm" value="<%= getNowDate("end")%>" readonly="true" id="distributionTimeEnd">
+              </div>
+              <div class="line-height-42 col-xs-6 col-sm-6 col-md-6">
+                <label class="lbRadio lbRadio-tap repeatTypeLb disabled" for="Everymonth">
+                    <input disabled type="radio" name="repeatType" value="3" id="Everymonth"  class="repeatType form-control">
+                    <%= getText("everyMonth") %>
+                </label>
+                <label class="lbRadio lbRadio-tap repeatTypeLb disabled active" for="Everyweek">
+                  <input disabled type="radio" name="repeatType" value="2" id="Everyweek"  class="repeatType form-control" checked>
+                  <%= getText("weekly") %>
+                </label>
+                <label class="lbRadio lbRadio-tap repeatTypeLb disabled" for="Everyday">
+                  <input disabled type="radio" name="repeatType" value="1" id="Everyday"  class="repeatType form-control">
+                  <%= getText("everyDay") %>
+                </label>
+              </div>
+              <div class="line-height-42 col-xs-6 col-sm-6 col-md-6">
+                <div class="no-padding col-xs-6 col-sm-6 col-md-6">
+                  <select name="selectValueEverymonth" disabled class="repeatTypeVal form-control input-lg hidden" id="selectValueEverymonth">
+                      <% for(var i = 1; i <= 31; i++) { %>
+                         <option value="<%= i %>"><%= i %><%= getText("day") %></option>
+                      <%} %>
+                  </select>
+                  <select name="selectValueEveryweek" disabled class="repeatTypeVal form-control input-lg" id="selectValueEveryweek">
+                      <option value="1" selected><%= getText("monday") %></option>
+                      <option value="2"><%= getText("tuesday") %></option>
+                      <option value="3"><%= getText("wednesday") %></option>
+                      <option value="4"><%= getText("thursday") %></option>
+                      <option value="5"><%= getText("friday") %></option>
+                      <option value="6"><%= getText("saturday") %></option>
+                      <option value="7"><%= getText("sunday") %></option>
+                  </select>
+                </div>
+                <div class="no-padding col-xs-6 col-sm-6 col-md-6">
+                  <input disabled class="form-control css-input input-lg hasTimepicker" type="text" name="distributionTime" placeholder="HH:mm" value="<%= getNowDate("start")%>" readonly="true" id="distributionTime">
+                </div>
+              </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div> <!-- /.media-block -->
+
+    <div class="availability-period-block form-group form-group-select">
+      <label class="title-lbl">
+        <%= getText("presenceOrAbsenceOfNotification") %>
+      </label>
+      <div class="row line-height-42">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <label class="lbRadio">
+            <% if ( nonPushFlg !== 1 ) { %>
+              <input type="radio" name="nonPushFlg" id="nonPushOn" value="0" class="form-control" checked>
+            <%  } else { %>
+              <input type="radio" name="nonPushFlg" id="nonPushOn" value="0" class="form-control">
+            <% } %>
+            <span><%= getText("notice") %></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="row line-height-42">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <label class="lbRadio">
+            <% if ( nonPushFlg === 1 ) { %>
+              <input type="radio" name="nonPushFlg" value="1" id="nonPushOff" class="form-control" checked>
+            <% } else { %>
+              <input type="radio" name="nonPushFlg" value="1" id="nonPushOff"  class="form-control">
+            <% } %>
+            <span><%= getText("noNotice") %></span>
+          </label>
+        </div>
+      </div>
+    </div> <!-- /.media-block -->
+
+    <div class="accuracy-block form-group">
+      <label class="title-lbl"><%= getText("displayPeriod") %></label>
+      <select name="dispTimeType" class="form-control input-lg" id="dispTimeType">
+          <option  <% if ( dispTimeType == 99){ %> selected <% } %> value="99"><%= getText("indefinitePeriod") %></option>
+          <option <% if ( dispTimeType == 11){ %> selected <% } %> value="11"><%= getText("halfAnHour") %></option>
+          <option <% if ( dispTimeType == 12){ %> selected <% } %> value="12"><%= getText("onehour") %></option>
+          <option <% if ( dispTimeType == 13){ %> selected <% } %> value="13"><%= getText("twohours") %></option>
+          <option <% if ( dispTimeType == 14){ %> selected <% } %> value="14"><%= getText("duringTheDay") %></option>
+          <option <% if ( dispTimeType == 15){ %> selected <% } %> value="15"><%= getText("threedays") %></option>
+          <option <% if ( dispTimeType == 16){ %> selected <% } %> value="16"><%= getText("sevendays") %></option>
+          <option <% if ( dispTimeType == 17){ %> selected <% } %> value="17"><%= getText("onemonth") %></option>
+      </select>
+    </div> 
+
+  </div>
+
+</div>

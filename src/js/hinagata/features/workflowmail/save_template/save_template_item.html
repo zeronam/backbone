@@ -1,0 +1,26 @@
+<div class="greybg" id="greybg"></div>
+<div class="dialog_template">
+  <div class="inner_dialog">
+  <h1><%= getSaveTemplateTitle() %><span id="close_save_template"><img src="./image/icon/close3.png" /></span></h1>
+  <div class="template-wrapper">
+    <div class="template-inner">
+      <ul class="input-template-save">
+        <li>
+          <span><%= getSaveTemplateNote() %></span><br/>
+          <span class="error-msg"></span>
+        </li>
+        <li>
+          <label><%= getSaveTemplateName() %></label>
+          <input type="text" id="templateName"/>
+        </li>
+        <li><button id="saveTemplate"><%= getSaveTemplateBtn() %></button></li>
+      </ul>
+      <ul class="success-save-template">
+        <li>
+          <span><%= getSaveTemplateSuccess() %></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>      
+</div>

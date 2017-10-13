@@ -1,0 +1,38 @@
+        <div class="subject-title form-group">
+          <label class="title-lbl"><%= getSubject() %></label>
+          <% if ( subjectTitle ) { %>
+            <input type="text" class="form-control css-input" id="subjectTitle" placeholder="<%= getSubject() %>" value="<%= subjectTitle %>">
+          <% } else { %>
+            <input type="text" class="form-control css-input" id="subjectTitle" placeholder="<%= getSubject() %>" value="">
+          <% } %>
+        </div>
+
+        <div class="form-group">
+          <hr>
+          <h3><%= getMessageContentTitle() %></h3>
+        </div>
+
+        <div class="group-layout-template">
+          <div id="contentLayoutTemplate01">
+
+            <div id="mainMessageContents">
+              <div class="subject-title form-group">
+                <label class="title-lbl"><%= getBodyText() %></label>
+                <% if ( bodyTextOne ) { %>
+                  <textarea class="form-control1 css-input" rows="5" id="bodyTextOne" placeholder="<%= getBodyText() %>"><%= bodyTextOne %></textarea>
+                <% } else { %>
+                  <textarea class="form-control1 css-input" rows="5" id="bodyTextOne" placeholder="<%= getBodyText() %>"></textarea>
+                <% } %>
+              </div> <!-- /.form-group -->
+              <div class="data-select form-group cf">
+                <div class="save-temp-detail" id="save-template-message">
+                  <span class="col-md-6 pLeft0">
+                    <input type="checkbox" value="" class="select-opt" id="check-save">
+                    <label for="radio01"><%= getSaveAsTemplate() %></label>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>

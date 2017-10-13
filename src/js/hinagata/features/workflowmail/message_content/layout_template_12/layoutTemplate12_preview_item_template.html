@@ -1,0 +1,58 @@
+<div id="new-layout-template" class="layout-template layout12">
+    <div class="banner">
+        <div class="inner-bnr">
+            <p class="box-photo">
+                <% if ( imgBannerOne ) { %>
+                <img class="logo" id="imgBannerOne" src="<%= imgBannerOne %>">
+                <% } else { %>
+                <img class="logo" id="imgBannerOne" src="./image/select_template/200x50.png">
+                <% } %></p>
+        </div>
+        <!-- /.inner-bnr -->
+    </div>
+    <!-- /.banner -->
+    <div class="box-content">
+        <div class="box-para">
+            <p class="para">
+                <iframe id="iframe-bodyTextOne" scrolling="no">
+                </iframe>
+            </p>
+        </div>
+        <!-- /.box-para -->
+    </div>
+    <!-- ./box-content -->
+    <div class="banner">
+        <div class="inner-bnr">
+            <p class="box-photo">
+                <% if ( imgBannerTwo ) { %>
+                <img id="imgBannerTwo" src="<%= imgBannerTwo %>">
+                <% } else { %>
+                <img id="imgBannerTwo" src="./image/main/noImage.png">
+                <% } %></p>
+        </div>
+        <!-- /.inner-bnr -->
+    </div>
+    <!-- /.banner -->
+    <div class="box-content">
+        <div class="box-para">
+            <p class="para">
+                <iframe id="iframe-bodyTextTwo" scrolling="no">
+                </iframe>
+            </p>
+        </div>
+        <!-- /.box-para -->
+    </div>
+    <!-- ./box-content -->
+    <div class="banner">
+        <div class="inner-bnr">
+            <p class="box-photo">
+                <% if ( imgBannerThree ) { %>
+                <img id="imgBannerThree" src="<%= imgBannerThree %>">
+                <% } else { %>
+                <img id="imgBannerThree" src="./image/main/noImage.png">
+                <% } %></p>
+        </div>
+        <!-- /.inner-bnr -->
+    </div>
+    <!-- /.banner -->
+</div>

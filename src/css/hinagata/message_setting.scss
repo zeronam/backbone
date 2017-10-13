@@ -1,0 +1,161 @@
+//====================================================
+//---------------- MESSAGE SETTING CSS ---------------
+//====================================================
+#message-setting-wrapper {
+	background-color: #ededed;
+}
+#message-setting-wrapper .container {
+	height:auto !important;
+}
+#message-setting-wrapper .simple-message , #message-setting-region{
+	height:100%;
+}
+.message-setting .data-select {
+	border-top:1px solid #29235c;
+	margin-top:30px;
+	margin-bottom:0;
+}
+.message-setting .drawer-title {
+	text-transform:none;
+	line-height:35px;
+}
+.message-setting .form-control, #message-content .form-control {
+	border-color: #29235c;
+	background-color: #f6f6f6;
+	color: #29235c;
+	height:41px;
+	// line-height:41px;
+}
+#message-setting-region .sms {
+	margin-top:15px;
+}
+.data-select .time-restrict, .message-setting .setting-select{
+	text-align: center;
+    padding: 5px 10px;
+    margin: -15px auto 0;
+    background: #ededed;
+    width: 265px;
+    color: #29235c;
+}
+.message-setting .time-restrict-detail {
+	padding:20px 0 0 0;
+}
+.message-setting .time-restrict-detail label, .save-temp-detail label {
+	margin-bottom:25px;
+	text-align:center;
+	font-size:14px;
+	color: #29235c;
+	margin-left:10px;
+	text-transform: none;
+	font-weight:normal;
+}
+#message-setting-region .bgscroll {
+	width:100%;
+	position:relative;
+}
+#message-setting-region .scroll {
+   	max-height: 450px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: block;
+    position:absolute;
+    width:100%;
+    padding-left: 2px;
+}
+.message-setting .part-preview .template-preview {
+	position:relative
+}
+.message-setting .part-content {
+	height:100%;
+}
+#message-setting-region .inner {
+	width:100%
+}
+.time-restrict-detail .fa {
+	margin-right:10px;
+	font-size:24px;
+	vertical-align:-3px;
+}
+.setting-select {
+	width:170px;
+}
+.select-opt {
+	width:25px;
+	height:25px;
+	display:inline-block;
+	vertical-align:-9px;
+}
+.message-setting .save-temp-detail {
+	padding:15px 10px 0 10px;
+}
+.message-setting .data-select .save-temp{
+	width:165px;
+}
+@media only screen and (max-width: 992px) {
+.date-time .col-md-6.pLeft0 {
+	padding-right:0
+}
+}
+@media screen and (orientation:portrait) {
+	#message-setting-region .scroll {
+		max-height:1024px;
+		overflow-y:hidden;
+		position:static;
+	}
+}
+.time-restrict-detail .col-md-6 {
+  text-align:center
+}
+.time-restrict-detail .col-md-6, .save-temp-detail .col-md-6 {
+  display: block;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 25px;
+}
+.time-restrict-detail .col-md-6 .select-opt {
+  position: absolute;
+  left: 55px;
+  top: -2px;
+}
+.save-temp-detail .select-opt {
+  position: absolute;
+  left: 0px;
+  top: -3px;
+}
+.message-setting .form-control.input-lg {
+    height: 45px;
+    // line-height: 45px;
+    font-size: 16px;
+}
+input[type="checkbox"]:checked {
+    background-color: #29235c;
+}
+
+@media only screen and (max-width: 768px) {
+  .time-restrict-detail .col-md-6 .select-opt {
+	  position: absolute;
+	  left: 5px;
+	  top: -2px;
+	}
+}
+
+.message-setting .form-control::-webkit-input-placeholder {
+  color: #808080;
+}
+.message-setting .form-control:-ms-input-placeholder { /* IE 10+ */
+  color: #808080;
+}
+.message-setting .form-control::-moz-placeholder { /* Firefox 19+ */
+  color: #808080;
+}
+.message-setting .form-control:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #808080;
+}
+
+#message-setting-wrapper{
+	position: relative;
+  min-height: 100vh;
+  .container {
+    padding-bottom: 60px;
+  }
+}

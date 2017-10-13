@@ -1,0 +1,18 @@
+<div id="information-region-wrapper">
+<div class="container">
+  <div class="coupon-master notification-master">
+    <h2 class="title"><span><%= getTitle()%></span></h2>
+    <div class="box-button-save cf">
+       <% if (!AppConf.webConf.segmentIdFromUrl) {%><div class="btn-home"><span><i class="fa fa-angle-left"></i></span> <span><%= getBtnHome()%></span></div> <% } %>
+    </div>
+    <div class="cf row">
+      <div class="part-content col-xs-12 col-sm-12 col-md-12">
+        <div id="coupon-content-region"></div> <!-- /#select-template -->
+      </div> <!-- /.part-content -->
+    </div>
+  </div> <!-- /.simple-coupon -->
+</div> <!-- /.container -->
+
+<div id="footer-region"></div>
+</div>
+<%= App.util.injectProgressScreenDom()  %>

@@ -1,0 +1,49 @@
+<div id="new-layout-template" class="layout-template layout09">
+    <div class="banner">
+        <div class="inner-bnr">
+              <% if ( imgBannerOne ) { %>
+                <p class="box-photo" id="imgBannerOne" src="<%= imgBannerOne %>" style="background-image:url('<%= imgBannerOne %>')"></p>
+              <% } else { %>
+                <p class="box-photo" id="imgBannerOne" src="./image/main/noImage.png" style="background-image:url('./image/main/noImage.png')"></p>
+              <% } %>
+        </div>
+        <!-- /.inner-bnr -->
+    </div>
+    <!-- /.banner -->
+    <div class="box-content">
+        <h2 class="subject">
+            <% if ( subjectTitle ) { %>
+              <span id="subjectTitle"><%= subjectTitle %></span>
+            <% } else { %>
+              <span id="subjectTitle"><%= getSubject()%></span>
+            <% } %>
+        </h2>
+        <h3 class="title-template">
+            <% if ( headlineOne ) { %>
+              <span id="headlineOne"><%= headlineOne %></span>
+            <% } else { %>
+              <span id="headlineOne"><%= getHeadline()%></span>
+            <% } %>
+        </h3>
+        <div class="box-para">
+            <p class="para">
+                <% if ( bodyTextOne ) { %>
+                  <span id="bodyTextOne"><%= convertBodyText(bodyTextOne) %></span>
+                <% } else { %>
+                  <span id="bodyTextOne"><%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%></span>
+                <% } %>
+            </p>
+        </div>
+        <!-- /.box-para -->
+        <div class="box-button">
+            <a class="btn-tmp bnt-more btn-link" role="button">
+                <% if ( nameBtnOne ) { %>
+                  <span id="nameBtnOne"><%= nameBtnOne %></span>
+                <% } else { %>
+                  <span id="nameBtnOne"><%= getNameBtn(1)%></span>
+                <% } %>
+            </a>
+        </div>
+    </div>
+    <!-- ./box-content -->
+</div>

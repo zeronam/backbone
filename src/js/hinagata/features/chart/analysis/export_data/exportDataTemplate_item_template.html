@@ -1,0 +1,35 @@
+<div>
+    <p class="export-data-title">Export Data Set</p>
+    <div class="export-data-option">
+        <p class="data-set">Data set</p>
+        <p class="date-select"><%= getToday()%></p>
+        <div class="data-limit">
+            <a data-limit="currentView" class="active">CURRENT VIEW</a>
+            <a data-limit="all">ALL DATA SET</a>
+        </div>
+        <div class="data-type cf">
+            <a data-type="application/pdf">
+                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                <span>PDF</span>
+            </a>
+            <a data-type="image/png" class="active">
+                <i class="fa fa-file-image-o" aria-hidden="true"></i>
+                <span>IMG</span>
+            </a>
+            <!-- <a data-type="text/csv"> -->
+            <a data-type="application/vnd.ms-excel">
+                <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                <span>XLS/CSV</span>
+            </a>
+            <a data-type="image/svg+xml">
+                <i class="fa fa-file-code-o" aria-hidden="true"></i>
+                <span>SVG/XML</span>
+            </a>
+        </div>
+    </div>
+    <p class="error-info"></p>
+    <div class="export-data-control">
+        <a id="btn-cancel" href="">CANCEL</a>
+        <a id="btn-export" href="">EXPORT</a>
+    </div>
+</div>

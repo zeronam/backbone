@@ -1,0 +1,35 @@
+<div id="APP-TOP" class="BACKBONE-PAGE">
+    <div id="confirm-region">
+        <div class="container">
+            <h2 class="title"><span><%= getTitle() %></span></h2>
+            <div class="box-button-save cf">
+                <% if (!AppConf.webConf.segmentIdFromUrl) {%>
+                    <div class="btn-home"><span><i class="fa fa-angle-left"></i></span> <span><%= getBtnHome()%></span></div>
+                    <% } %>
+            </div>
+            <!-- /.box-button-save -->
+            <hr>
+            <h3><%= getText("notificationDeliveryConfirmation") %></h3>
+            <p class="info-confirm">
+                <%= getText("notificationSend")%>
+            </p>
+            <p>
+                <a class="btn btn-back">
+                    <%= getBtnBack() %>
+                </a>
+                <a class="btn btn-confirm">
+                    <%= getBtnConfirm() %>
+                </a>
+            </p>
+            <p class="note-text">
+                <span class="fa fa-comment fa-2x"></span>
+                <%= getText("stopInfo") %>
+                <!-- スケジュールクーポンがスケジュールメニューに表示されます。<br/> クーポンが削除できるようにSTOPしてください。 -->
+            </p>
+        </div>
+        <!-- /.container -->
+        <div id="footer-region"></div>
+    </div>
+</div>
+<!-- /#APP-TOP -->
+<%= App.util.injectProgressScreenDom()  %>

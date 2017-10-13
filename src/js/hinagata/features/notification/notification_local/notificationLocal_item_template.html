@@ -1,0 +1,53 @@
+<ul  class="nav nav-tabs">
+	<li class="active">
+		<a  href="#1a" data-toggle="tab"><%= getText("specifyPosition") %></a>
+	</li>
+	<li>
+		<a href="#2a" data-toggle="tab"><%= getText("designateAccessPoint") %></a>
+	</li>
+</ul>
+
+<div class="tab-content clearfix">
+	<div class="tab-pane active" id="1a">
+		<div class="subject-title form-group">
+			<label class="title-lbl"><%= getText("spotName") %></label>
+			<input type="text" class="form-control input-lg" id="spotName1" placeholder="<%= getText("spotName") %>" value="">
+		</div>
+		<div class="subject-title form-group">
+			<label class="title-lbl"><%= getText("latitude") %></label>
+			<input type="number" class="form-control input-lg" id="latitude" placeholder="<%= getText("latitude") %>" value="">
+		</div>
+		<div class="subject-title form-group">
+			<label class="title-lbl"><%= getText("longitude") %></label>
+			<input type="number" class="form-control input-lg" id="longitude" placeholder="<%= getText("longitude") %>" value="">
+		</div>
+		<div class="subject-title form-group">
+			<label class="title-lbl"><%= getText("range") %></label>
+			<input type="number" class="form-control input-lg" id="range" placeholder="<%= getText("range") %>" value="">
+		</div>
+		<input id="add-spot-map" class="btn" type="button" value="<%= getText("addSpot") %>" >
+	</div>
+	<div class="tab-pane" id="2a">
+		<div class="subject-title form-group">
+			<label class="title-lbl"><%= getText("spotName") %></label> 
+			<input type="text" class="form-control input-lg" id="spotName2" placeholder="<%= getText("spotName") %>" value="">
+		</div>
+		<div class="subject-title form-group">
+			<label class="title-lbl"><%= getText("SSID") %></label>
+			<input type="number" class="form-control input-lg" id="ssid" placeholder="<%= getText("SSID") %>" value="">
+		</div>
+		<div class="subject-title form-group">
+			<label class="title-lbl"><%= getText("MACAddress") %></label>
+			<input type="number" class="form-control input-lg" id="bssid" placeholder="<%= getText("MACAddress") %>" value="">
+		</div>
+		<div class="subject-title form-group">
+			<label class="title-lbl"><%= getText("radioIntensity") %></label>
+			<select name="rssiType" class="form-control input-lg" id="rssiType">
+	          	<option value="0"><%= getText("strong")%></option>
+	          	<option value="1"><%= getText("normal")%></option>
+	          	<option value="2"><%= getText("weak")%></option>
+	      	</select>
+		</div>
+		<input id="add-spot-mac" class="btn" type="button" value="<%= getText("addSpot") %>" >
+	</div>
+</div>

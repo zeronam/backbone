@@ -1,0 +1,154 @@
+//====================================================
+//----------------- ASSIGN POINT CSS -----------------
+//====================================================
+$cl-white: #fff;
+$cl-gray: #dadada;
+$cl-purple: #29235C;
+$cl-green: #1f988d;
+
+#assign-point-page {
+	p {
+		margin: 0;
+		padding: 0;
+	}
+	.title {
+		width: 270px;
+		margin-left: -135px;
+		span {
+		    color: #29235C;
+		    text-transform: uppercase;
+		    font-weight: bold;
+		    position:absolute;
+		    top: -25px;
+		    left: 0px;
+		    font-size:14px;
+		    width: 100%;
+	    }
+	}
+	.assign-point-content {
+		margin-top: 60px;
+	}
+	.ic-edit {
+		text-align: center;
+		margin-bottom: 15px;
+		i {
+			line-height: 24px;
+		}
+	}
+	.sms {
+		text-align: center;
+		font-size: 14px;
+		line-height: 16px;
+	}
+	.box-price {
+		padding: 0 0 10px;
+		position: relative;
+	}
+	.box-point {
+		text-align: center;
+		.point {
+			font-size: 20px;
+			padding: 0 0 5px;
+		}
+		.label-point {
+			font-size: 12px;
+		}
+	}
+	.sms-error {
+		display: none;
+		color: red;
+		font-size: 14px;
+		text-align: center;
+		margin: 0;
+		padding: 5px 0 0;
+		width: 100%;
+		position: absolute;
+		top: 52px;
+	}
+	.box-ipt {
+		width: 250px;
+		margin: 0 auto;
+		padding: 7px 0 15px;
+		text-align: center;
+		position: relative;
+		input {
+			width: 100%;
+			padding: 10px;
+			font-size: 14px;
+			color: #29235C;
+			outline: 0;
+			border: 1px solid #29235C;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+		}
+		.ic-clear {
+			position: absolute;
+			right: -45px;
+			top: 8px;
+			display: inline-block;
+			vertical-align: middle;
+			cursor: pointer;
+		}
+	}
+	.list-user {
+		color: #29235c;
+		margin-bottom: 30px;
+		li {
+			/*background-color: #f8fffd;*/
+			background-color: #abfdf2;
+			position: relative;
+			padding: 15px 40px 15px 15px;
+			border-top: 1px solid #29235c;
+			border-bottom: 1px solid #29235c;
+			> div {
+				width: 33.33%;
+				float: left;
+				&.point-block {
+					> p {
+						float: left;
+						width: 33.33%;
+						span {
+							display: block;
+						}
+					}
+				}
+			}
+			.name, .num {
+				font-size: 18px;
+			}
+			.label {
+				margin: 0;
+				padding: 0;
+				text-align: left;
+				font-size: 12px;
+				line-height: 24px;
+				color: #29235c;
+				font-weight: normal;
+			}
+			.btn-modal {
+				position: absolute;
+				right: 15px;
+				top: 25px;
+		    z-index: 5;
+		    cursor: pointer;
+		    display: block;
+		    width: 30px;
+		    height: 30px;
+		    font-size: 16px;
+		    line-height: 28px;
+		    text-align: center;
+		    color: $cl-purple;
+		    background-color: $cl-white;
+		    border: 2px solid $cl-purple;
+		    -webkit-border-radius: 50% 50%;
+		      -moz-border-radius: 50% 50%;
+		          border-radius: 50% 50%;
+		    &.active, &:hover {
+		      color: $cl-white;
+		      background-color: $cl-purple;
+		    }
+			}
+		}
+	}
+}

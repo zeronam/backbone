@@ -1,0 +1,32 @@
+<div id="dialogue-region"></div>
+<div id="sidebar_master" class="BACKBONE-PAGE">
+    <div id="wrapper">
+        <a href="javascript:void(0)" class="create_message_button" ><i class="createbtn"></i></a>
+        <div class="main_screen">
+            <div class="inner">
+                <div class="topbar navbar-static-top cf <% if (AppConf.webConf.webFlag){ %>webChart<% }%>">
+                    <h2 class="section-title"><%= getTitle()%></h2>
+                    <ul class="leftbar navbar-header">
+                        <li class="menu-title"><span id="open_all"><%= getMenuAll()%></span></li>
+                        <li class="menu-title active"><span id="open_draft"><%= getMenuDraft()%></span></li>
+                        <li class="menu-title"><span id="open_confirm_wait"><%= getMenuWaitApprove()%></span></li>
+                        <li class="menu-title"><span id="open_active"><%= getMenuActive()%></span></li>
+                        <!-- <li class="menu-title"><span id="open_confirm_wait"><%= getMenuWaitApprove()%></span></li> -->
+                    </ul><!--End leftbar -->
+                    <label id="search-label" class="fa fa-search"></label>
+                    <ul class="rightbar">
+                        <li>                            
+                            <input type="text" placeholder="<%= getSearchPlaceholder()%>" id="search-terms" class="" name="search-terms">
+                        </li>
+                    </ul><!--End rightbar -->
+                </div><!--End top bar -->
+                <div class="coupon_board">
+                    <div class="list-coupon">
+                        <div id="coupon-main-region"></div>
+                    </div>
+                </div>
+            </div><!--End coupon board -->
+        </div><!-- Main screen -->
+    </div> <!-- /#APP-TOP -->
+    </div>
+<%= App.util.injectProgressScreenDom()  %>

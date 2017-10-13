@@ -1,0 +1,72 @@
+<div class="greybg" id="greybg"></div>
+<div class="dialog_image_upload">
+  <div class="inner_dialog">
+  <h1><%= getTitle()%><span id="close_upload_image"><img src="./image/icon/close3.png" /></span></h1>
+  <ul class="select_type_list">
+    <li class="active"><%= getTabInputSearch()%></li>
+    <li><%= getTabUploadImage()%></li>
+  </ul>
+  <div class="select_from_list">
+    <ul class="select_pics_list">
+    <li class="active"><span>1</span><%= getTabOperation()%></li>
+      <li><span>2</span><%= getTabSearchImage()%></li>
+    </ul>
+    <div class="list_detail">
+    <ul>
+      <li><label><%= getCategoryTitle()%></label>
+      <select name="categoryID1" id="categoryList1">
+        <option data-id=""><%= getCategoryAll()%></option>
+        <option data-id="0"><%= getCategoryNone()%></option>
+      </select></li>
+      <li><label><%= getSearchText()%></label>
+      <input type="text" id="keywordSearch"/></li>
+      <li><label><%= getOrderTitle()%></label>
+      <select name="sorttype" id="orderByImageList">
+        <option data-id="0"><%= getOrderText1()%></option>
+        <option data-id="1"><%= getOrderText2()%></option>
+        </select></li>
+      <li><label><%= getPerPageTitle()%></label>
+      <select name="perpage" id="perPageImageList">
+        <option data-id="5"><%= getPerPage1()%></option>
+        <option data-id="20"><%= getPerPage2()%></option>
+        <option data-id="50"><%= getPerPage3()%></option>
+        </select>
+      </li>
+      <li><button class="nextbtn" id="searchImgList"><%= getBtnNext()%></button></li>
+    </ul>
+    </div>
+    <div class="list_img_upload">
+      <p>
+        <!-- <select name="page" id="pageImageList">
+          <option data-id="1">1<%= getPageTitle()%></option>
+        </select> -->
+        <span class="total">0<%= getTotalRecordTitle()%></span>
+      </p>
+      <p class="list_detail_uploaded"><%= getListImageTitle()%></p>
+      <div id="image-list-region">
+        <div id="inner-image-list"></div>
+      </div>
+      <p class="file_manager_btn" id="select-image-wrapper"><button id="select_image_btn" class="nextbtn"><%= getBtnSelectedImage()%></button></p>
+    </div>
+  </div>
+  <div class="image_upload">
+    <ul class="upload_detail">
+      <li><label><%= getCategoryTitle()%></label>
+        <select name="categoryID2" id="categoryList2">
+          <option data-id=""><%= getCategoryAll1()%></option>
+        </select>
+      </li>
+      <li><label><%= getImageTitle()%></label>
+        <span class="upload_file"><%= getBtnSelectImage()%></span>
+        <input type="file" id="upload_img" />
+        <p class="filename"></p>
+        <button type="submit" id="submitUpload"><%= getBtnUpload()%></button>
+      </li>
+      <li>
+        <p class="msg_upload"></p>
+        <%= getNote()%>
+      </li>
+    </ul>
+  </div>
+  </div>      
+</div>

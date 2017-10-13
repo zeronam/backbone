@@ -1,0 +1,45 @@
+<div id="new-layout-template" class="layout-template layout06">
+    <div class="banner">
+        <div class="inner-bnr">
+            <p class="box-photo">
+              <% if ( imgBannerOne ) { %>
+                <img id="imgBannerOne" src="<%= imgBannerOne %>">
+              <% } else { %>
+                <img id="imgBannerOne" src="./image/main/noImage.png">
+              <% } %>
+            </p>
+        </div>
+        <!-- /.inner-bnr -->
+    </div>
+    <!-- /.banner -->
+    <div class="box-content">
+        <h3 class="title-template bg-color-1 ft-color-1">
+            <% if ( headlineOne ) { %>
+              <span id="headlineOne"><%= headlineOne %></span>
+            <% } else { %>
+              <span id="headlineOne"><%= getHeadline()%></span>
+            <% } %>
+        </h3>
+        <div class="box-para bg-color-1 ft-color-1">
+            <p class="para">
+                <% if ( bodyTextOne ) { %>
+                  <span id="bodyTextOne"><%= convertBodyText(bodyTextOne) %></span>
+                <% } else { %>
+                  <span id="bodyTextOne"><%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%>-<%= getBodyText()%></span>
+                <% } %>
+            </p>
+        </div>
+        <!-- /.box-para -->
+        <div class="box-button">
+            <a class="bnt-more btn-link bg-color-1 ft-color-1" role="button">
+                <% if ( nameBtnOne ) { %>
+                  <span id="nameBtnOne"><%= nameBtnOne %></span>
+                <% } else { %>
+                  <span id="nameBtnOne"><%= getNameBtn(1)%></span>
+                <% } %>
+                <span class="arrow-container"><span class="arrow-right"></span></span>
+            </a>
+        </div>
+    </div>
+    <!-- ./box-content -->
+</div>

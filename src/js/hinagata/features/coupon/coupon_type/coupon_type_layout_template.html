@@ -1,0 +1,20 @@
+<div id="type-region-wrapper">  
+  <div class="container">
+    <div class="coupon-master">
+      <h2 class="title"><span><%= getTitle()%></span></h2>
+
+      <div data-container-icon>
+        <div class="part-content">
+          <div id="coupon-content-region">
+            <ul class="list-coupon-type">
+              <li><a ><i class="fa fa-user fa-2x"></i><%= getMembersOnlyCoupons()%></a></li>
+              <li><a ><i class="fa fa-user-plus fa-2x"></i><%= getMembersCommonCoupon()%></a></li>
+              <li><a ><i class="fa fa-users fa-2x"></i><%= getPublicCoupon()%></a></li>
+            </ul>
+          </div> <!-- /#select-template -->
+        </div> <!-- /.part-content -->
+      </div>
+    </div> <!-- /.simple-coupon -->
+  </div> <!-- /.container -->
+  <div id="footer-region"></div>
+</div>

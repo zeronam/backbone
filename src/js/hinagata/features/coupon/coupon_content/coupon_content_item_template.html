@@ -1,0 +1,78 @@
+     
+<hr>
+<h3><%= setMemberOnly(memberOnly)%></h3><br>
+
+        <div id="mainCouponContents">       
+            <div class="subject-title form-group">
+              <label class="title-lbl"><%= getPageTitle()%><span class="required-label"><%= getRequired()%></span></label>
+              <% if(title) { %>
+                <input type="text" class="form-control input-lg" id="title" placeholder="<%= getPageTitle()%>" value="<%= title %>">
+              <% }else{ %>
+                <input type="text" class="form-control input-lg" id="title" placeholder="<%= getPageTitle()%>" value="">
+              <% } %>
+            </div>
+
+            <div class="subject-title form-group">
+              <label class="title-lbl"><%= getCouponsName()%><span class="required-label"><%= getRequired()%></span></label>
+              <% if(subject) { %>
+                <input type="text" class="form-control input-lg" id="subject" placeholder="<%= getCouponsName()%>" value="<%= subject %>">
+              <% }else{ %>
+                <input type="text" class="form-control input-lg" id="subject" placeholder="<%= getCouponsName()%>" value="">
+              <% } %>
+            </div>
+
+            <div class="subject-title form-group">
+              <label class="title-lbl"><%= getCouponDetails()%></label>
+              <% if(message) { %>
+                <textarea class="form-control input-lg" rows="4" id="message" placeholder="<%= getCouponDetails()%>!"><%= convertBrnl2(message) %></textarea>
+              <% }else{ %>
+                <textarea class="form-control input-lg" rows="4" id="message" placeholder="<%= getCouponDetails()%>!"></textarea>
+              <% } %>
+            </div>
+
+            <div class="subject-title form-group">
+              <label class="title-lbl"><%= getCouponImage()%><span class="required-label"><%= getRequired()%></span></label>
+              <div class="css-input-file">
+                <% if(imageFileName) { %>
+                  <input class="form-control input-lg" id="imageName" type="text" readonly value="<%= convertImageName(imageName, imageFileName) %>">
+                <% }else{ %>
+                  <input class="form-control input-lg" id="imageName" type="text" readonly value="">
+                <% } %>
+                <span><%= getChoose()%></span>
+                <input id="coverImageUpload" type="file">
+              </div>
+            </div>
+
+            <div class="subject-title form-group">
+              <label class="title-lbl"><%= getNotes()%></label>
+              <% if(memo) { %>
+                <textarea class="form-control input-lg" rows="4" id="memo" placeholder="<%= getNotesPlaceHolder()%>"><%= convertBrnl2(memo) %></textarea>
+              <% }else{ %>
+                <textarea class="form-control input-lg" rows="4" id="memo" placeholder="<%= getNotesPlaceHolder()%>"></textarea>
+              <% } %>
+            </div>
+
+            <div class="conditions-block form-group">
+              <p><label class="title-lbl"><%= getLink()%></label></p>
+              <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                  <p><label class="lbCheckbox">
+                    <input <% if(socialLink + "" !== "0"){ %>checked<% } %> type="checkbox" name="socialLink" value="on" id="socialLink" class="form-control">
+                    <span><%= getToViewTheSocialCooperationList()%></span>
+                  </label></p>
+                  <p><label class="lbCheckbox">
+                    <input <% if(topLink !== "0"){ %>checked<% } %> type="checkbox" name="topLink" value="on" id="topLink" class="form-control">
+                    <span><%= getALinkToTheTopPage()%></span>
+                  </label></p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                  <p><label class="lbCheckbox">
+                    <input <% if(couponListLink + "" !== "0"){ %>checked<% } %> type="checkbox" name="couponListLink" value="on" id="couponListLink" class="form-control">
+                    <span><%= getALinkToTheCouponList()%></span></label></p>
+                  <p><label class="lbCheckbox">
+                    <input <% if(memberRegisterLink + "" !== "0"){ %>checked<% } %> type="checkbox" name="memberRegisterLink" value="on" id="memberRegisterLink" class="form-control"><span><%= getALinkToTheMemberRegistration()%></span></label></p>
+                </div>
+              </div>
+            </div> <!-- /.media-block -->
+            
+        </div>

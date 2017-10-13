@@ -1,0 +1,95 @@
+<div id="layoutTemplate08" class="tab-pane">
+    <div id="new-layout-template" class="layout-template layout08">
+        <h3 class="subject bg-color-1 ft-color-1">
+            <% if ( subjectTitle ) { %>
+              <span id="subjectTitle"><%= subjectTitle %></span>
+            <% } else { %>
+              <span id="subjectTitle"><%= getSubject()%></span>
+            <% } %>
+        </h3>
+        <div class="box-content">
+            <div class="banner">
+                <div class="inner-bnr">
+                    <p class="box-photo">
+                      <% if ( imgBannerOne ) { %>
+                        <img id="imgBannerOne" src="<%= imgBannerOne %>">
+                      <% } else { %>
+                        <img id="imgBannerOne" src="./image/main/noImage.png">
+                      <% } %></p>
+                </div>
+                <!-- /.inner-bnr -->
+            </div>
+            <!-- /.banner -->
+            <h4 class="title-template ft-color-2">
+              <% if ( headlineOne ) { %>
+                <span id="headlineOne"><%= headlineOne %></span>
+              <% } else { %>
+                <span id="headlineOne"><%= getHeadline(1)%></span>
+              <% } %>
+            </h4>
+            <div class="box-para ft-color-2">
+                <p class="para">
+                  <% if ( bodyTextOne ) { %>
+                    <span id="bodyTextOne"><%= convertBodyText(bodyTextOne) %></span>
+                  <% } else { %>
+                    <span id="bodyTextOne"><%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%>-<%= getBodyText(1)%></span>
+                  <% } %>
+                </p>
+            </div>
+            <!-- /.box-para -->
+            <div class="box-button">
+                <a class="bnt-more btn-link bd-color-2 ft-color-2" role="button">
+                  <% if ( nameBtnOne ) { %>
+                    <span id="nameBtnOne"><%= nameBtnOne %></span>
+                  <% } else { %>
+                    <span id="nameBtnOne"><%= getNameBtn(1)%></span>
+                  <% } %>
+                    <span class="arrow-container bd-2"><span class="arrow-right"></span></span>
+                </a>
+            </div>
+        </div>
+        <!-- ./box-content -->
+        <div class="box-content">
+            <div class="banner">
+                <div class="inner-bnr">
+                    <p class="box-photo"><% if ( imgBannerTwo ) { %>
+                        <img id="imgBannerTwo" src="<%= imgBannerTwo %>">
+                      <% } else { %>
+                        <img id="imgBannerTwo" src="./image/main/noImage.png">
+                      <% } %></p>
+                </div>
+                <!-- /.inner-bnr -->
+            </div>
+            <!-- /.banner -->
+            <h4 class="title-template ft-color-2">
+              <% if ( headlineTwo ) { %>
+                <span id="headlineTwo"><%= headlineTwo %></span>
+              <% } else { %>
+                <span id="headlineTwo"><%= getHeadline(2)%></span>
+              <% } %>
+            </h4>
+            <div class="box-para ft-color-2">
+                <p class="para">
+                  <% if ( bodyTextTwo ) { %>
+                    <span id="bodyTextTwo"><%= convertBodyText(bodyTextTwo) %></span>
+                  <% } else { %>
+                    <span id="bodyTextTwo"><%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%>-<%= getBodyText(2)%></span>
+                  <% } %>
+                </p>
+            </div>
+            <!-- /.box-para -->
+            <div class="box-button">
+                <a class="bnt-more btn-link bd-color-2 ft-color-2" role="button">
+                  <% if ( nameBtnTwo ) { %>
+                    <span id="nameBtnTwo"><%= nameBtnTwo %></span>
+                  <% } else { %>
+                    <span id="nameBtnTwo"><%= getNameBtn(2)%></span>
+                  <% } %>
+                    <span class="arrow-container bd-2"><span class="arrow-right"></span></span>
+                </a>
+            </div>
+        </div>
+        <!-- ./box-content -->
+    </div>
+</div>
+<!-- /#layoutTemplate08 -->

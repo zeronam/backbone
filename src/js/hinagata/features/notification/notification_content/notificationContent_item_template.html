@@ -1,0 +1,36 @@
+     
+<div id="mainCouponContents">       
+
+    <div class="subject-title form-group">
+      <label class="title-lbl"><%= getText("topDescription")%></label>
+      <% if(header) { %>
+        <textarea class="form-control input-lg" rows="4" id="txtHeader" placeholder="<%= getText("topDescriptionPlaceholder")%>!"><%= convertBrnl2(header) %></textarea>
+      <% }else{ %>
+        <textarea class="form-control input-lg" rows="4" id="txtHeader" placeholder="<%= getText("topDescriptionPlaceholder")%>!"></textarea>
+      <% } %>
+    </div>
+
+    <div class="subject-title form-group">
+      <label class="title-lbl"><%= getText("image")%></label>
+      <div class="css-input-file">
+        <% if(contentImageUrl && imageName) { %>
+          <input class="form-control input-lg" id="imageName" type="text" readonly value="<%= convertImageName(imageName, contentImageUrl) %>"> 
+        <% }else{ %>
+          <input class="form-control input-lg" id="imageName" type="text" readonly value="">
+        <% } %>
+        <span class="removeUpload"><i class="fa fa-ban" aria-hidden="true"></i><%= getText("remove")%></span>
+        <span><i class="fa fa-folder-open" aria-hidden="true"></i><%= getText("choose")%></span>
+        <input id="coverImageUpload" type="file">
+      </div>
+    </div>
+
+    <div class="subject-title form-group">
+      <label class="title-lbl"><%= getText("bottomDescription")%></label>
+      <% if(footer) { %>
+        <textarea class="form-control input-lg" rows="4" id="txtFooter" placeholder="<%= getText("topDescriptionPlaceholder")%>"><%= convertBrnl2(footer) %></textarea>
+      <% }else{ %>
+        <textarea class="form-control input-lg" rows="4" id="txtFooter" placeholder="<%= getText("topDescriptionPlaceholder")%>"></textarea>
+      <% } %>
+    </div>
+
+</div>

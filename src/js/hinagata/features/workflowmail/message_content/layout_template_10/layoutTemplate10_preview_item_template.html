@@ -1,0 +1,139 @@
+<div id="layoutTemplate10" class="tab-pane">
+    <div id="new-layout-template" class="layout-template layout10">
+        <h3 class="subject">
+          <% if ( subjectTitle ) { %>
+            <span id="subjectTitle"><%= subjectTitle %></span>
+          <% } else { %>
+            <span id="subjectTitle"><%= getSubject()%></span>
+          <% } %>
+        </h3>
+        <p class="header">
+          <% if ( subjectNote ) { %>
+            <span id="subjectNote"><%= subjectNote %></span>
+          <% } else { %>
+            <span id="subjectNote"><%= getSubjectNote()%></span>
+          <% } %>
+        </p>
+        <div class="box-content">
+            <div class="banner">
+                <div class="inner-bnr">
+                     <% if ( imgBannerOne ) { %>
+                        <p class="box-photo" id="imgBannerOne" style="background-image:url(<%= imgBannerOne %>)"></p>
+                      <% } else { %>
+                        <p class="box-photo" id="imgBannerOne" style="background-image:url(./image/main/noImage.png)"></p>
+                      <% } %></p>
+                </div>
+                <!-- /.inner-bnr -->
+            </div>
+            <div class="box-para">
+                <!-- /.banner -->
+                <h4 class="title-template">
+                    <% if ( headlineOne ) { %>
+                      <a id="headlineOne" href=""><%= headlineOne %></a>
+                    <% } else { %>
+                      <a id="headlineOne" href=""><%= getHeadline(1)%></a>
+                    <% } %>
+                </h4>
+                <p class="para">
+                    <% if ( bodyTextOne ) { %>
+                      <span id="bodyTextOne"><%= convertBodyText(bodyTextOne) %></span>
+                    <% } else { %>
+                      <span id="bodyTextOne"><%= getBodyText(1)%></span>
+                    <% } %>
+                </p>
+            </div>
+        </div>
+        <!-- ./box-content -->
+        <div class="box-content">
+            <div class="banner">
+                <div class="inner-bnr">
+                     <% if ( imgBannerTwo ) { %>
+                        <p class="box-photo" id="imgBannerTwo" style="background-image:url(<%= imgBannerTwo %>)"></p>
+                      <% } else { %>
+                        <p class="box-photo" id="imgBannerTwo" style="background-image:url(./image/main/noImage.png)"></p>
+                      <% } %></p>
+                </div>
+                <!-- /.inner-bnr -->
+            </div>
+            <div class="box-para">
+                <!-- /.banner -->
+                <h4 class="title-template">
+                    <% if ( headlineTwo ) { %>
+                      <a id="headlineTwo" href=""><%= headlineTwo %></a>
+                    <% } else { %>
+                      <a id="headlineTwo" href=""><%= getHeadline(2)%></a>
+                    <% } %>
+                </h4>
+                <p class="para">
+                    <% if ( bodyTextTwo ) { %>
+                    <span id="bodyTextTwo"><%= convertBodyText(bodyTextTwo) %></span>
+                    <% } else { %>
+                      <span id="bodyTextTwo"><%= getBodyText(2)%></span>
+                    <% } %>
+                </p>
+            </div>
+        </div>
+        <!-- ./box-content -->
+        <div class="box-content">
+            <div class="banner">
+                <div class="inner-bnr">
+                     <% if ( imgBannerThree ) { %>
+                        <p class="box-photo" id="imgBannerThree" style="background-image:url(<%= imgBannerThree %>)"></p>
+                      <% } else { %>
+                        <p class="box-photo" id="imgBannerThree" style="background-image:url(./image/main/noImage.png)"></p>
+                      <% } %></p>
+                </div>
+                <!-- /.inner-bnr -->
+            </div>
+            <div class="box-para">
+                <!-- /.banner -->
+                <h4 class="title-template">
+                    <% if ( headlineThree ) { %>
+                      <a id="headlineThree" href=""><%= headlineThree %></a>
+                    <% } else { %>
+                      <a id="headlineThree" href=""><%= getHeadline(3)%></a>
+                    <% } %>
+                </h4>
+                <p class="para">
+                    <% if ( bodyTextThree ) { %>
+                    <span id="bodyTextThree"><%= convertBodyText(bodyTextThree) %></span>
+                    <% } else { %>
+                      <span id="bodyTextThree"><%= getBodyText(3)%></span>
+                    <% } %>
+                </p>
+            </div>
+        </div>
+        <!-- ./box-content -->
+        <div class="box-content">
+            <div class="banner">
+                <div class="inner-bnr">
+                     <% if ( imgBannerFour ) { %>
+                        <p class="box-photo" id="imgBannerFour" style="background-image:url(<%= imgBannerFour %>)"></p>
+                      <% } else { %>
+                        <p class="box-photo" id="imgBannerFour" style="background-image:url(./image/main/noImage.png)"></p>
+                      <% } %></p>
+                </div>
+                <!-- /.inner-bnr -->
+            </div>
+            <div class="box-para">
+                <!-- /.banner -->
+                <h4 class="title-template">
+                    <% if ( headlineFour ) { %>
+                      <a id="headlineFour" href=""><%= headlineFour %></a>
+                    <% } else { %>
+                      <a id="headlineFour" href=""><%= getHeadline(4)%></a>
+                    <% } %>
+                </h4>
+                <p class="para">
+                    <% if ( bodyTextTwo ) { %>
+                    <span id="bodyTextFour"><%= convertBodyText(bodyTextFour) %></span>
+                    <% } else { %>
+                      <span id="bodyTextFour"><%= getBodyText(4)%></span>
+                    <% } %>
+                </p>
+            </div>
+        </div>
+        <!-- ./box-content -->
+    </div>
+</div>
+

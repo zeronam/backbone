@@ -1,0 +1,21 @@
+<div>
+    <p class="date-range-title"><%= getTitle()%></p>
+    <p class="error-info"></p>
+    <div class="calendar">
+        <div class="calendar_left">
+            <p><%= getFrom()%></p>                
+            <div id="datepicker1"></div>
+            <input type="hidden" id="txtdate1" size="10" value="">                
+        </div>
+        <div class="calendar_right">
+            <p><%= getTo()%></p>
+            <div id="datepicker2"></div>
+            <input type="hidden" id="txtdate2" size="10" value="">
+        </div>
+    </div>
+    <p class="date-range-result"><label id="from-date"></label><label id="to-date"></label></p>
+    <div class="date-range-control">
+        <a id="btn-cancel" href=""><%= getCancelBtn()%></a>
+        <a id="btn-set" href=""><%= getSetBtn()%></a>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+<div id="select-template-wrapper">
+<div id="dialogue-region"></div>
+	<div class="container">
+    <div id="simple-message">
+      <h2 class="title"><span><%= getTitle()%></span></h2>
+      <div class="box-button-save cf">
+        <% if (!AppConf.webConf.segmentIdFromUrl) {%><div class="btn-home"><span><i class="fa fa-angle-left"></i></span> <span><%= getBtnHome()%></span></div> <% } %>
+      </div> <!-- /.box-button-save -->
+      <div class="cf">
+        <div class="part-content col-xs-6 col-sm-6 col-md-8">
+          <div class="form-group">
+            <p class="lbl-title"><%= getlblTitle()%></p>
+            <input type="text" class="css-input" id="campainName" placeholder="<%= getlblTitle()%>">
+          </div> <!-- /.form-group -->
+          <!-- <p class="sms"><%= getSms()%></p> -->
+          <div id="select-template">
+            <ul class="tab-menu cf">
+              <li class="active"><a data-toggle="tab" data-target="#tab1, #tab1_else" href="#tab1">
+                <span class="front-item"><%= getTabMyTemplate()%></span>
+              </a></li>
+              <li><a data-toggle="tab" data-target="#tab2, #tab2_else" href="#tab2">
+                <span class="front-item"><%= getTabLayoutTemplate()%></span>
+              </a></li>
+            </ul> <!-- /.tab-menu -->
+            <div class="tab-content">
+              <div id="tab1" class="block-tab tab-pane fade in active">
+              <div id="list-name-my-template-region"></div>
+              </div> <!-- /.block-tab -->
+              <div id="tab2" class="block-tab tab-pane fade in">
+                <ul class="list-template list-layoutTemplate scrollable">
+                  <li class="layoutTemplate01 active">
+                    <a data-toggle="tab" href="#template01" aria-expanded="true">
+                      <span class="temp-title"> <%= getLayoutTemplate1()%> </span>
+                    </a>
+                  </li>
+                  <li class="layoutTemplate02">
+                    <a data-toggle="tab" href="#template02" aria-expanded="true">
+                      <span class="temp-title"> <%= getLayoutTemplate2()%> </span>
+                    </a>
+                  </li>
+                  <li class="layoutTemplate03">
+                    <a data-toggle="tab" href="#template03" aria-expanded="true">
+                      <span class="temp-title"> <%= getLayoutTemplate3()%> </span>
+                    </a>
+                  </li>
+                  <li class="layoutTemplate04">
+                    <a data-toggle="tab" href="#template04" aria-expanded="true">
+                      <span class="temp-title"> <%= getLayoutTemplate4()%> </span>
+                    </a>
+                  </li>
+                  <li class="layoutTemplate05">
+                    <a data-toggle="tab" href="#template05" aria-expanded="true">
+                      <span class="temp-title"> <%= getLayoutTemplate5()%> </span>
+                    </a>
+                  </li>
+                  <li class="layoutTemplate06">
+                    <a data-toggle="tab" href="#template06" aria-expanded="true">
+                      <span class="temp-title"> <%= getLayoutTemplate6()%> </span>
+                    </a>
+                  </li>
+                  <li class="layoutTemplate07">
+                    <a data-toggle="tab" href="#template07" aria-expanded="true">
+                      <span class="temp-title"> <%= getLayoutTemplate7()%> </span>
+                    </a>
+                  </li>
+                  <li class="layoutTemplate08">
+                    <a data-toggle="tab" href="#template08" aria-expanded="true">
+                      <span class="temp-title"> <%= getLayoutTemplate8()%> </span>
+                    </a>
+                  </li>
+                  <li class="layoutTemplate09">
+                    <a data-toggle="tab" href="#template09" aria-expanded="true">
+                      <span class="temp-title"> <%= getLayoutTemplate9()%> </span>
+                    </a>
+                  </li>
+                  <li class="layoutTemplate10">
+                    <a data-toggle="tab" href="#template10" aria-expanded="true">
+                      <span class="temp-title"> <%= getLayoutTemplate10()%> </span>
+                    </a>
+                  </li>
+                  <li class="layoutTemplate11">
+                    <a data-toggle="tab" href="#template11" aria-expanded="true">
+                      <span class="temp-title"> <%= getLayoutTemplate11()%> </span>
+                    </a>
+                  </li>
+                  <li class="layoutTemplate12">
+                    <a data-toggle="tab" href="#template12" aria-expanded="true">
+                      <span class="temp-title"> <%= getLayoutTemplate12()%> </span>
+                    </a>
+                  </li>
+                </ul> <!-- /.list-layoutTemplate -->
+              </div> <!-- /.block-tab -->
+            </div> <!-- /.tab-content -->
+          </div> <!-- /#select-template -->
+        </div> <!-- /.part-content -->
+        <div id="preview-template" class="part-preview col-xs-6 col-sm-6 col-md-4">
+          <div class="tab-content">
+            <h3 class="ttl-priview"><%= getPreview()%></h3>
+            <div id="tab1_else" class="tab-pane fade in active">
+              <div class="template-preview">
+                <div class="outer-preview">
+                  <div class="inner-preview">
+                    <div id="preview-my-template-region">
+                    </div> <!-- /.my-template -->
+                  </div> <!-- /.inner-preview -->
+                </div> <!-- /.outer-preview -->
+              </div> <!-- /.template-preview -->
+            </div> <!-- /.block-tab -->
+            <div id="tab2_else" class="tab-pane fade in">
+              <div class="template-preview">
+                <div class="outer-preview">
+                  <div class="inner-preview">
+                    <div id="layout-template">
+                    </div> <!-- tab-content -->
+                  </div> <!-- /.inner-preview -->
+                </div> <!-- /.outer-preview -->
+              </div> <!-- /.template-preview -->
+            </div> <!-- /.block-tab -->
+          </div> <!-- /.tab-content -->
+        </div>
+      </div>
+    </div> <!-- /#simple-message -->
+    <div id="Modal-template"></div>
+    <div id="footer-region"></div>
+  </div> <!-- /.container -->
+</div>
+<%= App.util.injectProgressScreenDom()  %>

@@ -1,0 +1,384 @@
+@font-face {
+font-family: 'NotoSans-Regular';
+src: url('../css/fonts/NotoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+font-family: 'NotoSans-Bold';
+src: url('../css/fonts/NotoSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+font-family: 'NotoSans-Italic';
+src: url('../css/fonts/NotoSans-Italic.ttf') format('truetype');
+}
+
+
+@font-face {
+font-family: NotoSansCJKjp-Light;
+src: url("../css/fonts/NotoSansCJKjp-Light.otf") format("opentype");
+}
+
+@font-face {
+font-family: NotoSansCJKjp-Regular;
+src: url("../css/fonts/NotoSansCJKjp-Regular.otf") format("opentype");
+}
+
+@font-face {
+font-family: NotoSansCJKjp-Bold;
+src: url("../css/fonts/NotoSansCJKjp-bold.otf") format("opentype");
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 4px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,0.2);
+}
+
+
+body {
+	background-color: #EDEDED !important;
+	font-family: 'NotoSans-Regular' !important;
+	margin: 0px;
+	padding: 10px; 
+	margin: 30px;
+	padding: 30px;
+}
+
+
+hr { 
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-style: inset;
+    border-width: 1px;
+}
+
+
+label {
+	font-family: helvetica;
+	font-size: 9px;
+	text-transform: uppercase;
+	color: gray; 
+	font-weight: 800;
+	width: auto;
+	height: 10px; 
+	margin: 2px 2px 2px 15px; 
+
+}
+
+
+/*COLOURS */
+
+.col {
+	width: 50px; 
+	height: 50px; 
+	color: #29235C; 
+	font-size: 10px; 
+	text-transform: 
+	uppercase; 
+	padding: 8px; 
+	margin: 6px;
+	box-shadow: 1px 1px 10px #CCCCCC; 
+	display: inline-block;
+	float: left;
+	font-family: "Noto Sans", "NotoSans-Regular", sans-serif;
+}
+
+.gray { background: #EDEDED;}
+.gray-dark { background: #DADADA;}
+.navigation {background-color: #009FB2;}
+.elements { background-color: #29235C; color: white;}
+.details {background-color: #EE763F;}
+
+
+.message-ico {
+	margin: 10px;
+	width: 120px; 
+	height: 120px;
+    -webkit-filter: drop-shadow( 1px 1px 10px #7F7F7F);
+            filter: drop-shadow( 1px 1px 10px #7F7F7F);
+}
+
+.message-ico:active {
+	margin: 10px;
+	width: 120px; 
+	height: 120px;
+    -webkit-filter: drop-shadow( 0px 0px 3px #66CCFF );
+            filter: drop-shadow( 0px 0px 3px #66CCFF);        
+}
+
+
+.create-btn {
+	margin: 10px;
+	width: 56px; 
+	height: 56px;
+    -webkit-filter: drop-shadow( 1px 1px 10px #7F7F7F);
+            filter: drop-shadow( 1px 1px 10px #7F7F7F);
+}
+
+.create-btn:active {
+	margin: 10px;
+	width: 56px; 
+	height: 56px;
+    -webkit-filter: drop-shadow( 0px 0px 3px #66CCFF );
+            filter: drop-shadow( 0px 0px 3px #66CCFF);
+}
+
+
+
+.font-en {
+	margin: 20px;
+}
+
+.font-jp {
+	margin: 20px;
+}
+
+
+/*.container{
+	margin: 20px;
+
+}*/
+
+.section-title {
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-family: "NotoSans-Regular";
+	color: #29235C;
+}
+
+.menu-title {
+	font-size: 12px;
+	font-family: "NotoSans-Regular";
+	color: #29235C;
+}
+
+.menu-title-bold {
+	font-size: 12px;
+	font-family: "NotoSans-Bold";
+	color: #29235C;
+}
+
+.drawer-title {
+	font-size: 13px;
+	letter-spacing: 2px;
+	font-family: "NotoSans-Regular";
+	color: #29235C;
+}
+
+.campaign-title{
+	font-size: 20px;
+	font-family: "NotoSans-Regular";
+	color: #29235C;
+}
+
+.campaign-details {
+	font-size: 12px;
+	font-family: "NotoSans-Regular";
+	color: #29235C;
+}
+
+
+
+
+
+.section-title-jp {
+	font-size: 12px;
+	letter-spacing: 2px;
+	font-family: "NotoSansCJKjp-Light";
+	color: #29235C;
+}
+
+.menu-title-jp {
+	font-size: 10px;
+	font-family: "NotoSansCJKjp-Regular";
+	color: #29235C;
+	
+}
+
+.menu-title-bold-jp {
+	font-size: 10px;
+	font-family: "NotoSansCJKjp-Bold";
+	color: #29235C;
+}
+
+.drawer-title-jp {
+	font-size: 12px;
+	letter-spacing: 2px;
+	font-family: "NotoSansCJKjp-Regular";
+	color: #29235C;
+}
+
+.campaign-title-jp {
+	font-size: 22px;
+	letter-spacing: 2px;
+	font-family: "NotoSansCJKjp-Light";
+	color: #29235C;
+}
+
+.campaign-details-jp {
+	font-size: 12px;
+	letter-spacing: 2px;
+	font-family: "NotoSansCJKjp-Regular";
+	color: #29235C;
+}
+
+
+.btn {
+	float: left;
+	display: inline-block;
+	margin: 10px;
+}
+
+
+
+.btn-next{
+	width: 46px;
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 12px;
+  font-family: Arial;
+  color: #29235C;
+  font-size: 12px;
+  padding: 4px 10px 2px 10px;
+  border: solid #29235C 1px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btn-next:active {
+  background: #e6e6e6;
+  text-decoration: none;
+}
+
+.btn-previous{
+	width: 60px;
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 12px;
+  font-family: Arial;
+  color: #29235C;
+  font-size: 12px;
+  padding: 4px 10px 2px 10px;
+  border: solid #29235C 1px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btn-previous:active {
+  background: #e6e6e6;
+  text-decoration: none;
+}
+
+.btn-save{
+	width: 80px;
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 12px;
+  font-family: Arial;
+  color: #29235C;
+  font-size: 12px;
+  padding: 4px 10px 2px 10px;
+  border: solid #29235C 1px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btn-save:active {
+  background: #e6e6e6;
+  text-decoration: none;
+}
+
+
+
+.btn-dialog { width: 20px; height: 20px; border: 1px gray solid; border-radius: 50%; padding: 16px; text-align: center;}
+
+
+.dialog-edit:active{ background-color: #7DE860}
+.dialog-duplicate:active {background-color: #FFFA00}
+.dialog-view:active {background-color: #1BA5FF}
+.dialog-stop:active {background-color: #FF3326}
+
+
+
+/*TEXT INPUTS */
+
+ .css-input { 
+ 	width: 90%;
+ 	border-style:solid; 
+ 	font-size:14px; 
+ 	padding:9px; 
+ 	border-radius:13px; 
+ 	border-color:#29235c; 
+ 	border-width:1px; 
+ 	color:#29235c; 
+ 	background-color:#f6f6f6; 
+ 	box-shadow: 0px 0px 5px 0px rgba(42,42,42,.0);  
+ } 
+	
+.css-input:focus { 
+	outline:none; 
+	box-shadow: 0px 0px 5px 0px rgba(52,74,202,.8);
+} 
+
+
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label {
+    color: #29235c;
+    font-family: font-family: "Noto Sans", "NotoSans-Regular", sans-serif;
+    font-size: 10px;
+    text-transform: capitalize;
+}
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    -moz-border-radius:  20%;
+    border-radius:  20%;
+}
+
+input[type="radio"] + label span {
+     background-color: #EDEDED;
+     border: 1px solid #29235c;
+}
+
+input[type="radio"]:checked + label span{
+     background-color: #29235c;
+}
+
+input[type="radio"] + label span,
+input[type="radio"]:checked + label span {
+  -webkit-transition:background-color 0.1s linear;
+  -o-transition:background-color 0.1s linear;
+  -moz-transition:background-color 0.1s linear;
+  transition:background-color 0.1s linear;
+}
+
+
+
+/*ELEMENTS*/
+
+.phone {
+	width: 270px;
+}
+
+
+
+
+

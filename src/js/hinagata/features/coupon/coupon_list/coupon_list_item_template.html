@@ -1,0 +1,66 @@
+<% _.each(couponList, function(val, i) { %>
+<% _.each(couponList[i], function(val, j) { %>
+<% if( j  === 0 ){ %>
+    <% if( checkThisMonth(couponList[i][j].attributes.updateAt) === 1 ){ %>
+        <div class="mainline active">
+    <% } else { %>
+        <div class="mainline">
+    <% } %>
+    <span></span><h3><%= getHeaderDateList(couponList[i][j].attributes.updateAt)%></h3></div>
+<% } %>
+<div class="coupon_content cf">
+  <table class="tbl-coupon-list">
+    <tbody>
+        <tr>
+            <td>
+                <% if( couponList[i][j].attributes.imageFileName ){ %>
+                    <div class="thumb-coupon" style="background-image: url(<%= getUrlImage(couponList[i][j].attributes.imageFileName, couponList[i][j].attributes.imageFileNameThumb) %>)"></div>
+                <% } else { %>
+                    <div class="thumb-coupon">
+                      <i class="fa fa-picture-o"></i>
+                    </div>
+                <% } %>
+            </td>
+            <td>
+                <% if( couponList[i][j].attributes.status > 0 ){ %>
+                <div class="info-coupon">
+                  <a href="#couponInformation/view?coupId=<%= couponList[i][j].attributes.id%>" class="campaign-title item-name"><%= couponList[i][j].attributes.name %></a>
+                  <p class="campaign-details start-time"><%= getStatusText(couponList[i][j].attributes.status, couponList[i][j].attributes.delivType, couponList[i][j].attributes.availableTerm, couponList[i][j].attributes.memberOnly) %> - <%= getStart(couponList[i][j].attributes.validity, couponList[i][j].attributes.useStartDateTime, couponList[i][j].attributes.useEndDateTime) %><%= getEnd(couponList[i][j].attributes.useStartDateTime, couponList[i][j].attributes.useEndDateTime) %></p>
+                </div>
+                <% } else { %>
+                <div class="info-coupon">
+                  <a href="#couponInformation/edit?coupId=<%= couponList[i][j].attributes.id%>" class="campaign-title item-name"><%= couponList[i][j].attributes.name %></a>
+                  <p class="campaign-details start-time"><%= getStatusText(couponList[i][j].attributes.status, couponList[i][j].attributes.delivType, couponList[i][j].attributes.availableTerm, couponList[i][j].attributes.memberOnly) %> - <%= getStart(couponList[i][j].attributes.validity, couponList[i][j].attributes.useStartDateTime, couponList[i][j].attributes.useEndDateTime) %><%= getEnd(couponList[i][j].attributes.useStartDateTime, couponList[i][j].attributes.useEndDateTime) %></p>
+                </div>
+                  <% } %>
+            </td>
+            <td>
+                <p class="campaign-title item-name">
+                  <%= getSendTotal(couponList[i][j].attributes.status, couponList[i][j].attributes.sendTotal, couponList[i][j].attributes.memberOnly) %>
+                </p>
+                <p class="campaign-details subscribes item-name"><%= getSendLabel(couponList[i][j].attributes.status, couponList[i][j].attributes.memberOnly, couponList[i][j].attributes.conditionName) %></p>
+            </td>
+            <td>
+                <p class="campaign-title item-name"><%= getUseTotal(couponList[i][j].attributes.status, couponList[i][j].attributes.useTotal) %></p>
+                <p class="campaign-details subscribes item-name"><%= getUseTotalLabel() %> </p>
+            </td>
+            <td id="<%= couponList[i][j].attributes.id%>">
+              <% if( couponList[i][j].attributes.status + "" !== "2" ){ %>
+                <!-- <a id="open_stop" class="icon-stop"><i class="fa fa-ban" aria-hidden="true"></i></a> -->
+              <% } %>
+              <% if( couponList[i][j].attributes.status + "" === "0" ){ %>
+                <a id="open_dialogue_draft" class="circle_act"><i class="fa fa-ellipsis-h"></i></a>
+              <% } %>
+              <% if( couponList[i][j].attributes.status + "" === "1" || couponList[i][j].attributes.status + "" === "3" || couponList[i][j].attributes.status + "" === "4" || couponList[i][j].attributes.status + "" === "5" ){ %>
+                <a id="open_dialogue_active" class="circle_act"><i class="fa fa-ellipsis-h"></i></a>
+              <% } %>
+              <% if( couponList[i][j].attributes.status + "" === "2" ){ %>
+                <a id="open_dialogue_delete" class="circle_act"><i class="fa fa-ellipsis-h"></i></a>
+              <% } %>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<%}); %>
+<%}); %>

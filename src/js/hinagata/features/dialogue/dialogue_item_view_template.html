@@ -1,0 +1,102 @@
+<div class="greybg" id="greybg"></div>
+    <h1 class="title_mail position"></h1>
+    <button class="cancelbtnact position"><%= getBtnClose()%></button>
+<div class="popup active_message" id="active_dialog">
+    <ul class="listact">
+        <li><div class="btn btn-dialog dialog-view"><i class="fa fa-eye"></i></div><%= getBtnView() %></li>
+        <li><div class="btn btn-dialog dialog-duplicate"><i class="fa fa-files-o"></i></div><%= getBtnDuplicate() %></li>
+        <li><div class="btn btn-dialog dialog-history"><i class="fa fa-history"></i></div><%= getBtnHistory() %></li>
+    </ul>
+</div>
+<div class="popup active_coupon" id="active_dialog_coupon">
+    <ul class="listact">
+        <li><div class="btn btn-dialog dialog-view"><i class="fa fa-eye"></i></div><%= getBtnView() %></li>
+        <li><div class="btn btn-dialog dialog-duplicate"><i class="fa fa-files-o"></i></div><%= getBtnDuplicate() %></li>
+        <li><div id="open_stop" class="btn btn-dialog dialog-stop"><i class="fa fa-thumbs-down"></i></div><%= getBtnStop() %></li>
+    </ul>
+</div>
+<div class="popup scheduled_message" id="scheduled_dialog">                  
+    <ul class="listact">   
+        <li><div class="btn btn-dialog dialog-view"><i class="fa fa-eye"></i></div><%= getBtnView() %></li>
+        <li><div class="btn btn-dialog dialog-duplicate"><i class="fa fa-files-o"></i></div><%= getBtnDuplicate() %></li>
+        <li><div class="btn btn-dialog dialog-stop" id="stop_action"><i class="fa fa-thumbs-o-down"></i></div><%= getBtnStop() %></li>
+        <li><div class="btn btn-dialog dialog-history"><i class="fa fa-history"></i></div><%= getBtnHistory() %></li>
+    </ul>
+</div>
+
+<div class="popup draft_message" id="draft_dialog">
+    <ul class="listact">   
+        <li><div class="btn btn-dialog dialog-edit"><i class="fa fa-pencil"></i></div><%= getBtnEdit() %></li>        
+        <li><div class="btn btn-dialog dialog-duplicate"><i class="fa fa-files-o"></i></div><%= getBtnDuplicate() %></li>
+        <li><div class="btn btn-dialog dialog-delete"><i class="fa fa-trash-o"></i></div><%= getBtnDelete() %></li>
+        <li><div class="btn btn-dialog dialog-history"><i class="fa fa-history"></i></div><%= getBtnHistory() %></li>
+    </ul>
+</div>
+<div class="popup draft_coupon" id="draft_dialog_coupon">
+    <ul class="listact">   
+        <li><div class="btn btn-dialog dialog-edit"><i class="fa fa-pencil"></i></div><%= getBtnEdit() %></li>        
+        <li><div class="btn btn-dialog dialog-duplicate"><i class="fa fa-files-o"></i></div><%= getBtnDuplicate() %></li>
+        <li><div id="open_stop" class="btn btn-dialog dialog-stop"><i class="fa fa-thumbs-down"></i></div><%= getBtnStop() %></li>
+    </ul>
+</div>
+<div class="popup cancel_message" id="cancel_dialog">
+    <ul class="listact">
+        <li><div class="btn btn-dialog dialog-view"><i class="fa fa-eye"></i></div><%= getBtnView() %></li>
+        <li><div class="btn btn-dialog dialog-duplicate"><i class="fa fa-files-o"></i></div><%= getBtnDuplicate() %></li>
+        <li><div class="btn btn-dialog dialog-cancel" id="cancel_action"><i class="fa fa-external-link"></i></div><%= getBtnCancel() %></li>
+        <li><div class="btn btn-dialog dialog-history"><i class="fa fa-history"></i></div><%= getBtnHistory() %></li>
+    </ul>
+</div>
+<div class="popup delete_coupon" id="delete_dialog">
+    <ul class="listact">
+        <li><div class="btn btn-dialog dialog-view"><i class="fa fa-eye"></i></div><%= getBtnView() %></li>
+        <li><div class="btn btn-dialog dialog-duplicate"><i class="fa fa-files-o"></i></div><%= getBtnDuplicate() %></li>
+        <li><div class="btn btn-dialog dialog-delete"><i class="fa fa-trash-o"></i></div><%= getBtnDelete() %></li>
+    </ul>
+</div>
+<div class="confirm_box" id="confirm_box">
+    <span class="fa fa-ban"></span>   
+    <p class="title-confirm-box"><%= getConfirmStopTitle() %></p> 
+    <button class="cancelbtn" id="actbtn"><%= getBtnCancel() %></button><button id="actbtn" class="confirmbtn"><%= getBtnConfirm() %></button>
+</div>
+<div class="popup options_template" id="options_template_dialog">
+    <ul class="listact">
+        <li><div class="btn btn-dialog dialog-edit"><i class="fa fa-pencil"></i></div><%= getBtnEdit() %></li>
+        <li><div class="btn btn-dialog dialog-delete"><i class="fa fa-trash-o"></i></div><%= getBtnDelete() %></li>
+    </ul>
+</div>
+<div class="dialogue_main_delete" id="dialog_main_delete">
+<a id="close_dialogue_main" class="close_dialogue_main"><i class="fa fa-times fa-lg"></i></a>
+<div class="confirmbox" id="confirm_cancel">
+  <span class="circle_main"><i class="fa fa-trash-o fa-2x"></i></span>
+    <div class="content_main">
+      <div class="inner_main">
+        <p class="confirm_txt"><%= getTextOk() %></p>
+        <p class="noticetxt"><%= getDeleteTemplateMsg() %></p>
+      </div>
+    </div>
+    <!-- <p class="msg-infor">次のフェース</p> -->
+    <div class="block-btn">
+        <button class="confirm_btn" id="confirm_cancel_btn"><%= getBtnConfirm() %></button>
+        <button class="confirm_btn close_dialogue_main" id="confirm_close_btn"><%= getBtnClose() %></button>
+    </div>
+</div>
+</div>
+
+<!-- //Notify -->
+<div class="popup active_message" id="active_dialog_notify">
+    <ul class="listact">
+        <li><div class="btn btn-dialog dialog-view"><i class="fa fa-eye"></i></div><%= getBtnView() %></li>
+        <li><div class="btn btn-dialog dialog-duplicate"><i class="fa fa-files-o"></i></div><%= getBtnDuplicate() %></li>
+        <li><div class="btn btn-dialog dialog-history"><i class="fa fa-bar-chart"></i></div><%= getBtnReport() %></li>
+    </ul>
+</div>
+<div class="popup draft_message" id="draft_dialog_notify">
+    <ul class="listact">   
+        <li><div class="btn btn-dialog dialog-edit"><i class="fa fa-pencil"></i></div><%= getBtnEdit() %></li>        
+        <li><div class="btn btn-dialog dialog-duplicate"><i class="fa fa-files-o"></i></div><%= getBtnDuplicate() %></li>
+        <li><div class="btn btn-dialog dialog-delete"><i class="fa fa-trash-o"></i></div><%= getBtnDelete() %></li>
+        <li><div class="btn btn-dialog dialog-history"><i class="fa fa-bar-chart"></i></div><%= getBtnReport() %></li>
+    </ul>
+</div>
+

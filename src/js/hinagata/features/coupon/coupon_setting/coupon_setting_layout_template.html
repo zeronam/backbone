@@ -1,0 +1,33 @@
+<div id="setting-region-wrapper">  
+  <div class="container">
+    <div class="coupon-master">
+      <h2 class="title"><span><%= getTitle()%></span></h2>
+      <div class="box-button-save cf">
+        <div class="btn-save"><span><%= getBtnSave() %></span><span> <i class="fa fa-angle-down"></i></span></div>
+        <% if (!AppConf.webConf.segmentIdFromUrl) {%><div class="btn-home"><span><i class="fa fa-angle-left"></i></span> <span><%= getBtnHome() %></span></div><% } %>
+      </div>
+      <div class="cf row">
+        <div class="part-content col-xs-6 col-sm-7 col-md-8">
+
+          <div id="coupon-content-region"></div> <!-- /#select-template -->
+          
+        </div> <!-- /.part-content -->
+        <div id="preview-template" class="part-preview col-xs-6 col-sm-5 col-md-4">
+          <h3 class="ttl-priview"><%= getPreview() %></h3>
+          <div class="template-preview">
+            <div class="outer-preview">
+              <div class="inner-preview">
+
+                <div id="coupon-preview-region" class="coupon-template"></div>
+
+              </div> <!-- /.inner-preview -->
+            </div> <!-- /.outer-preview -->
+          </div> <!-- /.template-preview -->
+        </div>
+      </div>
+    </div> <!-- /.simple-coupon -->
+  </div> <!-- /.container -->
+
+  <div id="footer-region"></div>
+</div>
+<%= App.util.injectProgressScreenDom()  %>

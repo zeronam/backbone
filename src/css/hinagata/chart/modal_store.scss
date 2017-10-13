@@ -1,0 +1,215 @@
+//====================================================
+//------------------- MODAL STORE CSS ----------------
+//====================================================
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model;
+    -moz-box-sizing: $box-model;
+    box-sizing: $box-model;
+}
+
+.graph-wrapper {
+    position: relative;
+}
+
+.subscribers-wrapper {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    padding-left: 60px;
+    &.in-compare {
+        width: 50%;
+        &.pos-left {
+            left: 0;
+            top: 66px;
+            padding: 0;
+            .block-subscribers {
+                padding: 0 20px;
+            }
+        }
+        &.pos-right {
+            left: unset;
+            right: 0;
+            top: 66px;
+            padding: 0;
+            .block-subscribers {
+                padding: 0 20px;
+            }
+        }
+    }
+}
+
+.block-subscribers {
+    padding: 0 40px 0 50px;
+    @include box-sizing(border-box);
+    * {
+        @include box-sizing(border-box);
+    }
+    .item-box {
+        float: left;
+        margin: 0;
+        text-align: center;
+        padding-right: 10px;
+        &.pos-right {
+            float: right;
+            padding-right: 0;
+        }
+        * {
+            display: block;
+            line-height: 18px;
+        }
+        .number {
+            border-radius: 50px;
+            border: 1px solid #000078;
+            color: #000078;
+            font-size: 20px;
+            padding: 10px 20px;
+            &.subscrib, &.rate {
+                min-width: 80px;
+            }
+            &.male, &.female {
+                color: #fff;
+                min-width: 80px;
+            }
+            &.rate {
+                background-color: #1cee3d;
+            }
+            &.male {
+                background-color: #000078;
+            }
+            &.female {
+                background-color: #72008d;
+            }
+        }
+        .para {
+            color: #000078;
+            /*font-weight: bold;*/
+            font-size: 12px;
+        }
+    }
+}
+
+.group-slt-controll {
+    float: right;
+    margin-right: 100px;
+    position: relative;
+    > li {
+        color: #000078;
+        display: inline-block;
+        margin-right: -4px;
+        margin-left: 10px;
+        border-radius: 100%;
+        height: 44px;
+        width: 44px;
+        text-align: center;
+        line-height: 40px;
+        // background-color: #ddd;
+        font-size: 20px;
+        border: 1px solid #000078;
+        &.active {
+            color: #fff;
+            background-color: #000078;
+        }
+        &.disable {
+            pointer-events: none;
+        }
+        .home-inner {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.modal-store-container {
+    top: -256px;
+    position: absolute;
+    // bottom: 80px;
+    z-index: 99;
+    display: none;
+    &.home {
+        left: -70px;
+    }
+    &.edit {
+        left: -15px;
+    }
+    &.show {
+        display: block;
+    }
+    &.hide {
+        display: none;
+    }
+}
+
+.block-modal-store {
+    @include box-sizing(border-box);
+    * {
+        @include box-sizing(border-box);
+    }
+    position: relative;
+    width: 200px;
+    padding: 0 15px;
+    border: 1px solid #000078;
+    background-color: rgba(51, 51, 51, 0.85);
+    &:after {
+        position: absolute;
+        left: 50%;
+        bottom: -12px;
+        margin-left: -15px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 12px solid #000078;
+    }
+    .inner-modal-store {
+        height: 236px;
+        overflow-y: scroll;
+    }
+    .item {
+        position: relative;
+        padding: 15px 5px;
+        border-bottom: 1px solid #fff;
+        line-height: 15px;
+        text-align: left;
+        &:first-child {
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+        label {
+            color: #fefefe;
+            font-size: 16px;
+            padding-left: 30px;
+        }
+        input[type=radio] {
+            position: absolute;
+            visibility: hidden;
+            &:checked ~ {
+                label {
+                    // color: #000078;
+                }
+                .check {
+                    background-color: #03ff34;
+                }
+            }
+        }
+        .check {
+            display: block;
+            position: absolute;
+            border: 2px solid #fefefe;
+            border-radius: 100%;
+            height: 20px;
+            width: 20px;
+            top: 13px;
+            left: 5px;
+            z-index: 5;
+        }
+        .icon-edit {
+            float: right;
+            color: #fff;
+            font-size: 16px;
+        }
+    }
+}

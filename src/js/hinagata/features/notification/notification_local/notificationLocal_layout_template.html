@@ -1,0 +1,51 @@
+<div id="content-region-wrapper" class="google-map">
+
+  <div class="container">
+    <div id="map-shop">
+      <div id="google-map-box"></div>
+    </div>
+
+    <div class="simple-coupon coupon-master">
+      <h2 class="title"><span><%= getTitle()%></span></h2>
+      <div class="box-button-save cf">
+        <div class="btn-save"><span><%= getBtnSave() %></span><span> <i class="fa fa-angle-down"></i></span></div>
+        <% if (!AppConf.webConf.segmentIdFromUrl) {%><div class="btn-home"><span><i class="fa fa-angle-left"></i></span> <span><%= getBtnHome()%></span></div> <% } %>
+      </div>
+    </div>
+    
+    <div id="notification-specify-local-region"></div>
+  </div> <!-- /.container -->
+
+  <div id="notification-popup">
+    <div class="container">
+      <p class="shape-popup popup-close">
+        <%= getText("spotsList") %>
+        <span id="spot-count">0</span><%= getText("item") %>
+        <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+      </p>
+      <div class="cf row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th><%= getText("spotName") %></th>
+                <th><%= getText("latitude") %></th>
+                <th><%= getText("longitude") %></th>
+                <th><%= getText("range") %></th>
+                <th><%= getText("SSID") %></th>
+                <th><%= getText("MACAddress") %></th>
+                <th><%= getText("radioIntensity") %></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="notification-popup-region"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-region"></div>
+</div>
+<%= App.util.injectProgressScreenDom()  %>

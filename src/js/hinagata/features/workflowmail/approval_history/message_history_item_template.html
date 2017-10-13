@@ -1,0 +1,33 @@
+<div class="col-xs-9 col-sm-9">
+	<% if ( comment ) { %>
+    	<p class="message_title"><%= comment %></p>
+    <% } else { %>
+    	<p class="message_title">&nbsp;</p>
+    <% } %>
+    <p class="message_details">
+    	<span class="userName"><i class="fa fa-user"></i><%= userName%></span>
+    	<span class="processedDate"><i class="fa fa-calendar"></i><%= processedDate%></span>
+	</p>
+</div>
+<div class="col-xs-3 col-sm-3">
+	<p class="message_status">
+	    <% if ( getStatusNameHistory  + "" === "作成" || getStatusNameHistory  + "" === "Create" ) { %>
+	    	<i class="fa fa-pencil-square-o"></i>
+	    <% } else if ( getStatusNameHistory  + "" === "依頼" || getStatusNameHistory  + "" === "Request" ) { %>
+	    	<i class="fa fa-external-link"></i>
+	    <% } else if ( getStatusNameHistory  + "" === "承認" || getStatusNameHistory  + "" === "Approval" ) { %>
+	    	<i class="fa fa-check-square-o"></i>
+	    <% } else if ( getStatusNameHistory  + "" === "却下" || getStatusNameHistory  + "" === "reject" ) { %>
+	    	<i class="fa fa-thumbs-o-down"></i>
+	    <% } else if ( getStatusNameHistory  + "" === "依頼キャンセル" || getStatusNameHistory  + "" === "Cancel Request" ) { %>
+	    	<i class="fa fa-external-link"></i>
+	    <% } else if ( getStatusNameHistory  + "" === "承認キャンセル" || getStatusNameHistory  + "" === "Cancel Approve" ) { %>
+	    	<i class="fa fa-check-square-o"></i>
+	    <% } else if ( getStatusNameHistory  + "" === "配信キャンセル" || getStatusNameHistory  + "" === "Cancel Send" ) { %>
+	    	<i class="fa fa-paper-plane-o"></i>
+	    <% } else if ( getStatusNameHistory  + "" === "その他" || getStatusNameHistory  + "" === "Other" ) { %>
+	    	<i class="fa fa-ellipsis-h"></i>
+	    <% } %>
+	</p>
+	<p class="message_status"><%= getStatusNameHistory%></p>
+</div>

@@ -1,0 +1,47 @@
+<div class="myTemplate">
+  <h3 class="ttl-my-template">
+    <% if ( headlineOne ) { %>
+      <span id="headlineOne"><%= headlineOne %></span>
+    <% } else { %>
+      <span id="headlineOne"><%= getHeadline()%></span>
+    <% } %>
+  </h3>
+  <div class="banner">
+    <div class="inner-bnr">
+      <p class="box-photo">
+        <% if ( imgBannerOne ) { %>
+          <img id="imgBannerOne" src="<%= imgBannerOne %>">
+        <% } else { %>
+          <img id="imgBannerOne" src="./image/main/noImage.png">
+        <% } %>
+      </p>
+    </div> <!-- /.inner-bnr -->
+  </div> <!-- /.banner -->
+  <div class="box-content">
+    <div class="box-para">
+      <p class="para">
+        <% if ( bodyTextOne ) { %>
+          <span id="bodyTextOne"><%= convertBodyText(bodyTextOne) %></span>
+        <% } else { %>
+          <span id="bodyTextOne"><%= getBodyText()%></span>
+        <% } %>
+      </p>
+    </div> <!-- /.box-para -->
+    <div class="box-button">
+      <a class="btn-tmp bnt-more" role="button">
+        <% if ( nameBtnOne ) { %>
+          <span id="nameBtnOne"><%= nameBtnOne %></span>
+        <% } else { %>
+          <span id="nameBtnOne"><%= getNameBtn(1)%></span>
+        <% } %>
+      </a>
+      <a class="btn-tmp bnt-buy" role="button">
+        <% if ( nameBtnTwo ) { %>
+          <span id="nameBtnTwo"><%= nameBtnTwo %></span>
+        <% } else { %>
+          <span id="nameBtnTwo"><%= getNameBtn(2)%></span>
+        <% } %>
+      </a>
+    </div>
+  </div> <!-- ./box-content -->
+</div>

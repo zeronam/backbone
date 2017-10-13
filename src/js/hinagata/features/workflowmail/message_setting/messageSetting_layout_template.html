@@ -1,0 +1,28 @@
+<div id="message-setting-wrapper">
+  <div id="dialogue-common-region"></div>
+  <div class="container" id="container">
+    <div class="simple-message message-setting">
+      <h1 class="title"><span><%= getTitle()%></span></h1>
+      <div class="box-button-save cf">
+        <div class="btn-save"><span><%= getBtnSave()%></span><span> <i class="fa fa-angle-down"></i></span></div>
+        <% if (!AppConf.webConf.segmentIdFromUrl) {%><div class="btn-home"><span><i class="fa fa-angle-left"></i></span> <span><%= getBtnHome()%></span></div><% } %>
+      </div> <!-- /.box-button-save -->
+      <div class="part-content col-xs-6 col-sm-7 col-md-8">
+       <div id="message-setting-region"></div>
+       </div> <!-- /.part-content -->
+      <div id="preview-template" class="part-preview col-xs-6 col-sm-5 col-md-4">
+        <h3 class="ttl-priview"><%= getPreview()%></h3> 
+        <div class="template-preview">
+          <div class="outer-preview">
+            <div class="inner-preview">
+              <div id="my-template" class="my-template">
+              </div> <!-- /.my-template -->
+            </div> <!-- /.inner-preview -->
+          </div> <!-- /.outer-preview -->
+        </div> <!-- /.template-preview -->
+      </div>
+    </div> <!-- /.simple-message -->
+  </div> <!-- /.container -->
+  <div id="footer-region"></div>
+</div> <!-- /#message-setting-wrapper -->
+<%= App.util.injectProgressScreenDom()  %>

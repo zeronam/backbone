@@ -1,0 +1,127 @@
+<div id="sidebar_master" class="BACKBONE-PAGE">
+ <div class="transbg" id="transbg"></div>
+    <div id="wrapper">
+        <ul id='contextmenu_chart'></ul>
+        <div id="select_date">
+            <div class="greybgact"></div>
+            <div class="select_content">
+                <button class="btnCloseSelectCompare"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <h1>日付を選択</h1>                
+                <div class="inner_content">
+                    <div class="title_date"><p class="detailDate">比較する期間 (<span></span><span></span>)</p><input class="to_date" id = "compare_to_date" readonly="true"/></div> 
+                </div>
+                
+                <div class="confirm_select_compare">
+                    <button class="confirm_compare">OK</button>
+                </div>
+            </div>
+        </div>
+        <div class="iframe_box">
+        <button class="btnCloseIframe"><i class="fa fa-times" aria-hidden="true"></i></button>
+        <iframe src="" class="iframe_segment"></iframe>
+        </div>
+        <div id="modal-detail-action">
+            <button class="btnCloseModalDetail"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <!-- <button class="btnMoreAction"><i class="fa fa-code-fork" aria-hidden="true"></i></button> -->
+            <div class="list_action_btn">
+            </div>
+            <div class="content_detail">
+                <div class="titlebar">                    
+                    <div class="modalinfo">
+                    <span class="name"></span>
+                    <p><span class="type"></span>: <span class="fromDay"></span> <span class="toDay"></span></p>
+                    </div>
+                </div>
+                <div class='title_table'></div>
+                <ul>
+                    
+                </ul>
+            </div>
+            <!-- <p class="error_popup"><%= getSegmentData()%></p> -->
+        </div>
+        <div id="modal-zoom-chart">
+            <div class="closebg"></div>
+            <div class="title_line_chart2"></div>
+            <div class="modal-zoom">
+                <h3></h3>
+                <div class="chart_toolbar">
+                    <button type="button" class="downloadcsvbtn"><i class="fa fa-file-excel-o" aria-hidden="true"></i></button>
+                    <button type="button" class="changetypechartbtn"><i class="fa fa-pie-chart" aria-hidden="true"></i></button>
+                    <button type="button" class="getscreenshot"><i class="fa fa-camera" aria-hidden="true"></i></button>
+                    <button type="button" class="select_date_view"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></button>
+                </div>
+                
+                <p class="chart_time"></p>                
+                <div class="zoom-chart"></div>
+                <img id="imageSVG"/>
+                <canvas id="canvas"></canvas>
+                <button class="zoom-chart-next"></button>
+                <button class="zoom-chart-prev"></button>
+                <button class="btnCloseZoom"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <button class="refresh_chart_detail"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+            </div>   
+        </div>
+        <a href="#selectType" class="create_button"><i class="createbtn"></i></a>
+        <div id="sub-sidebar-region"></div>
+        <div id="sidebar-region"></div>
+        <div class="main_screen">
+            <div class="inner">
+                <div class="topbar navbar-static-top cf <% if (AppConf.chart.webFlag){ %>webChart<% }%>">
+                    <h2 class="section-title"><%= getTitle()%></h2>
+                    <ul class="leftbar navbar-header">
+                        <li class="menu-title"><span id="open_today"><%= getToday()%></span></li>
+                        <li class="menu-title"><span id="open_all"><%= getWeek()%></span></li>
+                        <li class="menu-title"><span id="open_active"><%= getMonth()%></span></li>
+                        <li class="menu-title"><span id="open_scheduled"><%= getLastQ()%></span></li>
+                        <li class="menu-title active"><span id="open_draft"><%= getLastYear()%></span></li>
+                    </ul><!--End leftbar -->
+                    <div class="list_shop">
+                        <button type="button" id="open_submenu"><span></span> <i class="fa fa-angle-right" aria-hidden="true"></i></button> 
+                        <div id="top_toolbar">
+                        <button><span><i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i></span></button>
+                            <span class='arrow-up'></span>
+                            <ul>
+                                <li id="reset_chartList">初期表示に戻す</li>
+                            </ul>
+                        </div>                     
+                    </div>
+                    <div class="listshopbg bggrey">
+                            <div class="closebg"></div>
+                            <div class="list_shop_detail popup_chart">
+                                <button class="btnCloseSelectShop"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                <h1><%= getTitleListShop()%></h1>
+                                <span class="loadShopValue"></span>
+                                <span class="shopid"></span>              
+                                <input type="text" id="search_shop_list" class="search_shop" placeholder= <%= getPlaceHolderInputSearch()%> />
+                                <ul id="list_shop_select"></ul>
+                                <div class="select_filter"><p><span><i class="fa fa-check" aria-hidden="true"></i></span><em></em> <%= getSelectAllListShop()%></p></div>
+                                <p class="error_select"></p>
+                                <div class="confirm_select_shop">
+                                    <button class="confirm_select"><%= getApplyBtnListShop()%></button>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="confirm_reset bggrey" id="confirm_reset">
+                            <div class="closebg"></div>
+                            <div class="confirm_box_chart popup_chart">
+                                <button class="btnCloseSelectShop"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                <h1>初期表示に戻す</h1>         
+                                <p class="message">元の設定にリセットします。よろしいですか</p>
+                                <div class="confirm_select_reset">
+                                <button class="cancel_select">Cancel</button>
+                                    <button class="confirm_select_reset_btn">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                            <!-- <label id="search-act" class="fa fa-search"></label> -->
+                            <!-- <label id="search-close" for="search-terms" class="fa fa-search"></label> -->
+                            <!-- <input type="text" placeholder="Search message" id="search-terms" class="css-input" name="search-terms"> -->
+
+                </div><!--End top bar -->
+                <div id="chart_board">
+                </div>
+            </div><!--End coupon board -->
+        </div><!-- Main screen -->
+    </div> <!-- /#APP-TOP -->
+</div>
+<%= App.util.injectProgressScreenDom()  %>

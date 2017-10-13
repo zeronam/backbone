@@ -1,0 +1,70 @@
+     
+<div id="mainCouponContents" class="section-ico">    
+
+    <hr>
+    <h3><i class="fa fa-user" aria-hidden="true"></i><%= getText("segmentInformation")%></h3><br>
+  <% if(segmentDetail){ %>
+    <div class="subject-title form-group">
+       <div class="text-only">      
+        <p><i class="fa fa-line-chart" aria-hidden="true"></i><%= segmentDetail.chartName %></p>
+       </div>
+       <div class="text-only">
+        <p><i class="fa fa-database" aria-hidden="true"></i><%= segmentDetail.x %> ~ <%= segmentDetail.y%></p>
+       </div>
+       <div class="text-only">
+        <p><i class="fa fa-clock-o" aria-hidden="true"></i><%= segmentDetail.type %> (<%= convertDate(segmentDetail.startDate, "YYYY/MM/DD") %> ~ <%= convertDate(segmentDetail.endDate, "YYYY/MM/DD") %>)</p>
+       </div>
+     </div>
+  <%} else { %>
+    <div class="subject-title form-group">
+      <label class="title-lbl"><%= getText("extractionCondition")%></label>
+      <select name="target" class="form-control input-lg" id="target">
+          <option data-id=""><%= getText("conditionNone")%></option>
+      </select>
+    </div>   
+  <%} %>
+
+    <hr>
+    <h3><i class="fa fa-map-marker" aria-hidden="true"></i><%= getText("notificationByLocationInformation")%></h3><br>
+    <div class="subject-title form-group">
+      <label class="title-lbl"><%= getText("notificationByLocationInformation")%></label>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <label class="lbRadio">
+            <input type="radio" name="locationNotificationType" id="locationNotificationType" value="0" class="form-control" <% if (locationNotificationType != 1){ %>checked<% } %>>
+            <span><%= getText("notSpecified") %></span>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <label class="lbRadio">
+            <input type="radio" name="locationNotificationType" id="locationNotificationType" value="1" class="form-control" <% if (locationNotificationType == 1){ %>checked<% } %>>
+            <span><%= getText("areaSpecified") %></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="subject-title form-group">
+      <label id="specifyTimeLb" class="title-lbl <% if (locationNotificationType != 1){ %>hidden<% } %>"><%= getText("note")%></label>
+      <div class="row">
+        <% if ( locationNotificationType == 1) { %>
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <input class="form-control css-input input-lg hasTimepicker" type="text" name="specifyTimeStart" placeholder="HH:mm" value="<%= convertDate(specifyTimeStart) %>" readonly="true" id="specifyTimeStart">
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <input class="form-control css-input input-lg hasTimepicker" type="text" name="specifyTimeEnd" placeholder="HH:mm" value="<%= convertDate(specifyTimeEnd) %>" readonly="true" id="specifyTimeEnd">
+          </div>
+        <% } else { %>
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <input class="form-control css-input input-lg hasTimepicker <% if (locationNotificationType != 1){ %>hidden<% } %>" type="text" name="specifyTimeStart" placeholder="HH:mm" value="<%= getNowDate("start")%>" readonly="true" id="specifyTimeStart">
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <input class="form-control css-input input-lg hasTimepicker <% if (locationNotificationType != 1){ %>hidden<% } %>" type="text" name="specifyTimeEnd" placeholder="HH:mm" value="<%= getNowDate("end")%>" readonly="true" id="specifyTimeEnd">
+          </div>
+        <% } %>
+      </div>
+    </div>
+
+</div>

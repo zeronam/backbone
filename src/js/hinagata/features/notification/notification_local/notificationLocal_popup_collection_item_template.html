@@ -1,0 +1,16 @@
+<td><%= name %></td>
+<td><% if(location){ %><%= location.latitude %><% } %></td>
+<td><% if(location){ %><%= location.longitude %><% } %></td>
+<td><% if(location){ %><%= location.scope %><% } %></td>
+<td><% if(accessPoint){ %><%= accessPoint.ssid %><% } %></td>
+<td><% if(accessPoint){ %><%= accessPoint.bssid %><% } %></td>
+<td><% if(accessPoint){ %><%= getrssiTypeText(accessPoint.rssiType) %><% } %></td>
+<td>
+	<span class="edit-spot" data-id="<%= spotId %>"><i class="fa fa-pencil-square-o"></i></span>
+  	<span class="delete-spot" data-id="<%= spotId %>"><i class="fa fa-trash-o"></i></span>
+	<% if(location){ %>
+	  	<span class="view-spot" data-id="<%= spotId %>" data-name="<%= name %>" data-scope="<%= location.scope %>" data-long="<%= location.longitude %>" data-lat="<%= location.latitude %>">
+	  		<i class="fa fa-map-marker"></i>
+		</span>
+	<% } %>
+</td>

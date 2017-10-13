@@ -1,0 +1,99 @@
+//====================================================
+//----------------------- LOGIN CSS ------------------
+//====================================================
+#LOGIN{
+}
+.container{
+	padding: 6px 12px;
+	height: 100%;
+}
+#LOGIN-MAIN{
+	text-align: center;
+}
+#LOGIN-MAIN .btn {
+	float:none;
+}
+#LOGIN-MAIN #LOGIN {
+    max-width: 360px;
+    margin: 0 auto;
+    margin-top: 125px;
+	padding-bottom: 115px;
+}
+#LOGIN-MAIN .login-logo{
+	margin-bottom: 15px;
+}
+#LOGIN-MAIN .login-logo img{
+	width: 27px;
+}
+#LOGIN-MAIN .form-group{
+	margin-bottom: 25px;
+}
+#LOGIN-MAIN label {
+	font-size: 11px;
+	line-height: 15px;
+	height: 15px;
+	padding-left: 10px;
+	display: block;
+	text-align: left;
+}
+#LOGIN-MAIN .form-control{
+	height: 48px;
+	line-height: 20px;
+	border: 1px solid #00C4CE;
+	border-radius: 7px;
+	background-color: #A5EFF3;
+	width: 100%;
+	color: #555;
+}
+#LOGIN-MAIN .btn{
+	border: 1px solid #29235C;	
+	padding: 10px 45px;
+	background-color: transparent;
+	font-size: 16px;
+	line-height: 20px;
+	border-radius: 7px;
+	color: #29235C !important;
+}
+#LOGIN-MAIN .btn:hover{
+	background-color: #A5EFF3;
+	border-color: #00C4CE;
+}
+#LOGIN-MAIN .instruction{
+	font-size: 11px;
+	margin-top: 35px;
+	text-transform: uppercase;
+	color: #ff0000;
+}
+#LOGIN-MAIN .copy-right{
+	position: fixed;
+	left: 50%;
+	bottom: 0;
+	margin-left: -112px;
+	font-size: 11px;
+}
+
+#login-wrapper {
+	text-align: right;
+	.multi_language {
+		visibility: hidden;
+    	padding: 0;
+    	li {
+		    width: 40px !important;
+		    height: 40px !important;
+		    margin-left: 5px;
+		}
+	}
+}
+@media only screen and (max-width: 1024px) {
+	#LOGIN-MAIN #LOGIN {
+    	margin-top: 175px;
+    }
+}
+@media only screen and (max-width: 992px) {}
+@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 480px) {
+	#LOGIN-MAIN #LOGIN {
+		margin-top: 75px;
+	}
+}
+@media only screen and (max-width: 390px) {}

@@ -1,0 +1,18 @@
+<div class="notification-img"><img src="./image/main/app-header.png"></div>
+<p class="notification-title"><%= title%></p>
+
+<div class="notification-info">
+	<p id="txtHeader"><%= header%></p>
+</div>
+
+<div class="notification-img">
+	<% if ( contentImageUrl ) { %>
+	  <img id="contentImageUrl" src="<%= getUrlImage(contentImageUrl) %>">
+	<% } else { %>
+	  <img id="contentImageUrl" src="">
+	<% } %>
+</div>
+
+<div class="notification-info">
+	<p id="txtFooter"><%= footer%></p>
+</div>

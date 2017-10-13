@@ -1,0 +1,20 @@
+<div id="information-region-wrapper">
+<div class="container">
+  <div class="coupon-master">
+    <h2 class="title"><span><%= getTitle()%></span></h2>
+    <div class="box-button-save cf">
+      <% if (getType()=='edit') {%><div class="btn-save"><span><%= getBtnSave() %></span><span> <i class="fa fa-angle-down"></i></span></div><% } %>
+      <% if (!AppConf.webConf.segmentIdFromUrl) {%><div class="btn-home"><span><i class="fa fa-angle-left"></i></span> <span><%= getBtnHome()%></span></div><% } %>
+    </div>
+    <div class="cf row">
+      <div class="part-content col-xs-12 col-sm-12 col-md-12">
+        <div id="coupon-content-region"></div> <!-- /#select-template -->
+      </div> <!-- /.part-content -->
+      <div class="part-preview col-xs-6 col-sm-6 col-md-6"></div>
+    </div>
+  </div> <!-- /.simple-coupon -->
+</div> <!-- /.container -->
+
+<div id="footer-region"></div>
+</div>
+<%= App.util.injectProgressScreenDom()  %>

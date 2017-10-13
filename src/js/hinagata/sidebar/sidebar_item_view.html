@@ -1,0 +1,73 @@
+<!-- <div class="nav-sidebar"> -->
+    <ul class="navi_main" id="navi_main">
+        <li class="logoCompany">
+            <a id="show_sub_menu"> 
+                <span class="logo_name"><%= getCompanyName()%></span>
+                <i class="logoicn icn"></i>
+            </a>
+        </li>
+        <li class="messageList">
+            <a >
+                <span class="mail_name"><%= getMail()%></span>
+                <i class="fa fa-paper-plane-o"></i>
+            </a>
+        </li>
+        <li class="couponList">
+            <a >
+                <span class="coupon_name"><%= getCoupon()%></span>
+                <i class="fa fa-tags"></i>
+            </a>
+        </li>
+        <li class="subscribeList">
+            <a >
+                <span class="point_name"><%= getSubscribes()%></span>
+                <i class="fa fa-book"></i>
+            </a>
+        </li>
+        <li class="report">
+            <a >
+                <span class="report_name"><%= getReport()%></span>
+                <i class="fa fa-signal"></i>
+            </a>
+        </li>
+        <li class="notification">
+            <a >
+                <span class="push_name"><%= getNotification()%></span>
+                <i class="fa fa-bell"></i>
+            </a>
+        </li>
+    </ul>
+    <ul class="navi_main bottom" id="main_nav_bottom">
+        <li>
+            <a >
+                <span class="information_name"><%= getInformation()%></span>
+                <i class="fa fa-info-circle"></i>
+            </a>
+        </li>
+        <li>
+            <a >
+                <span class="config_name"><%= getConfig()%></span>
+                <i class="fa fa-cog"></i>
+            </a>
+        </li>
+        <li>
+            <a >
+                <span id="loginName">ゲスト</span>
+                <i class="fa fa-user fa-lg showPopupUser"></i>
+            </a>
+            <div class="menu_user_log">
+                <ul id="userAction">
+                    <li class="logout_name"><%= getLogout()%></li>
+                    <li class="profile_name"><%= getProfile()%></li>
+                </ul>
+            </div>                 
+        </li>
+        <li>
+            <a >
+                <span></span>
+                <i class="fa fa-angle-double-right fa-lg showSideBar"></i>
+            </a>      
+        </li>
+
+    </ul>
+<!-- </div>

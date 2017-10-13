@@ -1,0 +1,58 @@
+<% _.each(messageList, function(val, i) { %>
+<% _.each(messageList[i], function(val, j) { %>
+<% if( j  === 0 ){ %>
+    <% if( checkThisMonth(messageList[i][j].attributes.startTime) === 1 ){ %>
+        <div class="mainline active">
+    <% } else { %>
+        <div class="mainline">
+    <% } %>
+    <span></span><h3><%= getHeaderDateList(messageList[i][j].attributes.startTime)%></h3></div>
+<% } %>
+<div class="message_content cf">
+<table class="tbl-main-list">
+    <tbody>
+        <tr>
+            <% if( messageList[i][j].attributes.status > 0 ){ %>
+            <td>
+                <a href="#messageContent/view?id=<%= messageList[i][j].attributes.id%>" class="campaign-title item-name"><%= messageList[i][j].attributes.name %></a>
+                <p class="campaign-details start-time"><%= getStatusText(messageList[i][j].attributes.status,messageList[i][j].attributes.dsStatus) %><%= formatDateTime(messageList[i][j].attributes.startTime) %></p>
+            </td>
+            <% } else { %>
+            <td>
+                <a href="#messageContent/edit?id=<%= messageList[i][j].attributes.id%>" class="campaign-title item-name"><%= messageList[i][j].attributes.name %></a>
+                <p class="campaign-details start-time"><%= getStatusText(messageList[i][j].attributes.status,messageList[i][j].attributes.dsStatus) %><%= formatDateTime(messageList[i][j].attributes.startTime) %></p>
+            </td>
+            <% } %>
+            <td>
+                <p class="campaign-title status-title item-name"><%= getDelivCount(messageList[i][j].attributes.status, messageList[i][j].attributes.dsStatus,messageList[i][j].attributes.delivCount) %></p>
+                <p class="campaign-details subscribes item-name"><%=getConditionName(messageList[i][j].attributes.conditionName) %></p>
+            </td>
+            <td>
+                <p class="campaign-title status-title item-name"><%= getOpenMail(messageList[i][j].attributes.status, messageList[i][j].attributes.dsStatus,messageList[i][j].attributes.countOpen) %></p>
+                <p class="campaign-details subscribes item-name"><%= getOpens()%></p>
+            </td>
+            <td>
+                <p class="campaign-title status-title item-name"><%= getClickMail(messageList[i][j].attributes.status, messageList[i][j].attributes.dsStatus,messageList[i][j].attributes.countClick) %></p>
+                <p class="campaign-details subscribes item-name"><%= getClicks()%></p>
+            </td>
+            <td id="<%= messageList[i][j].attributes.id%>">
+               <!--  <a id="open_history" class="icon-history"><i class="fa fa-history" aria-hidden="true"></i></a> -->
+			    <% if( getStatusMail(messageList[i][j].attributes.status, messageList[i][j].attributes.dsStatus,messageList[i][j].attributes.regisStatus,messageList[i][j].attributes.delivStop)  === 1 || getStatusMail(messageList[i][j].attributes.status, messageList[i][j].attributes.dsStatus,messageList[i][j].attributes.regisStatus,messageList[i][j].attributes.delivStop) === 2 || getStatusMail(messageList[i][j].attributes.status, messageList[i][j].attributes.dsStatus,messageList[i][j].attributes.regisStatus,messageList[i][j].attributes.delivStop) === 6 ){ %>
+			    	<a id="open_dialogue_active" class="circle_act"><i class="fa fa-ellipsis-h"></i></a>
+			    <% } %>
+			    <% if( getStatusMail(messageList[i][j].attributes.status, messageList[i][j].attributes.dsStatus,messageList[i][j].attributes.regisStatus,messageList[i][j].attributes.delivStop)  === 3 ){ %>
+			    	<a id="open_dialogue_scheduled" class="circle_act"><i class="fa fa-ellipsis-h"></i></a>
+			    <% } %>
+			    <% if( getStatusMail(messageList[i][j].attributes.status, messageList[i][j].attributes.dsStatus,messageList[i][j].attributes.regisStatus,messageList[i][j].attributes.delivStop)  === 4 ){ %>
+			    	<a id="open_dialogue_draft" class="circle_act"><i class="fa fa-ellipsis-h"></i></a>
+			    <% } %>
+                <% if( getStatusMail(messageList[i][j].attributes.status, messageList[i][j].attributes.dsStatus,messageList[i][j].attributes.regisStatus,messageList[i][j].attributes.delivStop)  === 5 ){ %>
+                    <a id="open_dialogue_cancel" class="circle_act"><i class="fa fa-ellipsis-h"></i></a>
+                <% } %>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<%}); %>
+<%}); %>

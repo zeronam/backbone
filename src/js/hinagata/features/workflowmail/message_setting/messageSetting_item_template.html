@@ -1,0 +1,40 @@
+        <div class="headline-block form-group">
+          <span class="drawer-title"><%= getlblTitle()%></span>
+          <input type="text" id="campainName" class="form-control input-lg css-input" placeholder="<%= getlblTitle()%>" disabled>
+        </div> <!-- /.form-group -->
+          <p class="sms"><%= getSms()%></p>           
+        <div class="headline-block form-group data-select">
+           <p class="setting-select"><%= getSettingTitle()%></p>
+        </div>  <!-- /.select-segment -->
+            <% if(!segment()){ %>
+            <span class="drawer-title"><%= getConditionTitle()%></span>
+            <select class="form-control input-lg" id="target">
+              <option data-id=""><%= getConditionNone()%></option>
+            </select>
+            <%} %>
+            <% if(segment()){ %>
+            <div class="subject-title form-group segment-info">
+              <span class="drawer-title"><%= getConditionTitle()%></span>
+              <div class="text-only">
+                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                <p><%= chartName %></p>
+              </div>
+              <div class="text-only">
+                <i class="fa fa-database" aria-hidden="true"></i>
+                <p><%= x %> ~ <%= y%></p>
+              </div>
+              <div class="text-only">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                <p><%= type %> (<%= convertDate(startDate, "YYYY/MM/DD") %> ~ <%= convertDate(endDate, "YYYY/MM/DD") %>)</p>
+              </div>
+            </div>
+            <%} %>
+            <div class="form-group">
+              <span class="drawer-title"><%= getIssueDate()%></span>
+              <div class='input-group date' id='datetimepicker'>
+                  <input type='text' class="form-control input-lg datetimepicker" readonly="true" placeholder="<%= getNowDate()%>" value="<%= getNowDate()%>"/>
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>

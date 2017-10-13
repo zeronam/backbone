@@ -1,0 +1,277 @@
+        <div class="subject-title form-group">
+          <label class="title-lbl"><%= getSubject() %></label>
+          <% if ( subjectTitle ) { %>
+            <input type="text" class="form-control css-input" id="subjectTitle" placeholder="<%= getSubject() %>" value="<%= subjectTitle %>">
+          <% } else { %>
+            <input type="text" class="form-control css-input" id="subjectTitle" placeholder="<%= getSubject() %>" value="">
+          <% } %>
+        </div>
+        <div class="subject-title form-group">
+          <label class="title-lbl"><%= getSubjectNote() %></label>
+          <% if ( subjectNote ) { %>
+            <input type="text" class="form-control css-input" id="subjectNote" placeholder="<%= getSubjectNote() %>" value="<%= subjectNote %>">
+          <% } else { %>
+            <input type="text" class="form-control css-input" id="subjectNote" placeholder="<%= getSubjectNote() %>" value="">
+          <% } %>
+        </div>
+
+        <div class="form-group">
+          <hr>
+          <h3><%= getMessageContentTitle() %></h3>
+        </div>
+
+        <div class="group-layout-template">
+          <div id="contentLayoutTemplate01">
+
+            <div id="mainMessageContents">
+              <div class="media-block form-group">
+                <% if ( imgBannerOne ) { %>
+                  <div id="image-holder-1" class="box-photo">
+                <% } else { %>
+                  <div id="image-holder-1" class="box-photo" style="display:none;">
+                <% } %>
+                  <!-- <span class="image-no">1</span> -->
+                  <span id="result" class="image-thumb">
+                    <% if ( imgBannerOne ) { %>
+                      <img id="imgBannerOne" src="<%= imgBannerOne %>">
+                    <% } else { %>
+                      <img id="imgBannerOne">
+                    <% } %>
+                  </span>
+                  <span id="delImage1" class="fa fa-times-circle"></span>
+                </div> <!-- /#image-holder -->
+                <div class='add-image' id="add-image-1">
+                  <!-- <span class="image-no">2</span> -->
+                  <a href='javascript:;' <% if ( imgBannerOne ) { %> style="display: none;" <% } %> >
+                    <span class="fa fa-plus-circle"></span>
+                    <button id="coverImageUpload1" style='width:100%;height:100%;cursor:pointer;position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40"></button>
+                  </a>
+                </div><!-- /#button-add-image -->
+              </div> <!-- /.media-block -->
+
+              <div class="headline-block form-group">
+                <label class="title-lbl"><%= getHeadline() %></label>
+                <% if ( headlineOne ) { %>
+                  <input type="text" class="form-control css-input" id="headlineOne" placeholder="<%= getHeadline() %>" value="<%= headlineOne %>">
+                <% } else { %>
+                  <input type="text" class="form-control css-input" id="headlineOne" placeholder="<%= getHeadline() %>">
+                <% } %>
+              </div> <!-- /.headline-block -->
+
+              <div class="subject-title form-group">
+                <label class="title-lbl"><%= getBodyText() %></label>
+                <% if ( bodyTextOne ) { %>
+                  <textarea class="form-control1 css-input" rows="5" id="bodyTextOne" placeholder="<%= getBodyText() %>"><%= bodyTextOne %></textarea>
+                <% } else { %>
+                  <textarea class="form-control1 css-input" rows="5" id="bodyTextOne" placeholder="<%= getBodyText() %>"></textarea>
+                <% } %>
+              </div> <!-- /.form-group -->
+
+              <div class="block-url form-group cf">
+                <p class="col-xs-12 col-md-12 no-gutter">
+                  <label class="title-lbl"><%= getUrlLink() %></label>
+                  <% if ( urlLink0ne ) { %>
+                    <input type="text" class="form-control2 css-input urlLink" id="urlLink0ne" placeholder="<%= getUrlLink(1) %>" value="<%= convertUrl(urlLink0ne) %>">
+                  <% } else { %>
+                    <input type="text" class="form-control2 css-input urlLink" id="urlLink0ne" placeholder="<%= getUrlLink(1) %>" value="">
+                  <% } %>
+                  <select class="form-control input-lg select_path_url" id="select_path_url1">
+                    <option data-id="0">http://</option>
+                    <option data-id="1">https://</option>
+                    <option data-id="2">www</option>
+                  </select>
+                </p>
+              </div>
+              <!--template 1-->
+              <div class="media-block form-group">
+                  <% if ( imgBannerTwo ) { %>
+                    <div id="image-holder-2" class="box-photo">
+                  <% } else { %>
+                    <div id="image-holder-2" class="box-photo" style="display:none;">
+                  <% } %>
+                    <!-- <span class="image-no">1</span> -->
+                    <span id="result" class="image-thumb">
+                      <% if ( imgBannerTwo ) { %>
+                        <img id="imgBannerTwo" src="<%= imgBannerTwo %>">
+                      <% } else { %>
+                        <img id="imgBannerTwo">
+                        <!-- <img id="imgBannerTwo" src="./image/select_template/img_bnr_01.jpg"> -->
+                      <% } %>
+                    </span>
+                    <span id="delImage2" class="fa fa-times-circle"></span>
+                  </div> <!-- /#image-holder -->
+                  <div class='add-image' id="add-image-2">
+                    <!-- <span class="image-no">2</span> -->
+                    <a href='javascript:;' <% if ( imgBannerOne ) { %> style="display: none;" <% } %> >
+                      <span class="fa fa-plus-circle"></span>
+                      <input id="coverImageUpload2" type="file" style='width:100%;height:100%;cursor:pointer;position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40">
+                    </a>
+                  </div><!-- /#button-add-image -->
+              </div> <!-- /.media-block -->
+
+              <div class="headline-block form-group">
+                <label class="title-lbl"><%= getHeadline() %></label>
+                <% if ( headlineTwo ) { %>
+                  <input type="text" class="form-control css-input" id="headlineTwo" placeholder="<%= getHeadline(2) %>" value="<%= headlineTwo %>">
+                <% } else { %>
+                  <input type="text" class="form-control css-input" id="headlineTwo" placeholder="<%= getHeadline(2) %>">
+                <% } %>
+              </div> <!-- /.headline-block -->
+
+              <div class="subject-title form-group">
+                <label class="title-lbl"><%= getBodyText() %></label>
+                <% if ( bodyTextTwo ) { %>
+                  <textarea class="form-control1 css-input" rows="5" id="bodyTextTwo" placeholder="<%= getBodyText(2) %>"><%= bodyTextTwo %></textarea>
+                <% } else { %>
+                  <textarea class="form-control1 css-input" rows="5" id="bodyTextTwo" placeholder="<%= getBodyText(2) %>"></textarea>
+                <% } %>
+              </div> <!-- /.form-group -->
+
+              <div class="block-url form-group cf">
+                <p class="col-xs-12 col-md-12 no-gutter">
+                  <label class="title-lbl"><%= getUrlLink() %></label>
+                  <% if ( urlLinkTwo ) { %>
+                    <input type="text" class="form-control2 css-input urlLink" id="urlLinkTwo" placeholder="<%= getUrlLink(2) %>" value="<%= convertUrl(urlLinkTwo) %>">
+                  <% } else { %>
+                    <input type="text" class="form-control2 css-input urlLink" id="urlLinkTwo" placeholder="<%= getUrlLink(2) %>" value="">
+                  <% } %>
+                  <select class="form-control input-lg select_path_url" id="select_path_url2">
+                    <option data-id="0">http://</option>
+                    <option data-id="1">https://</option>
+                    <option data-id="2">www</option>
+                  </select>
+                </p>
+              </div>
+              <!--template 2-->              
+              <div class="media-block form-group">
+                  <% if ( imgBannerThree ) { %>
+                    <div id="image-holder-3" class="box-photo">
+                  <% } else { %>
+                    <div id="image-holder-3" class="box-photo" style="display:none;">
+                  <% } %>
+                    <!-- <span class="image-no">1</span> -->
+                    <span id="result" class="image-thumb">
+                      <% if ( imgBannerThree ) { %>
+                        <img id="imgBannerThree" src="<%= imgBannerThree %>">
+                      <% } else { %>
+                        <img id="imgBannerThree">
+                        <!-- <img id="imgBannerTwo" src="./image/select_template/img_bnr_01.jpg"> -->
+                      <% } %>
+                    </span>
+                    <span id="delImage3" class="fa fa-times-circle"></span>
+                  </div> <!-- /#image-holder -->
+                  <div class='add-image' id="add-image-3">
+                    <!-- <span class="image-no">3</span> -->
+                    <a href='javascript:;' <% if ( imgBannerOne ) { %> style="display: none;" <% } %> >
+                      <span class="fa fa-plus-circle"></span>
+                      <input id="coverImageUpload3" type="file" style='width:100%;height:100%;cursor:pointer;position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40">
+                    </a>
+                  </div><!-- /#button-add-image -->
+              </div> <!-- /.media-block -->
+
+              <div class="headline-block form-group">
+                <label class="title-lbl"><%= getHeadline() %></label>
+                <% if ( headlineThree ) { %>
+                  <input type="text" class="form-control css-input" id="headlineThree" placeholder="<%= getHeadline(3) %>" value="<%= headlineThree %>">
+                <% } else { %>
+                  <input type="text" class="form-control css-input" id="headlineThree" placeholder="<%= getHeadline(3) %>">
+                <% } %>
+              </div> <!-- /.headline-block -->
+
+              <div class="subject-title form-group">
+                <label class="title-lbl"><%= getBodyText() %></label>
+                <% if ( bodyTextThree ) { %>
+                  <textarea class="form-control1 css-input" rows="5" id="bodyTextThree" placeholder="<%= getBodyText(3) %>"><%= bodyTextThree %></textarea>
+                <% } else { %>
+                  <textarea class="form-control1 css-input" rows="5" id="bodyTextThree" placeholder="<%= getBodyText(3) %>"></textarea>
+                <% } %>
+              </div> <!-- /.form-group -->
+
+              <div class="block-url form-group cf">
+                <p class="col-xs-12 col-md-12 no-gutter">
+                  <label class="title-lbl"><%= getUrlLink() %></label>
+                  <% if ( urlLinkThree ) { %>
+                    <input type="text" class="form-control2 css-input urlLink" id="urlLinkThree" placeholder="<%= getUrlLink(3) %>" value="<%= convertUrl(urlLinkThree) %>">
+                  <% } else { %>
+                    <input type="text" class="form-control2 css-input urlLink" id="urlLinkThree" placeholder="<%= getUrlLink(3) %>" value="">
+                  <% } %>
+                  <select class="form-control input-lg select_path_url" id="select_path_url3">
+                    <option data-id="0">http://</option>
+                    <option data-id="1">https://</option>
+                    <option data-id="2">www</option>
+                  </select>
+                </p>
+              </div>
+              <!--template 3-->
+              <div class="media-block form-group">
+                  <% if ( imgBannerFour ) { %>
+                    <div id="image-holder-4" class="box-photo">
+                  <% } else { %>
+                    <div id="image-holder-4" class="box-photo" style="display:none;">
+                  <% } %>
+                    <!-- <span class="image-no">1</span> -->
+                    <span id="result" class="image-thumb">
+                      <% if ( imgBannerFour ) { %>
+                        <img id="imgBannerFour" src="<%= imgBannerFour %>">
+                      <% } else { %>
+                        <img id="imgBannerFour">
+                        <!-- <img id="imgBannerTwo" src="./image/select_template/img_bnr_01.jpg"> -->
+                      <% } %>
+                    </span>
+                    <span id="delImage4" class="fa fa-times-circle"></span>
+                  </div> <!-- /#image-holder -->
+                  <div class='add-image' id="add-image-4">
+                    <!-- <span class="image-no">2</span> -->
+                    <a href='javascript:;' <% if ( imgBannerOne ) { %> style="display: none;" <% } %> >
+                      <span class="fa fa-plus-circle"></span>
+                      <input id="coverImageUpload4" type="file" style='width:100%;height:100%;cursor:pointer;position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40">
+                    </a>
+                  </div><!-- /#button-add-image -->
+              </div> <!-- /.media-block -->
+
+              <div class="headline-block form-group">
+                <label class="title-lbl"><%= getHeadline() %></label>
+                <% if ( headlineFour ) { %>
+                  <input type="text" class="form-control css-input" id="headlineFour" placeholder="<%= getHeadline(4) %>" value="<%= headlineFour %>">
+                <% } else { %>
+                  <input type="text" class="form-control css-input" id="headlineFour" placeholder="<%= getHeadline(4) %>">
+                <% } %>
+              </div> <!-- /.headline-block -->
+
+              <div class="subject-title form-group">
+                <label class="title-lbl"><%= getBodyText() %></label>
+                <% if ( bodyTextFour ) { %>
+                  <textarea class="form-control1 css-input" rows="5" id="bodyTextFour" placeholder="<%= getBodyText(4) %>"><%= bodyTextFour %></textarea>
+                <% } else { %>
+                  <textarea class="form-control1 css-input" rows="5" id="bodyTextFour" placeholder="<%= getBodyText(4) %>"></textarea>
+                <% } %>
+              </div> <!-- /.form-group -->
+
+              <div class="block-url form-group cf">
+                <p class="col-xs-12 col-md-12 no-gutter">
+                  <label class="title-lbl"><%= getUrlLink() %></label>
+                  <% if ( urlLinkFour ) { %>
+                    <input type="text" class="form-control2 css-input urlLink" id="urlLinkFour" placeholder="<%= getUrlLink(4) %>" value="<%= convertUrl(urlLinkFour) %>">
+                  <% } else { %>
+                    <input type="text" class="form-control2 css-input urlLink" id="urlLinkFour" placeholder="<%= getUrlLink(4) %>" value="">
+                  <% } %>
+                  <select class="form-control input-lg select_path_url" id="select_path_url4">
+                    <option data-id="0">http://</option>
+                    <option data-id="1">https://</option>
+                    <option data-id="2">www</option>
+                  </select>
+                </p>
+              </div>
+              <!--template 4-->
+              <div class="data-select form-group cf">
+                <div class="save-temp-detail" id="save-template-message">
+                  <span class="col-md-6 pLeft0">
+                    <input type="checkbox" value="" class="select-opt" id="check-save">
+                    <label for="radio01"><%= getSaveAsTemplate() %></label>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>

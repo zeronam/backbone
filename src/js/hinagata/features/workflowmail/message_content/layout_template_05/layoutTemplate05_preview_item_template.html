@@ -1,0 +1,87 @@
+<div id="layoutTemplate05">
+  <div class="layout-template layout05">
+    <h4 class="message-subject">
+      <% if ( subjectTitle ) { %>
+        <span id="subjectTitle"><%= subjectTitle %></span>
+      <% } else { %>
+        <span id="subjectTitle"><%= getSubject()%></span>
+      <% } %>
+    </h4>
+    <div class="banner">
+      <ul class="list-banner">
+        <li>
+          <% if ( imgBannerOne ) { %>
+            <img id="imgBannerOne" src="<%= imgBannerOne %>">
+          <% } else { %>
+            <img id="imgBannerOne" src="./image/main/noImage.png">
+          <% } %>
+        </li>
+        <li>
+          <% if ( imgBannerTwo ) { %>
+            <img id="imgBannerTwo" src="<%= imgBannerTwo %>">
+          <% } else { %>
+            <img id="imgBannerTwo" src="./image/main/noImage.png">
+          <% } %>
+        </li>
+      </ul> <!-- /.list-banner -->
+      <h4 class="headline">
+        <% if ( headlineOne ) { %>
+          <span id="headlineOne"><%= headlineOne %></span>
+        <% } else { %>
+          <span id="headlineOne"><%= getHeadline(1)%></span>
+        <% } %>
+      </h4>
+    </div>
+    <div class="body-template">
+      <div class="tbl-outer">
+        <div class="tbl-inner">
+          <p>
+            <% if ( bodyTextOne ) { %>
+              <span id="bodyTextOne"><%= convertBodyText(bodyTextOne) %></span>
+            <% } else { %>
+              <span id="bodyTextOne"><%= getBodyText(1)%></span>
+            <% } %>
+          </p>
+        </div> <!-- /.tbl-inner -->
+      </div> <!-- /.tbl-outer -->
+    </div> <!-- /.body-template -->
+    <div class="banner">
+      <h4 class="headline">
+        <% if ( headlineTwo ) { %>
+          <span id="headlineTwo"><%= headlineTwo %></span>
+        <% } else { %>
+          <span id="headlineTwo"><%= getHeadline(2)%></span>
+        <% } %>
+      </h4>
+    </div>
+    <div class="body-template">
+      <div class="tbl-outer">
+        <div class="tbl-inner">
+          <p>
+            <% if ( bodyTextTwo ) { %>
+              <span id="bodyTextTwo"><%= convertBodyText(bodyTextTwo) %></span>
+            <% } else { %>
+              <span id="bodyTextTwo"><%= getBodyText(2)%></span>
+            <% } %>
+          </p>
+        </div> <!-- /.tbl-inner -->
+      </div> <!-- /.tbl-outer -->
+    </div> <!-- /.body-template -->
+    <div class="group-url cf">
+      <a class="btn-default btn-url" role="button">
+        <% if ( nameBtnOne ) { %>
+          <span id="nameBtnOne"><%= nameBtnOne %></span>
+        <% } else { %>
+          <span id="nameBtnOne"><%= getNameBtn(1)%></span>
+        <% } %>
+      </a>
+      <a class="btn-default btn-url" role="button">
+        <% if ( nameBtnTwo ) { %>
+          <span id="nameBtnTwo"><%= nameBtnTwo %></span>
+        <% } else { %>
+          <span id="nameBtnTwo"><%= getNameBtn(2)%></span>
+        <% } %>
+      </a>
+    </div> <!-- /.group-url -->
+  </div> <!-- /.layout-template.layout05 -->
+</div> <!-- /#layoutTemplate05 -->

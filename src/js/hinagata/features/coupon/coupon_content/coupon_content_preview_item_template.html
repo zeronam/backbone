@@ -1,0 +1,60 @@
+
+<div class="preview-header">
+	<!-- <h3><%= getCouponDetails() %></h3> -->
+	<img src="./image/main/app-header-coupon.png">
+</div>
+<div class="preview-content">
+	<div class="coupon-img">
+		<% if ( imageFileName ) { %>
+		  <img id="imageFileName" src="<%= getUrlImage(imageFileName) %>">
+		<% } else { %>
+		  <img id="imageFileName" src="./image/main/noImage.png">
+		<% } %>
+	</div>
+	<div class="coupon-details">
+		<div>
+			<% if ( subject ) { %>
+			<h1 id="subject" class="coupon-name"><%= subject%></h1>
+			<% } else { %>
+				<h1 id="subject" class="coupon-name"></h1>
+			<% } %>
+			<p id="message"><%= message%></p>
+		</div>
+	</div>
+	<!-- <div class="coupon-times">
+		<i class="fa fa-tags" aria-hidden="true"></i>
+		<div>
+			<h3><%= getConditionsOfUse() %></h3>
+			<% if(useInterval){ %>
+				<p><%= getUseInterval()%></p>
+			<% } %>
+			<% if ( useLimit ) { %>
+				<p><%= getUseLimit(useLimit)%></p>
+			<% } %>
+			<% if(thresLimitNumber){ %>
+				<p><%= getTimesLimit(thresLimitNumber)%></p>
+			<% } %>
+		</div>
+	</div> -->
+	<div class="coupon-usage">
+		<i class="fa fa-clock-o" aria-hidden="true"></i> 
+		<div>
+			<h3><%= getExpirationDate() %></h3>
+			<% if ( stddatedivCd + "" === "1" ) { %>
+				<p><%= convertDateValidity(validity, memberOnly)%></p>
+			<% } else { %>
+				<p><%= convertDate(useStartDateTime)%> ～ <%= convertDate(useEndDateTime)%></p>
+			<% } %>
+		</div>
+	</div>
+	<div class="coupon-notes">
+		<i class="fa fa-comment-o" aria-hidden="true"></i> 
+		<div>
+			<h3><%= getNotes() %></h3>
+			<p id="memo"><%= memo%></p>
+		</div>
+	</div>
+	<div class="coupon-use">
+		<button type="button" id="use-btn" class="btbgcolor1 btftcolor1">このクーポンを使う</button>
+	</div>
+</div>

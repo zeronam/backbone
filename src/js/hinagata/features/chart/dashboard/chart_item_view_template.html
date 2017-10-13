@@ -1,0 +1,170 @@
+<% if( getType(chartType) === 1 ) { %>
+	<% if ( fullWidthFlg > 0 ){ %>
+	<div class="column_chart_board full draggable">
+	<% } else { %>
+	<div class="column_chart_board half draggable">
+	<% } %>
+		<div class="column-inner">
+			<h1>
+				<span><%= name %></span>
+				<button data-id="<%= id %>" class="show_options"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="show_popup_detail"><i class="fa fa-search-plus" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="refresh_chart"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+			</h1>
+			<button data-chart-id="<%= id%>" class="viewall "><%= getViewAll()%></button>		
+			<div id="chartColumn"></div>
+			<div class="list_legend column"></div>
+			<div class='detail_menu'><div class="info_value_chart"></div><ul></ul></div>
+			<p class="unit"></p>
+		</div>
+	</div>
+<% } else if( getType(chartType) === 2 ) { %>
+	<% if ( fullWidthFlg > 0 ){ %>
+	<div class="donut_chart_board full draggable">
+	<% } else { %>
+	<div class="donut_chart_board half draggable">
+	<% } %>
+		<div class="donut-inner">		
+			<h1>
+				<span><%= name %></span>
+				<button data-id="<%= id %>" class="show_options"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="show_popup_detail"><i class="fa fa-search-plus" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="refresh_chart"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+			</h1>
+			<button data-chart-id="<%= id%>" class="viewall "><%= getViewAll()%></button>			
+			<div class="box_area">
+			</div>
+			<p class="listbtnact"></p>
+		</div>
+	</div>
+<% } else if( getType(chartType) === 3 ) { %>	
+	<div class="monetary_chart_board draggable">
+		<div class="monetary-inner">
+		
+			<h1>
+				<span><%= name %></span>
+				<button data-id="<%= id %>" class="show_options"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="show_popup_detail"><i class="fa fa-search-plus" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="refresh_chart"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+			</h1>
+			<div id="chartMonetary"></div>
+		</div>
+	</div>
+<% } else if( getType(chartType) === 4 ) { %>
+	<% if ( fullWidthFlg > 0 ){ %>
+	<div class="pie_chart_board full draggable">
+	<% } else { %>
+	<div class="pie_chart_board half draggable">
+	<% } %>
+		<div class="pie-inner">
+		
+			<h1>
+				<span><%= name %></span>
+				<button data-id="<%= id %>" class="show_options"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="show_popup_detail"><i class="fa fa-search-plus" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="refresh_chart"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+			</h1>
+			<button data-chart-id="<%= id%>" class="viewall "><%= getViewAll()%></button>			
+			<div class="box_area">			
+			</div>
+			<p class="listbtnact"></p>
+		</div>
+	</div>
+<% } else if( getType(chartType) === 5 ) { %>
+		<% if ( fullWidthFlg > 0 ){ %>
+	<div class="area_chart_board full draggable">
+	<% } else { %>
+	<div class="area_chart_board half draggable">
+	<% } %>
+		<div class="area-inner">
+		
+			<h1>
+				<span><%= name %></span>
+				<button data-id="<%= id %>" class="show_options"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="show_popup_detail"><i class="fa fa-search-plus" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="refresh_chart"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+			</h1>
+			<div class="wrapper">
+				<div id="chartArea"></div>
+			</div>
+		</div>
+	</div>
+<% } else if( getType(chartType) === 6 ) { %>
+			<% if ( fullWidthFlg > 0 ){ %>
+	<div class="line_chart_board full draggable">
+	<% } else { %>
+	<div class="line_chart_board half draggable">
+	<% } %>
+		<div class="line-inner">
+		
+			<h1>
+				<span><%= name %></span>
+				<button data-id="<%= id %>" class="show_options"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="show_popup_detail"><i class="fa fa-search-plus" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="refresh_chart"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+			</h1>			
+			<button data-chart-id="<%= id%>" class="viewall "><%= getViewAll()%></button>
+			<div class="box_area ">
+				<div id="chartLine"></div>
+			</div>
+			<p class="listbtnact"></p>
+			<p class="unit"></p>
+		</div>
+	</div>
+<% } else if( getType(chartType) === 7 ) { %>
+	<% if ( fullWidthFlg > 0 ){ %>
+	<div class="tablechart_board full draggable">
+	<% } else { %>
+	<div class="tablechart_board half draggable">
+	<% } %>
+		<div class="table-inner">
+		
+			<h1>
+				<span><%= name %></span>
+				<button data-id="<%= id %>" class="show_options"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="show_popup_detail"><i class="fa fa-search-plus" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="refresh_chart"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+			</h1>
+			<ul class="table_board box_message"></ul>
+		</div>  
+	</div>
+<% } else if( getType(chartType) === 8 ) { %>
+	<% if ( fullWidthFlg > 0 ){ %>
+	<div class="percent_chart_board full draggable">
+	<% } else { %>
+	<div class="percent_chart_board half draggable">
+	<% } %>
+		<div class="percent-inner">
+		
+			<h1>
+				<span><%= name %></span>
+				<button data-id="<%= id %>" class="show_options"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="show_popup_detail"><i class="fa fa-search-plus" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="refresh_chart"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+			</h1>
+            <div id="box_general_stats">
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+<% } else if( getType(chartType) === 9 ) { %>
+	<% if ( fullWidthFlg > 0 ){ %>
+	<div class="datachart_board full draggable">
+	<% } else { %>
+	<div class="datachart_board half draggable">
+	<% } %>
+		<div class="data-inner">		
+			<h1>
+				<span><%= name %></span>
+				<button data-id="<%= id %>" class="show_options"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="show_popup_detail"><i class="fa fa-search-plus" aria-hidden="true"></i></button>
+				<button data-id="<%= id %>" class="refresh_chart"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+			</h1>
+			<div class="title_board">
+				<div id="title_list"></div>
+			</div>
+			<ul class="data_board box_message">				
+			</ul>
+		</div>  
+	</div>
+<% } %>

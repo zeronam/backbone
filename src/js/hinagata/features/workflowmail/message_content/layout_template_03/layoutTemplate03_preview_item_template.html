@@ -1,0 +1,54 @@
+<div id="layoutTemplate03">
+  <div class="layout-template layout03">
+    <h4 class="message-subject">
+      <% if ( subjectTitle ) { %>
+        <span id="subjectTitle"><%= subjectTitle %></span>
+      <% } else { %>
+        <span id="subjectTitle"><%= getSubject()%></span>
+      <% } %>
+    </h4>
+    <div class="banner">
+      <% if ( imgBannerOne ) { %>
+        <img id="imgBannerOne" src="<%= imgBannerOne %>" alt="" width="100%">
+      <% } else { %>
+        <img id="imgBannerOne" src="./image/main/noImage.png" alt="" width="100%">
+      <% } %>
+      <h4 class="headline">
+        <% if ( headlineOne ) { %>
+          <span id="headlineOne"><%= headlineOne %></span>
+        <% } else { %>
+          <span id="headlineOne"><%= getHeadline()%></span>
+        <% } %>
+      </h4>
+    </div>
+    <div class="body-template">
+      <div class="tbl-outer">
+        <div class="tbl-inner">
+          <p>
+            <% if ( bodyTextOne ) { %>
+              <span id="bodyTextOne"><%= convertBodyText(bodyTextOne) %></span>
+            <% } else { %>
+              <span id="bodyTextOne"><%= getBodyText()%></span>
+            <% } %>
+          </p>
+        </div> <!-- /.tbl-inner -->
+      </div> <!-- /.tbl-outer -->
+    </div> <!-- /.body-template -->
+    <div class="group-url cf">
+      <a class="btn btn-default btn-url" role="button">
+        <% if ( nameBtnOne ) { %>
+          <span id="nameBtnOne"><%= nameBtnOne %></span>
+        <% } else { %>
+          <span id="nameBtnOne"><%= getNameBtn(1)%></span>
+        <% } %>
+      </a>
+      <a class="btn btn-default btn-url" role="button">
+        <% if ( nameBtnTwo ) { %>
+          <span id="nameBtnTwo"><%= nameBtnTwo %></span>
+        <% } else { %>
+          <span id="nameBtnTwo"><%= getNameBtn(2)%></span>
+        <% } %>
+      </a>
+    </div> <!-- /.group-url -->
+  </div> <!-- /.layout-template.layout03 -->
+</div> <!-- /#layoutTemplate03 -->

@@ -1,0 +1,475 @@
+//====================================================
+//--------------- CREATE-SUBSCRIBES CSS --------------
+//====================================================
+#create_subscribes {
+	-webkit-transform: translate3d(0, 0, 0);
+}
+#create_subscribes #wrapper {
+	height:100%;
+}
+#create_subscribes #wrapper.show {
+	transition: left 0.3s;
+}
+#create_subscribes #wrapper.show .sidebar {
+	left:100px;
+	z-index:1;
+	transition: left 0.5s;
+}
+#create_subscribes #wrapper.show .sub_sidebar {
+	left:0;
+	z-index:1;
+	transition: left 0.5s;
+}
+#create_subscribes .greybg {
+	background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    display:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:24;
+    overflow: auto;  
+    transition: all 0.5s ease 0s;    
+}
+#create_subscribes .greybg.show {
+	display:block;
+}
+#create_subscribes .btn-dialog {
+    width: 80px;
+    height: 80px;
+    border: 1px gray solid;
+    border-radius: 50%;
+    padding: 16px;
+    text-align: center;
+    display: block;
+    float: none;
+    margin-bottom: 20px;
+}
+#create_subscribes .btn-dialog:hover {
+	color: #fff;
+}
+#create_subscribes .popup {
+	margin:auto; 
+	position: fixed;
+	z-index:99;
+	transition: all 0.5s ease 0s;
+	display:none;
+	top:50%;
+	left:50%;
+	height:136px;
+	margin-top:-68px;
+}
+#create_subscribes .popup.show, #create_subscribes .confirm_box.show {
+	display:block;
+}
+#create_subscribes .action_dialogue, #create_subscribes .scheduled_message, #create_subscribes .active_list {
+	width:340px;
+	margin-left:-170px;
+}
+#create_subscribes .popup .listact {
+	position:relative;
+	z-index:9999;
+}
+#create_subscribes .popup .listact li{
+	display:inline-block;
+	text-align:center;
+	margin:0 5px;
+	color: #fff;
+}
+#create_subscribes .popup .listact .fa{
+	font-size:40px;
+}
+#create_subscribes .popup .listact li a {
+    border: 2px solid #fff;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    display: block;
+    line-height: 92px;
+    margin-bottom:12px;
+}
+
+#create_subscribes .popup.draft_message .listact li a {
+	width:75px;
+}
+#create_subscribes .popup .listact li .icn {
+	margin:10px auto 0;
+	display:block;
+}
+#create_subscribes .active_message, #create_subscribes .draft_message, #create_subscribes .segments {
+	width:230px;
+	margin-left:-115px;
+}
+/*sidebar*/
+#create_subscribes .sidebar {
+	background-color: #21a3b2;
+    width: 45px;
+    height: 100%;
+    min-height: 600px;
+    display: block;
+    -webkit-box-shadow: 3px 3px 3px 0px rgba(145,145,145,1);
+	-moz-box-shadow: 3px 3px 3px 0px rgba(145,145,145,1);
+	box-shadow: 3px 3px 3px 0px rgba(145,145,145,1);
+	position:absolute;
+	top:0;
+	left:0;
+	transition:left 0.2s;
+}
+#create_subscribes .navi_main {
+	position:relative;
+}
+#create_subscribes .navi_main.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#create_subscribes .navi_main .icn {
+	display:block;
+	margin: 15px auto 0;
+}
+
+#create_subscribes .navi_main li {
+	text-align: center;
+	border-bottom:1px solid #fff;
+	position:relative;
+}
+#create_subscribes .navi_main li.active a{
+	color:#2e3092;
+} 
+#create_subscribes .navi_main li a {
+	font-size: 20px;
+	height:55px;
+	line-height:55px;
+	display: block;
+	width:45px;
+	color: #fff;
+}
+#create_subscribes .navi_main li #show_sub_menu {
+	height:50px;
+	line-height:50px;
+}
+#create_subscribes .active_message .listact {
+	margin-left:4px;
+}
+#create_subscribes .confirm_box {
+	width:300px;	
+	padding:30px 15px;
+	margin:0 auto;
+	text-align:center;
+	position:fixed;	
+    z-index:9999;
+    transition: all 0.5s ease 0.2s; 
+    top:40%;
+    margin-left:-150px;
+    left:50%;
+    display:none;
+}
+#create_subscribes .confirm_box .fa{
+	font-size:40px;
+	color: #fff;
+}
+#create_subscribes .confirm_box p {
+	color: #fff;
+	font-weight:bold;
+	margin:15px 0;
+}
+#create_subscribes .confirm_box button {
+	width:95px;
+	height:35px;
+	background-color:#fff;
+	border-radius:5px;
+	border:1px solid #101010;
+	margin:0 8px;
+}
+
+
+/*icon*/
+#create_subscribes .logoicn {
+	width:27px;
+	height:34px;
+	background-image:url(../image/main/logo_betrend.png);
+}
+.circle_act {
+	border-radius:100%;
+	border:2px solid #2e3092;
+	width:40px;
+	height:40px;
+	display:block;
+	float:right;
+	margin-top:7px;
+	&:hover {
+		color: #fff;
+		background-color: #2e3092;
+	}
+}
+
+/*main screen*/
+#create_subscribes .main_screen{
+	background-color: #ebecec;
+	height:100%;	
+	width:100%;
+	overflow:hidden;
+}
+#create_subscribes .main_screen .topbar {
+	background-color: #f5f5f5;
+	display:block;
+	min-height:35px;
+	padding:5px 0;
+}
+#create_subscribes .title_app {
+	text-transform: uppercase;
+    float: left;
+    font-size: 15px;
+    margin: 0 30px 0 15px;
+    margin-top:12px;
+    font-weight: bold;
+    color: #2e3092;
+} 
+#create_subscribes .toolbar ul {
+	float:right;
+}
+#create_subscribes .toolbar ul li {
+	display:inline-block;
+}
+#create_subscribes .toolbar ul li a{
+	font-size: 22px;
+    padding: 5px 10px;
+    display: block;
+    color:#c4c4c6;
+}
+#create_subscribes .toolbar ul li.active a{
+    color:#2e3092;
+}
+#create_subscribes .main_screen .topbar .section-title {
+	float:left;
+	margin: 15px 30px 0 15px;
+}
+#create_subscribes .main_screen .topbar .leftbar {
+	float:left;
+}
+#create_subscribes .main_screen .topbar .leftbar li {
+	display: inline-block;
+	line-height:36px;
+	text-align: center;
+	position: relative;
+}
+#create_subscribes .main_screen .topbar .leftbar li a {
+	padding:0 10px;
+	font-size: 14px;
+	height:35px;
+	width:110px;
+	display:inline-block;
+	color:#2e3092;
+	font-family: Arial;
+}
+#create_subscribes .main_screen .topbar .leftbar li.active a {
+	font-weight:bold;
+}
+#create_subscribes .main_screen .topbar .leftbar .icn {
+	display: block;
+	margin-right:20px;
+	float:left;
+	margin-top:12px;
+}
+#create_subscribes .main_screen .topbar .rightbar {
+	float:right;
+	margin-right:5px;
+	position: relative;
+}
+#create_subscribes .line_degree {
+	width:1px;
+	height:25px;
+	display:inline-block;
+	-webkit-transform: rotate(30deg); 
+    -moz-transform: rotate(30deg);  
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /*for IE*/
+    vertical-align:middle;
+    background: #2e3092;
+}
+
+#create_subscribes .fa-search {
+    display: block;
+    font-size: 20px;
+    cursor: pointer;
+    top: 5px;
+    color: #2e3092;
+    position: absolute;
+    right: -6px;
+    z-index: 22;
+    width: 50px;
+    height: 40px;
+    background: transparent;
+    text-align: right;
+    padding-right:10px;
+}
+#create_subscribes  #search-terms1 {
+  	display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 36px;  
+    padding: 0;
+    background-color: #fff;
+    color: #2e3092;
+    font-size: 14px;
+    -webkit-transition: width 0.5s;
+    -moz-transition: width 0.5s;
+    -ms-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    transition: width 0.5s;
+    opacity:0;
+    z-index:10;
+}  
+#create_subscribes  #search-terms1.focus {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;   
+    padding:0 30px 0 10px;
+    width:300px;
+    opacity:1;
+    outline:none;
+    outline-width: 0;
+}
+#create_subscribes .message_board {
+	display: table;
+	width:100%;
+	height:100%;
+	position:relative;
+}
+#create_subscribes .inner {
+	padding-left:50px;
+	height:100%;
+}
+#create_subscribes .message_board .list-message {
+	overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 75%;
+    display:block;
+    width: 100%; 
+    position:absolute;   
+    padding: 0 15px 15px 15px;
+    top:0;
+    left:0;
+    box-sizing: border-box;
+}
+
+
+#create_subscribes .message_content {	
+	border-top:1px solid #9f9fa2;
+	padding:10px 0;	
+	width:100%;
+	display:block;
+  	color:#2e3092;  
+}
+#create_subscribes .message_content .fa  {
+	line-height: 41px;
+    margin-left: 9px;
+    font-size: 25px;
+}
+
+#create_subscribes .message_content .message_title {
+	font-size:18px;
+	margin-bottom:0;
+}
+#create_subscribes .message_content  .num_message_info {
+	font-size:18px;
+	margin-bottom:0;
+}
+#create_subscribes .info li {
+	display:inline-block;
+	padding:0;
+}
+#create_subscribes .message_content .descript p {	
+	float:left;
+	width:50%;
+}
+
+/* SUB SIDEBAR */
+
+#create_subscribes .sub_sidebar {
+	display:block;
+	background-color: #21a3b2;
+    width: 100px;
+    height: 100%;
+    min-height: 600px;
+    position:absolute;
+    border:1px solid #59b7bf;
+    border-width:0 1px;
+    top:0;
+    left:-102px;
+    transition:left 0.2s;
+}
+#create_subscribes .sub_sidebar ul {
+	position:relative;
+}
+#create_subscribes .sub_sidebar ul li {
+	color: #fff;
+	border-bottom: 1px solid #207f89;
+	text-align:center;
+}
+#create_subscribes .sub_sidebar ul li a {
+	height:55px;
+	line-height:55px;
+	display:block;
+	font-weight:bold;
+}
+
+#create_subscribes .sub_sidebar .logo_name {
+	font-size:18px;
+	font-weight:bold;
+	height: 65px;
+    line-height: 65px;
+}
+#create_subscribes .navi_sub.bottom {
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    width:100px;
+}
+#create_subscribes .create_subscribes_button {
+	position:absolute;
+	bottom:20px;
+	right:20px;
+	z-index: 30;
+	line-height:42px;
+	text-align:center;
+	color:#fff;
+	border-radius:100%;
+	font-size:18px;
+	.createbtn {
+		background-image: url("../image/main/create.svg");
+		width:50px;
+		height:50px;
+		display:block;
+	}
+}
+
+#create_subscribes .message-show.show {
+	display:block;
+}
+
+#create_subscribes .message-show {
+	display:none;
+	> div > div:last-child {
+		border-bottom:1px solid #9f9fa2;
+		&.list-view-empty {
+			border: 0;
+		}
+	}
+}
+
+#create_subscribes .toolbar {
+	height: 41px;
+}
+
+.col-sm-4.edited {
+	width: 40% !important;
+}
+
+.col-sm-4.button {
+	width: 26% !important;
+}

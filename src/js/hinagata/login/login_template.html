@@ -1,0 +1,55 @@
+<div id="login-wrapper">
+	<ul class="multi_language">
+        <li >
+            <svg class="icon icon-england" viewBox="25 25 50 50">
+                <style type="text/css">
+                    .st1{stroke:#FFFFFF;stroke-width:6;}
+                    .st2{clip-path:url(#XMLID_18_);stroke-width:4;}
+                    .st3{stroke:#FFFFFF;stroke-width:10;}
+                    .st4{stroke-width:6;}
+                </style>
+                <g id="XMLID_2_">
+                    <path id="XMLID_17_" class="st9" d="M20,35v30h60V35H20z"/>
+                    <path id="XMLID_14_" class="st1" d="M20,35l60,30 M80,35L20,65"/>
+                    <g id="XMLID_9_">
+                        <defs>
+                            <polygon id="XMLID_13_" points="80,50 80,50 80,65 50,65 20,65 20,50 20,35 50,35 80,35           "/>
+                        </defs>
+                        <clipPath id="XMLID_18_">
+                            <use xlink:href="#XMLID_13_"/>
+                        </clipPath>
+                        <path id="XMLID_10_" class="st2" d="M20,35l60,30 M80.5,34.5l-60,30"/>
+                    </g>
+                    <path id="XMLID_6_" class="st3" d="M50,35v30 M20,50h60"/>
+                    <path id="XMLID_3_" class="st4" d="M50,35v30 M20,50h60"/>
+                </g>
+            </svg>
+        </li>
+        <li>
+            <svg class="icon icon-japan" viewBox="25 20 50 50">
+                <g id="XMLID_3_">
+                    <rect id="XMLID_2_" x="20" y="30" class="st0" width="60" height="30.6"/>
+                    <circle id="XMLID_1_" class="st1" cx="50" cy="45.2" r="8.5"/>
+                </g>
+            </svg>
+        </li>
+    </ul>
+</div>
+<div id="LOGIN">
+	<img class="login-logo" src="<%= AppConf.logo.imgUrl%>">
+
+		<!--<div class="form-group">-->
+			<label for="user-id">ID</label>
+			<input class="form-control" type="text" name="user-id" id="user-id" placeholder="ID">
+		<!--</div>-->
+		<!--<div class="form-group">-->
+			<label for="password" id="password-label"><%= getPasswordText()%></label>
+			<input class="form-control" type="password" name="password" id="password" placeholder="<%= getPasswordText()%>">
+		<!--</div>-->
+		
+		<button type="button" class="btn login-btn"><%= getBtnLogin()%></button>
+
+	<p class="instruction"></p>
+	<p class="copy-right"><%= AppConf.logo.title%></p>
+</div>
+<%= App.util.injectProgressScreenDom("1")  %>

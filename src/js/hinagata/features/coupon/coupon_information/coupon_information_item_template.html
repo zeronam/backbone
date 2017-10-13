@@ -1,0 +1,137 @@
+<hr>
+<h3><%= setMemberOnly(memberOnly)%></h3><br>
+
+<div id="mainCouponInformation" class="row">          
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="subject-title form-group">
+    <label class="title-lbl"><%= getCouponsName() %><span class="required-label"><%= getRequired() %></span></label>
+      <input type="text" class="form-control input-lg" id="name" placeholder="<%= getPlaceholderCouponsName() %>" value="<%= name %>">
+    </div>
+    
+    <div class="accuracy-block form-group">
+      <label class="title-lbl"><%= getClearingWay() %></label>
+      <select class="form-control input-lg" id="useType">
+        <% if(useType != ""){ %>
+          <option <% if (useType === 0){ %>selected<%}%> data-id="0"><%= getButtonOperationOnly() %></option>
+          <option <% if (useType === 1){ %>selected<%}%> data-id="1"><%= getStoreDecisionOnly() %></option>
+          <option <% if (useType === 2){ %>selected<%}%> data-id="2"><%= getShopAroundOnly() %></option>
+          <option <% if (useType === 10){ %>selected<%}%> data-id="10"><%= getQRCode() %></option>
+        <% } else { %>
+          <option data-id="0" selected><%= getButtonOperationOnly() %></option>
+          <option data-id="1"><%= getStoreDecisionOnly() %></option>
+          <option data-id="2"><%= getShopAroundOnly() %></option>
+          <option data-id="10"><%= getQRCode() %></option>
+        <% } %>
+      </select>
+    </div> 
+
+    <div class="conditions-block form-group form-group-select">
+      <label class="title-lbl"><%= getConditionsOfUse() %></label>
+      <div class="row line-height-42">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <label class="lbCheckbox"><input type="checkbox" name="limitPerson" value="on" id="limitPerson" class="form-control" <% if (useLimit > 0){ %>checked<% } %>><span><%= getUseRestrictionsOfArrival() %></span></label>
+        </div>
+        <div id="fieldLimitPerson" class="col-xs-8 col-sm-8 col-md-8">
+          <% if ( useLimit > 0 ){ %>
+            <input type="tel" name="thresLimitPerson" maxlength="8" value="<%= useLimit%>" id="limitPersonVal" class="form-control input-lg" placeholder="<%= getPlaceholderCondition() %>">
+          <% } else { %>
+            <input type="tel" name="thresLimitPerson" maxlength="8" value="" id="limitPersonVal" class="form-control input-lg"  placeholder="<%= getPlaceholderCondition() %>">
+          <% } %>
+        </div>                
+      </div>
+      <% if ( memberOnly + "" !== "1" ) { %>
+        <div class="row line-height-42">
+          <div id="fieldLimitNumber" class="col-xs-4 col-sm-4 col-md-4">
+            <label class="lbCheckbox"><input type="checkbox" value="on" id="limitNumber" class="form-control" <% if (thresLimitNumber > 0){ print("checked")} %>><span><%= getLimitOnTheNumberOfTimesTheTotal() %></span></label>
+          </div>
+          <div class="col-xs-8 col-sm-8 col-md-8" id="fieldLimitNumber">
+            <% if ( thresLimitNumber > 0 ){ %>
+              <input type="tel" name="thresLimitNumber" maxlength="8" value="<%= thresLimitNumber%>" id="limitNumberVal" class="form-control input-lg" placeholder="<%= getPlaceholderCondition() %>">
+            <% } else { %>
+              <input type="tel" name="thresLimitNumber" maxlength="8" value="" id="limitNumberVal" class="form-control input-lg"  placeholder="<%= getPlaceholderCondition() %>">
+            <% } %>
+          </div>
+        </div>
+        <div class="line-height-42">
+          <label class="lbCheckbox"><input type="checkbox" name="limitDay" value="on" id="limitDay" class="form-control" <% if (useInterval == 1){ %>checked<% } %>><span><%= getLimitTheMultipleUseOfTheSameDayLimitOnTheSameDay() %></span></label>
+        </div>
+      <% } %>
+    </div> <!-- /.media-block -->
+
+    <div class="availability-period-block form-group form-group-select">
+    <label class="title-lbl"><%= getAvailabilityPeriod() %><span class="required-label"><%= getRequired() %></span></label>
+      <div class="row line-height-42">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <label class="lbRadio">
+            <% if ( stddatedivCd + "" !== "1" ) { %>
+              <input type="radio" name="dateValidType" id="dateValidType0" class="form-control" checked>
+            <%  } else { %>
+              <input type="radio" name="dateValidType" id="dateValidType0" class="form-control">
+            <% } %>
+            <span><%= getStartCompletionDate() %></span>
+          </label>
+        </div>
+        <div id="dateValidType0Val" class="col-xs-8 col-sm-8 col-md-8">
+          <div class="row">
+            <% if ( stddatedivCd + "" === "0" ) { %>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <input readonly="true" class="form-control css-input input-lg hasDatetimepicker" type="text" name="dateTimeAvailabilityStart" value="<%= convertDate(useStartDateTime) %>" placeholder="YYYY/MM/DD HH:mm" id="dateTimeAvailabilityStart">
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <input readonly="true" class="form-control css-input input-lg hasDatetimepicker" type="text" name="dateTimeAvailabilityEnd" value="<%= convertDate(useEndDateTime) %>" placeholder="YYYY/MM/DD HH:mm" id="dateTimeAvailabilityEnd">
+              </div>
+            <%  } else { %>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <input <% if (stddatedivCd + "" === "1"){ %>disabled<% } %> class="form-control css-input input-lg hasDatetimepicker" type="text" name="dateTimeAvailabilityStart" placeholder="YYYY/MM/DD HH:mm" value="<%= getNowDate("start")%>" readonly="true" id="dateTimeAvailabilityStart">
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <input <% if (stddatedivCd + "" === "1"){ %>disabled<% } %> class="form-control css-input input-lg hasDatetimepicker" type="text" name="dateTimeAvailabilityEnd" placeholder="YYYY/MM/DD HH:mm" value="<%= getNowDate("end")%>" readonly="true" id="dateTimeAvailabilityEnd">
+              </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row line-height-42">
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <label class="lbRadio">
+            <% if ( stddatedivCd + "" === "1" ) { %>
+              <input type="radio" name="dateValidType" value="" id="dateValidType1" class="form-control" checked>
+            <% } else { %>
+              <input type="radio" name="dateValidType" value="" id="dateValidType1"  class="form-control">
+            <% } %>
+            <span><%= getExpirationDate() %><%= getStddatedivCdText(memberOnly) %></span>
+          </label>
+        </div>
+        <div id="dateValidType1Val" class="col-xs-8 col-sm-8 col-md-8">
+          <% if ( stddatedivCd + "" === "1" ) { %>
+            <input class="form-control input-lg" type="tel" id="numOfDayValidSinceDist" name="numOfDayValidSinceDist" maxlength="3" value="<%= validity%>">
+          <% } else { %>
+            <input disabled="disabled" class="form-control input-lg" type="tel" id="numOfDayValidSinceDist" name="numOfDayValidSinceDist" maxlength="3" value="">
+          <% } %>
+        </div>
+      </div>
+    </div> <!-- /.media-block -->
+
+    <div class="confirmation-block form-group form-group-select">
+      <label class="title-lbl"><%= getConfirmationScreen() %></label>
+      <div class="line-height-42">
+        <label class="lbCheckbox ">
+          <input <% if (confirmationDisp == 1){ %>checked<%}%> type="checkbox" name="confirmationDisp" value="on" id="confirmationDisp" class="form-control">
+          <span><%= getDisplayAConfirmationScreenWhenUseCoupon() %></span>
+        </label> 
+      </div>
+    </div>
+
+    <% if(couponUrl != ""){ %>
+      <div class="confirmation-block form-group form-group-select">
+        <label class="title-lbl"><%= getCouponUrl() %></label>
+        <div class="line-height-42">
+          <a href="<%= couponUrl %>"><%= couponUrl %></a>
+        </div>
+      </div>
+    <% } %>
+
+  </div>
+
+</div>

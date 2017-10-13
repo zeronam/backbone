@@ -1,0 +1,27 @@
+<div class="notification-img"><img src="./image/main/app-header.png"></div>
+<div class="notification-info">
+	<% if ( openDate) { %>
+		<p><i class="fa fa-calendar" aria-hidden="true"></i> <%= convertDate(openDate)%> </p>
+		<p><i class="fa fa-clock-o" aria-hidden="true"></i> <%= openTime%></p>
+	<% } else { %>
+		<p><i class="fa fa-calendar" aria-hidden="true"></i> <%= convertDate(distributionTimeStart)%> ～ <%= convertDate(distributionTimeEnd)%> </p>
+		<p><i class="fa fa-clock-o" aria-hidden="true"></i> <%= distributionTime%></p>
+	<% } %>
+	<p><%= title%></p>
+</div>
+
+<div class="notification-info">
+	<p id="txtHeader"><%= header%></p>
+</div>
+
+<div class="notification-img">
+	<% if ( contentImageUrl ) { %>
+	  <img id="contentImageUrl" src="<%= getUrlImage(contentImageUrl) %>">
+	<% } else { %>
+	  <img id="contentImageUrl" src="./image/main/noImage.png">
+	<% } %>
+</div>
+
+<div class="notification-info">
+	<p id="txtFooter"><%= footer%></p>
+</div>

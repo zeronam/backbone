@@ -1,0 +1,76 @@
+#graph-container, .container_compare{
+  .axis path,
+  .axis line {
+    shape-rendering: crispEdges;
+    stroke: #000078;
+    stroke-width: 2px;
+  }
+  .axis line {
+    stroke-width: 0;    
+  }
+  .y.axis path,
+  .y.axis line {
+    fill: none;
+    stroke: none;
+  }
+  .wrapper-chart {
+    .y.axis path,
+    .y.axis line {
+      stroke: #000078;
+    }
+  }
+  div.tooltip {   
+      z-index: 1000;      
+      position: absolute;
+      span{      
+        color: #72008d;
+        border: 1px solid #72008d;  
+        visibility: visible;
+        display: block;
+        border-radius: 100% !important;
+        width: 60px;
+        height: 60px;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 60px;
+        background-color: #ededed;
+        font-size: 12px;
+      }
+  }
+  .grid .tick {
+    stroke: #c1c1c1;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+  }
+  .grid path {
+    stroke-width: 0;
+  }
+  .category rect{
+    outline: 0px;
+  }
+}
+
+.advance-chart, .wrapper-chart{
+  position: relative;
+  .axis path {
+    stroke: #000078;
+    stroke-width: 2px;
+    fill: none;
+  }
+  .axis line{
+    stroke-width: 1px;
+    stroke: #000078;
+  }
+  .tooltip b{
+    visibility: visible;
+    display: block;
+    border-radius: 100% !important;
+    width: 58px;
+    height: 58px;
+    text-align: center;
+    line-height: 58px;
+    background-color: #ededed;
+    font-size: 12px;
+  }
+}
+

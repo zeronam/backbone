@@ -1,0 +1,204 @@
+//====================================================
+//------------------ DEMO GRAPHIC CSS ----------------
+//====================================================
+#modal-date-range {
+  display: none;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.9);
+  font-size: 18px;
+  z-index: 160;
+  font-weight: normal;
+  .error-info{
+    color: rgba(230, 29, 29, 0.75);
+    font-size: 18px;
+    text-align: center;
+    height: 20px;
+    font-weight: bold;
+  }
+  .date-range-title, .date-range-result{
+    color: #FFF;
+    font-size: 22px;
+    text-align: center;
+    margin: 50px 0;
+  }
+  .calendar::after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+  }
+  .calendar .calendar_left, .calendar .calendar_right{
+    text-align: center;
+    min-height: 379px;
+    width: 50%;
+    float: left;
+    p{
+      color: #FFF;
+    }
+    .hasDatepicker{
+      margin: 0 auto;
+      display: table;  
+      .ui-widget-content {
+        padding: 0;
+        background: none;
+        position: relative;
+        border-color: #999;
+        border: 2px solid;
+        a:hover{
+          background: none;
+          border: none;
+        }
+        .ui-datepicker-header{
+          width: 100%;
+          background: none;
+          border: none;
+          font-weight: normal;
+          height: 0;
+          padding: 0;  
+          .ui-datepicker-title{
+            position: relative;
+            top: 340px;
+            font-weight: normal;
+          }
+          .ui-datepicker-prev{
+            top: 50%;
+            left: -50px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            margin-top: -25px;
+            span{
+              display: none;
+            }
+          }      
+          .ui-datepicker-prev::before {
+            position: relative;
+            top: 3pt;
+            content: "";
+            display: inline-block;
+            /* By using an em scale, the arrows will size with the font */
+            width: 40px;
+            height: 40px;
+            border-left: 2px solid #FFF;
+            border-bottom: 2px solid #FFF;
+            transform: rotate(45deg);
+          }
+          .ui-datepicker-next{
+            top: 50%;
+            right: -50px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            margin-top: -25px;
+            span{
+              display: none;
+            }
+          }      
+          .ui-datepicker-next::before {
+            position: relative;
+            top: 3pt;
+            content: "";
+            display: inline-block;
+            /* By using an em scale, the arrows will size with the font */
+            width: 40px;
+            height: 40px;
+            border-right: 2px solid #FFF;
+            border-top: 2px solid #FFF;
+            transform: rotate(45deg);
+          }
+        }
+        table{
+          margin: 0;
+          thead{
+            display: none;
+          }
+          td{
+            padding: 0;
+            width: 48px;
+          }
+          .ui-state-default{
+            margin:0;
+            background: none;
+            text-align: center;
+            padding: 15px 0;
+            font-weight: normal;
+          }
+          .ui-state-active{
+            border-color: #666;
+          }
+          .ui-state-highlight{
+            /*background-color: #000078;*/
+            color: #fff;
+            border: 2px solid #fff;
+          }
+          .dp-highlight .ui-state-default {
+            background: #131352;
+            color: #FFF;
+            border-color: #666;
+          }
+          .dp-highlight .ui-state-active {
+            background: #000078;
+          }
+        }
+      }
+    }
+  }
+  .date-range-result{
+    margin-top: 100px;
+    font-weight: normal;
+    label{
+      color: #FFF;
+      font-size: 30px;
+      margin: 0;
+      font-weight: normal;
+      text-transform: none;
+    }
+  }
+  .date-range-control{
+    a{
+      color: #FFF;
+      border: 1px solid #FFF;
+      border-radius: 20px;
+      padding: 0 9px;
+      width: 100px;
+      font-size: 12px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+    a#btn-cancel{
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+    }
+    a#btn-set{
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+    }
+  }
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  width: 46.5px;
+  height: 46.5px;
+}
+.ui-datepicker {
+  width: auto !important;
+  // height:330px;
+}
+#modal-date-range .calendar .calendar_left .hasDatepicker .ui-widget-content table td, #modal-date-range .calendar .calendar_right .hasDatepicker .ui-widget-content table td {
+  width:46.5px;
+  height: 46.5px;
+  display: inline-block;
+}
+.ui-datepicker .ui-datepicker-header {
+  position: static !important;
+}
+

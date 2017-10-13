@@ -1,0 +1,279 @@
+<div id="demo_graphic" class="BACKBONE-PAGE">
+ <div class="transbg" id="transbg"></div>
+    <div id="wrapper">
+        <div id="dialogue-common-region"></div>
+        <div id="modal-date-range"></div>
+        <div id="modal-monetary"></div>
+        <div id="modal-export-data"></div>
+
+        <div class="main_screen">
+            <div class="inner">
+                <div class="topbar navbar-static-top cf analysis-menu">
+                    <h2 class="section-title"><%= getTitle()%></h2>
+                    <ul class="leftbar navbar-header">
+                        <li class="menu-title active"><span id="open_all">SRFM</span></li>
+                        <li class="menu-title"><span id="open_active"><%= getRecency()%></span></li>
+                        <li class="menu-title"><span id="open_scheduled"><%= getFrequency()%></span></li>
+                        <li class="menu-title"><span id="open_draft"><%= getMonetary()%></span></li>
+                    </ul><!--End leftbar -->
+                    <ul class="rightbar navbar-right">
+                        <li><label id="search-act" class="fa fa-search"></label>
+                            <!-- <label id="search-close" for="search-terms" class="fa fa-search"></label> -->
+                            <input type="text" placeholder="Search message" id="search-terms" class="css-input" name="search-terms">
+                        </li>
+                    </ul><!--End rightbar -->
+                    <!-- <a class="downloadicn"><i class="fa fa-cloud-download fa-2x" aria-hidden="true"></i></a> -->
+                </div><!--End top bar -->
+                
+                <div class="page_slider" id="page_slider">
+                    <p>
+                        <a class="pre_btn">
+                            <i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>
+                        </a>
+                        <span class="date-text"></span>
+                        <a id="calendar-btn"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                        <a class="next_btn">
+                            <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                    <p class="week-text"></p>
+                </div>
+                <div class="subscribers-wrapper out-compare">
+                    <div class="block-subscribers cf">
+                        <p class="item-box">
+                            <span class="number subscrib">0</span>
+                            <span class="para"><%= getSubscribes()%></span>
+                        </p>
+                        <div class="demo-box">
+                            <p class="item-box">
+                                <span class="number male">0</span>
+                            </p>
+                            <p class="item-box">
+                                <span class="number female">0</span>
+                            </p>
+                        </div>
+                        <!-- <p class="item-box pos-right">
+                            <span class="number rate">+1.3%</span>
+                            <span class="para">Join rate</span>
+                        </p> -->
+                    </div>
+                </div>
+                <div class="block-average cf">
+                    <div class="format-common monetary">
+                        <ul class="list-item active">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li><i class="fa fa-eye" aria-hidden="true"></i></li>
+                        </ul>
+                    </div>
+                    <div class="format-common customers">
+                        <ul class="list-item">
+                            <li><i class="fa fa-eye" aria-hidden="true"></i></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--chart-->
+                <div id="graph-container">
+                </div>
+                <!--advance chart-->
+                <div class="advance-chart">
+                    <div id="advance-chart-region">
+                    </div>
+                </div>
+                <div class="compare-container">
+                    <div class="chartslide_compare">
+                        <div class="container_compare twentytwenty-container">
+                            <div class="graph-location twentytwenty-before">
+                                <div class="page_slider" id="page_slider1">
+                                    <p>
+                                        <a class="pre_btn" id ="leftcol">
+                                            <i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>
+                                        </a>
+                                        <span id="time_graph"></span>
+                                        <a id="calendar-btn" class="leftcol"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                                        <a class="next_btn" id="leftcol">
+                                            <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
+                                        </a>
+                                    </p>
+                                    <p class="week-text"></p>
+                                </div>
+                                <div class="subscribers-wrapper in-compare pos-left">
+                                    <div class="block-subscribers cf">
+                                        <p class="item-box">
+                                            <span class="number subscrib">0</span>
+                                            <span class="para"><%= getSubscribes()%></span>
+                                        </p>
+                                        <div class="demo-box">
+                                            <p class="item-box">
+                                                <span class="number male">0</span>
+                                            </p>
+                                            <p class="item-box">
+                                                <span class="number female">0</span>
+                                            </p>
+                                        </div>
+                                        <!-- <p class="item-box pos-right">
+                                            <span class="number rate">+1.3%</span>
+                                            <span class="para">Join rate</span>
+                                        </p> -->
+                                    </div>
+                                </div>
+                                <div id="before-graph-container">
+                                </div>
+                                <div class="bottom_bar navbottom_compare" id="compare_navbottom_left">
+                                    <div class="inner-bottom cf">
+                                        <div class="item-clock"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                                        <ul class="listactbtn cf">
+                                            <li><a ><%= getWeek()%></a><span class="item-mask"></span></li>
+                                            <li class="active"><a ><%= getMonth()%></a><span class="item-mask"></span></li>
+                                            <li><a ><%= getYear()%></a><span class="item-mask"></span></li>
+                                            <li><a ><%= getRange()%></a><span class="item-mask"></span></li>
+                                            <li><a ><i class="fa fa-code" aria-hidden="true"></i></a><span class="item-mask"></span></li>
+                                            <!-- <li class="price"><a >JPY</a></li> -->
+                                        </ul>
+                                        <div>
+                                            <!-- <ul class="group-slt-controll">
+                                                <li data-store="home">
+                                                    <div class="home-inner">
+                                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div id="modal-store-home-in-compare-region1" class="modal-store-container home"></div>
+                                                </li>
+                                                <li data-store="edit">
+                                                    <div class="edit-inner">
+                                                        <i class="fa fa-list" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div id="modal-store-edit-in-compare-region1" class="modal-store-container edit"></div>
+                                                </li>
+                                            </ul> -->
+                                            <ul class="graph_info">
+                                                <li class="active"><a ><i class="fa fa-male" aria-hidden="true"></i></a></li>
+                                                <li class="active"><a ><i class="fa fa-female" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="graph-location twentytwenty-after">
+                                <div class="page_slider" id="page_slider2">
+                                    <p>
+                                        <a class="pre_btn" id="rightcol">
+                                            <i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>
+                                        </a>
+                                        <span id="time_graph"></span>
+                                        <a id="calendar-btn" class="rightcol"><i class="fa fa-calendar" aria-hidden="true"></i></a>
+                                        <a class="next_btn" id="rightcol">
+                                            <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
+                                        </a>
+                                    </p>
+                                    <p class="week-text"></p>
+                                </div>
+                                <div class="subscribers-wrapper in-compare pos-right">
+                                    <div class="block-subscribers cf">
+                                        <p class="item-box">
+                                            <span class="number subscrib">0</span>
+                                            <span class="para"><%= getSubscribes()%></span>
+                                        </p>
+                                        <div class="demo-box">
+                                            <p class="item-box">
+                                                <span class="number male">0</span>
+                                            </p>
+                                            <p class="item-box">
+                                                <span class="number female">0</span>
+                                            </p>
+                                        </div>
+                                        <!-- <p class="item-box pos-right">
+                                            <span class="number rate">+1.3%</span>
+                                            <span class="para">Join rate</span>
+                                        </p> -->
+                                    </div>
+                                </div>
+                                <div id="insert-graph-container">
+                                </div>
+                                <div class="bottom_bar navbottom_compare" id="compare_navbottom_right">
+                                    <div class="inner-bottom cf">
+                                        <div class="item-clock"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                                        <ul class="listactbtn cf">
+                                            <li><a ><%= getWeek()%></a><span class="item-mask"></span></li>
+                                            <li class="active"><a ><%= getMonth()%></a><span class="item-mask"></span></li>
+                                            <li><a ><%= getYear()%></a><span class="item-mask"></span></li>
+                                            <li><a ><%= getRange()%></a><span class="item-mask"></span></li>
+                                            <li><a ><i class="fa fa-code" aria-hidden="true"></i></a><span class="item-mask"></span></li>
+                                            <!-- <li class="price"><a >JPY</a></li> -->
+                                        </ul>
+                                        <div>
+                                            <!-- <ul class="group-slt-controll">
+                                                <li data-store="home">
+                                                    <div class="home-inner">
+                                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div id="modal-store-home-in-compare-region2" class="modal-store-container home"></div>
+                                                </li>
+                                                <li data-store="edit">
+                                                    <div class="edit-inner">
+                                                        <i class="fa fa-list" aria-hidden="true"></i>
+                                                    </div>
+                                                    <div id="modal-store-edit-in-compare-region2" class="modal-store-container edit"></div>
+                                                </li>
+                                            </ul> -->
+                                            <ul class="graph_info">
+                                                <li class="active"><a ><i class="fa fa-male" aria-hidden="true"></i></a></li>
+                                                <li class="active"><a ><i class="fa fa-female" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--menu-bottom-->
+                <div class="bottom_bar" id="default_navbottom">
+                    <div class="inner-bottom cf">
+                        <div class="item-clock"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                        <ul class="listactbtn cf">
+                            <li><a ><%= getWeek()%></a><span class="item-mask"></span></li>
+                            <li class="active"><a ><%= getMonth()%></a><span class="item-mask"></span></li>
+                            <li><a ><%= getYear()%></a><span class="item-mask"></span></li>
+                            <li><a ><%= getRange()%></a><span class="item-mask"></span></li>
+                            <li><a ><i class="fa fa-code" aria-hidden="true"></i></a><span class="item-mask"></span></li>
+                            <!-- <li class="price"><a >JPY</a></li> -->
+                        </ul>
+                        <div>
+                            <!-- <ul class="group-slt-controll">
+                                <li data-store="home">
+                                    <div class="home-inner">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                    </div>
+                                    <div id="modal-store-home-out-compare-region" class="modal-store-container home"></div>
+                                </li>
+                                <li data-store="edit">
+                                    <div class="edit-inner">
+                                        <i class="fa fa-list" aria-hidden="true"></i>
+                                    </div>
+                                    <div id="modal-store-edit-out-compare-region" class="modal-store-container edit"></div>
+                                </li>
+                            </ul> -->
+                            <ul class="graph_info">
+                                <li class="active"><a ><i class="fa fa-male" aria-hidden="true"></i></a></li>
+                                <li class="active"><a ><i class="fa fa-female" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!--End coupon board -->
+        </div><!-- Main screen -->
+    </div> <!-- /#APP-TOP -->
+</div>
+<%= App.util.injectProgressScreenDom()  %>
+

@@ -1,0 +1,30 @@
+<div id="APP-TOP" class="BACKBONE-PAGE">
+	<!-- <div id="dialogue-common-region"></div> -->
+	<div id="confirm-region">
+		   <div class="container">
+		      <h2 class="title"><span><%= getTitle()%></span></h2>
+		      <div class="box-button-save cf">
+		        <% if (!AppConf.webConf.segmentIdFromUrl) {%><div class="btn-home"><span><i class="fa fa-angle-left"></i></span> <span><%= getBtnHome()%></span></div><div class="btn-save"><span>保存して戻る</span><span> <i class="fa fa-angle-down"></i></span></div><% } %>
+		      </div> <!-- /.box-button-save -->
+					<div class="center-content">
+						<hr>
+						<h3><%= getConfirmTitle()%></h3>
+						<p class="info-confirm">
+							<%= getMessageSend()%>
+						</p>
+						<p class="btn-group">
+							<a class="btn btn-back"><%= getBtnBack()%></a>
+							<a class="btn btn-confirm"><%= getBtnConfirm()%></a>
+						</p>
+					</div>
+		      <p class="note-text">
+		        <span class="fa fa-comment fa-2x"></span>
+		        <%= getConfirmNote()%>
+		      </p>
+		  </div> <!-- /.container -->
+		  <div id="footer-region"></div>
+	</div>
+</div> <!-- /#APP-TOP -->
+<%= App.util.injectProgressScreenDom()  %>
+
+

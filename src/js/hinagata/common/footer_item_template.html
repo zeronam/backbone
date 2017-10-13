@@ -1,0 +1,40 @@
+<div class="inner-controll">
+	<ul class="cf" id="navi-control-bar">
+		<% if( typeFooter === "mail" ){ %>
+			<% if( action === "create" ){ %>
+				<li><span class="path_text"><%= getMailTemplate()%></span></li>
+			<% } %>
+			<li><span class="path_text"><%= getContent()%></span></li>
+			<li><span class="path_text"><%= getSetting()%></span></li>
+			<% if( action !== "view" ){ %>
+				<li><span class="path_text"><%= getConfirm()%></span></li>
+			<% } %>
+		<% } else if( typeFooter === "coupon" ){ %>
+			<% if( action === "create" || action === "type" ){ %>
+				<li><span class="path_text"><%= getCouponType()%></span></li>
+			<% } %>
+			<li><span class="path_text"><%= getCouponBasicInformation()%></span></li>
+			<li><span class="path_text"><%= getContent()%></span></li>
+			<% if( memberOnly !== "1" ){ %>
+				<li><span class="path_text"><%= getSetting()%></span></li>
+			<% } %>
+			<% if( action !== "view" ){ %>
+				<li><span class="path_text"><%= getConfirm()%></span></li>
+			<% } %>
+		<% } else if( typeFooter === "notification" ){ %>
+			<li><span class="path_text"><%= getNotificationFooterText("basicConfiguration")%></span></li>
+			<li><span class="path_text"><%= getNotificationFooterText("content")%></span></li>
+			<li><span class="path_text"><%= getNotificationFooterText("notificationCondition")%></span></li>
+			<li><span class="path_text"><%= getNotificationFooterText("dispatchCondition")%></span></li>
+			<% if( action !== "view" ){ %>
+				<li><span class="path_text"><%= getNotificationFooterText("confirm")%></span></li>
+			<% } %>
+		<% } %>
+	</ul>
+	<% if( !isHideBackBtn() ){ %>
+		<a class="btn-controll btn-cancel btn btn-default" role="button"><%= getBtnBack()%></a>
+	<% } %>
+	<% if( action !== "type" ){ %>
+		<a class="btn-controll btn-next btn btn-default" role="button"><%= getBtnNext()%></a>
+	<% } %>
+</div> <!-- /.inner-controll -->
